@@ -24,9 +24,8 @@ $sourceRoot=Join-Path $project 'desktop\src'
 $info=Join-Path $sourceRoot 'AssemblyInfo.cs'
 $packages=Join-Path $project 'dependencies\desktop'
 foreach($dependency in @('K4os.Compression.LZ4.dll','System.Memory.dll','System.Buffers.dll','System.Runtime.CompilerServices.Unsafe.dll','System.Numerics.Vectors.dll')){Copy-Item -LiteralPath (Join-Path $packages $dependency) -Destination $destination -Force}
-$notices=@('QDisplay third-party dependencies. Licenses reproduced below.')
-foreach($license in Get-ChildItem -LiteralPath $packages -File | Where-Object {$_.Name -match 'LICENSE|NOTICES'}){$notices+=('--- '+$license.Name+' ---');$notices+=Get-Content -LiteralPath $license.FullName -Raw}
-[IO.File]::WriteAllText((Join-Path $destination 'THIRD-PARTY-NOTICES.txt'),($notices -join [Environment]::NewLine))
+& python (Join-Path $PSScriptRoot 'prepare_license_bundle.py') --notice-output (Join-Path $destination 'THIRD-PARTY-NOTICES.txt') | Out-Null
+if($LASTEXITCODE -ne 0){throw 'License bundle generation failed'}
 $core=Join-Path $destination 'QDisplay.Core.dll'
 & $compiler /nologo /target:library /optimize+ /unsafe+ "/out:$core" "/r:$(Join-Path $destination 'K4os.Compression.LZ4.dll')" "/r:$(Join-Path $destination 'System.Memory.dll')" $info (Join-Path $sourceRoot 'Core\Models.cs') (Join-Path $sourceRoot 'Core\Protocol.cs') (Join-Path $sourceRoot 'Core\Media.cs') (Join-Path $sourceRoot 'Core\SparseFrame.cs')
 if($LASTEXITCODE -ne 0){throw 'Core compilation failed'}

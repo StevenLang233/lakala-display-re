@@ -48,7 +48,10 @@ try{
     }
     if($seen.Count -ne $expectedFiles.Count){throw 'Windows ZIP has missing files'}
 }finally{$hasher.Dispose();$archive.Dispose()}
-$assetPaths=@($firmware,$installer,$zipPath)
+& python (Join-Path $PSScriptRoot 'prepare_license_bundle.py') --output-dir $AssetsDirectory | Out-Null
+if($LASTEXITCODE -ne 0){throw 'License bundle generation failed'}
+$licenseZip=Join-Path $AssetsDirectory ('QDisplay-'+$metadata.windows.version+'-LICENSES.zip')
+$assetPaths=@($firmware,$installer,$zipPath,$licenseZip)
 $manifest=[ordered]@{tag=$metadata.tag;purpose=$metadata.purpose;firmware=$metadata.firmware;windows=$metadata.windows;limitations=$metadata.limitations;assets=@()}
 foreach($path in $assetPaths){
     $item=Get-Item -LiteralPath $path

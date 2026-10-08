@@ -12,7 +12,7 @@ def listed():
     return sorted(set(name.decode('utf-8') for name in result.stdout.split(b'\0') if name))
 paths=listed()
 for name in paths:
-    if not (name in ('README.md','.gitignore','.gitattributes') or name.startswith('main/')): raise SystemExit('Unexpected source path: '+name)
+    if not (name in ('README.md','LICENSE','.gitignore','.gitattributes') or name.startswith('main/')): raise SystemExit('Unexpected source path: '+name)
     if re.search(r'^(junk/|main/reverse/private/|main/demo/build/)',name): raise SystemExit('Local data in Git: '+name)
     if Path(name).suffix.lower() in ('.exe','.dll','.msi','.img','.zip','.nupkg'): raise SystemExit('Binary artifact in source: '+name)
     if Path(name).suffix.lower()=='.bin' and name not in ('main/reverse/evidence/protocol/hello.bin','main/reverse/evidence/protocol/hello_ack_example.bin'):
@@ -39,7 +39,7 @@ for line in (payload/'SHA256SUMS.txt').read_text(encoding='utf-8').splitlines():
     if candidate is None or sha(candidate)!=digest: raise SystemExit('Release checksum mismatch: '+name)
     expected.append(name)
 zip_path=ROOT/'junk/publish/source-upload.zip'
-with zipfile.ZipFile(zip_path,'w',compression=zipfile.ZIP_DEFLATED,compresslevel=6) as archive:
+with zipfile.ZipFile(zip_path,'w',compression=zipfile.ZIP_DEFLATED,compresslevel=6,strict_timestamps=False) as archive:
     for name in paths: archive.write(ROOT/name,name)
 with zipfile.ZipFile(zip_path) as archive:
     if archive.namelist()!=paths: raise SystemExit('Source ZIP file list mismatch')

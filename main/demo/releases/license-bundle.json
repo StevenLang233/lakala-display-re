@@ -1,0 +1,30 @@
+{
+  "file": "QDisplay-0.3.0-LICENSES.zip",
+  "bytes": 71288,
+  "sha256": "8451e8743b1fa38b0624e603fc97bfe056b8122b911b48ef8cfc683de08a237b",
+  "scope": "original portions only; third-party licenses retained",
+  "files": [
+    "LICENSE",
+    "main/demo/dependencies/desktop/k4os.compression.lz4-LICENSE",
+    "main/demo/dependencies/desktop/system.buffers-LICENSE.TXT",
+    "main/demo/dependencies/desktop/system.buffers-THIRD-PARTY-NOTICES.TXT",
+    "main/demo/dependencies/desktop/system.memory-LICENSE.TXT",
+    "main/demo/dependencies/desktop/system.memory-THIRD-PARTY-NOTICES.TXT",
+    "main/demo/dependencies/desktop/system.numerics.vectors-LICENSE.TXT",
+    "main/demo/dependencies/desktop/system.numerics.vectors-THIRD-PARTY-NOTICES.TXT",
+    "main/demo/dependencies/desktop/system.runtime.compilerservices.unsafe-LICENSE.TXT",
+    "main/demo/dependencies/desktop/system.runtime.compilerservices.unsafe-THIRD-PARTY-NOTICES.TXT",
+    "main/demo/firmware/src/third_party/LICENSE.lz4",
+    "main/demo/firmware/src/third_party/LICENSE.xxhash",
+    "main/demo/third_party/runtime/COPYING.NEWLIB",
+    "main/demo/third_party/runtime/COPYING.RUNTIME",
+    "main/demo/third_party/runtime/COPYING3",
+    "main/demo/third_party/SOURCE-HEADER-NOTICES.txt",
+    "main/demo/third_party/sprdflash-LICENSE",
+    "main/demo/third_party/sprdproto-LICENSE",
+    "main/demo/THIRD_PARTY.md",
+    "main/LICENSE_SCOPE.md",
+    "main/reverse/evidence/abi/APACHE-2.0.txt",
+    "main/reverse/evidence/abi/SDK-LICENSE"
+  ]
+}

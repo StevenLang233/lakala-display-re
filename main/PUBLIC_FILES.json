@@ -1,9 +1,14 @@
 {
   "files": [
     {
+      "file": "LICENSE_SCOPE.md",
+      "bytes": 7678,
+      "sha256": "2d65ebad171e0b25bd222ac5312f19bb926e217146d5afe561d6801da56d0a5a"
+    },
+    {
       "file": "README.md",
-      "bytes": 1805,
-      "sha256": "aa2c7d1668d1c98609b6db7115819285e330ce6f4cc24f1826f148516fd7d6c9"
+      "bytes": 1971,
+      "sha256": "083738842b23332c0465625d20b0593a8b9d8fc66189da177d65d61261d63615"
     },
     {
       "file": "assets/steven-appreciation.jpg",
@@ -12,18 +17,18 @@
     },
     {
       "file": "demo/BUILD.md",
-      "bytes": 4751,
-      "sha256": "d3d18669865176a6eca57cb890fbeeb4caa933226a9203547c5c8b979522970d"
+      "bytes": 4989,
+      "sha256": "eaba3684970f65ce02a3bf7fb4737102b0165ff06ad7d88653f11dc913cea608"
     },
     {
       "file": "demo/PUBLISH.md",
-      "bytes": 2935,
-      "sha256": "28fdfc19fafecb8eec6c80abb25097faff08794b9391f0d66688a82d26bbbf4a"
+      "bytes": 3352,
+      "sha256": "b061aa5b458e9025773bb6ec72c069e78ef69982f0bf4cefc7302ac843bdf05b"
     },
     {
       "file": "demo/README.md",
-      "bytes": 3306,
-      "sha256": "88b20bcfc3913dc8d09e90290b0755cef6788c3a2858546e577be850b52508c1"
+      "bytes": 3453,
+      "sha256": "94bb6e7788c79c8d6b279b0ee23590cf6ddcd4281d697b1c3c3797b767ac552d"
     },
     {
       "file": "demo/SOURCE_SNAPSHOT.json",
@@ -32,8 +37,8 @@
     },
     {
       "file": "demo/THIRD_PARTY.md",
-      "bytes": 1770,
-      "sha256": "776db90d5ed253c2fc1e77a2b115ed63c8640416bbec48c1cf695af9c36eeefb"
+      "bytes": 6566,
+      "sha256": "e2de11efbf245dd1ee4e6663bf611e9e50232fa96fa4ecb6ff36732fcba5bb16"
     },
     {
       "file": "demo/dependencies/desktop/k4os.compression.lz4-LICENSE",
@@ -346,14 +351,19 @@
       "sha256": "17973c0dc49d9854ca26caa191f0e12f7a424b68858d9a78de3860d959d85e4b"
     },
     {
+      "file": "demo/releases/license-bundle.json",
+      "bytes": 1536,
+      "sha256": "d849a04d04e64a9b3883283ed69b82bc04ab58fb7fe9a0f7cfc3ccfd5a251602"
+    },
+    {
       "file": "demo/releases/manifest.json",
       "bytes": 1438,
       "sha256": "affc3a2b374374db6dce79a656bd3af7c1d9f31f311d8545c6114c2c77ecaee0"
     },
     {
       "file": "demo/releases/v0.3.0-demo.20261009.md",
-      "bytes": 2368,
-      "sha256": "e5ef4c893e328c91be4829969b31e6507e614ef3a0adca528e4318ff71207b4b"
+      "bytes": 3368,
+      "sha256": "ee50df28c1b07a16aaf823e25413dfe0cfd9fb117f8d7ee67cd861fbef75743a"
     },
     {
       "file": "demo/requirements-build.txt",
@@ -362,8 +372,8 @@
     },
     {
       "file": "demo/scripts/build_desktop.ps1",
-      "bytes": 4708,
-      "sha256": "f6d475e30770181ba1859ba0fb1c7c8a30d78b057d7a412dfeee233cc2bd3ab5"
+      "bytes": 4509,
+      "sha256": "f6bfb9c0865f5a89ee09b79715b8b621d88993fe24ba58f41dfaef843c48c05d"
     },
     {
       "file": "demo/scripts/build_desktop_msi.ps1",
@@ -386,19 +396,24 @@
       "sha256": "e8967a5619ef65bdc9459823f2763f15eceed2bc5c6eea7dbf2cbddd9081188f"
     },
     {
+      "file": "demo/scripts/prepare_license_bundle.py",
+      "bytes": 3516,
+      "sha256": "f47f174e91c3bf7d7e1b75d2187167a77af90a76aa7a66d3a73a107c39d304a1"
+    },
+    {
       "file": "demo/scripts/prepare_release_payload.ps1",
-      "bytes": 4636,
-      "sha256": "897ec781afde3a7de7f9e53e9f718460c7b1555e5983d1097f1d805d7f834f41"
+      "bytes": 4913,
+      "sha256": "eecafac0c0d37b37f0750fb9d777601c8b4989014cca4f1e80d113f22f6b129a"
     },
     {
       "file": "demo/scripts/prepare_upload_bundle.py",
-      "bytes": 4102,
-      "sha256": "44c35edcc78284d8cc6f9c06dd560c18c31c958ae23b91e01c0c930f2c7dd790"
+      "bytes": 4136,
+      "sha256": "c25e6a6f64b6d1422c61278d997a80fbb9fdbe7a5c3652d0b10155f5bfefb181"
     },
     {
       "file": "demo/scripts/publish_github.ps1",
-      "bytes": 7447,
-      "sha256": "6a58b3ca98a47eff96a0f98a502a112b2f3fb1a86ff5f468cd4e1fbb408aea7a"
+      "bytes": 7459,
+      "sha256": "b862d50260a1d0c6f68f9bb692f78f16e746bded334c018ecf45ce0d297d5977"
     },
     {
       "file": "demo/scripts/restore_desktop_dependencies.ps1",
@@ -409,6 +424,26 @@
       "file": "demo/scripts/verify_snapshot.py",
       "bytes": 1646,
       "sha256": "32a9c593528ff72c61892659d5f6ca35c7b0439363a39696725a3f784d7ad7fa"
+    },
+    {
+      "file": "demo/third_party/SOURCE-HEADER-NOTICES.txt",
+      "bytes": 3458,
+      "sha256": "8821ce9bf5c58b207450f3a877b736166a2323db57d7bf37f40b3cce583cd31b"
+    },
+    {
+      "file": "demo/third_party/runtime/COPYING.NEWLIB",
+      "bytes": 58930,
+      "sha256": "f07f95e2882c0fd821022c39c30a58275a2c70d7511ffd7317daaec56f6956ac"
+    },
+    {
+      "file": "demo/third_party/runtime/COPYING.RUNTIME",
+      "bytes": 3397,
+      "sha256": "90077ba306ee9d8ed966cab1b4abd69b6e728acf08777283cc50283cd9503fa6"
+    },
+    {
+      "file": "demo/third_party/runtime/COPYING3",
+      "bytes": 35821,
+      "sha256": "0b383d5a63da644f628d99c33976ea6487ed89aaa59f0b3257992deac1171e6b"
     },
     {
       "file": "demo/third_party/sprdflash-LICENSE",
@@ -461,6 +496,11 @@
       "sha256": "42b844d8ff3c0aa256700f2ef2fe95cae84d94037eae4b16f69742675991ca9d"
     },
     {
+      "file": "demo/third_party/sprdproto-LICENSE",
+      "bytes": 1065,
+      "sha256": "ceda3dd4cea2134126def06b2e99c22f70e57b3cfc77db4e68c5ba120ea0493f"
+    },
+    {
       "file": "reverse/AUDIO.md",
       "bytes": 3798,
       "sha256": "2c6fbd194c4fe554472ee02847745276c28368c2ae06db21758ee85b7ed2aaad"
@@ -502,8 +542,8 @@
     },
     {
       "file": "reverse/README.md",
-      "bytes": 1618,
-      "sha256": "5dad508c29fe979293f37f7e4b684c0e2a52f9189b5749f56f1fc14c61acaa6d"
+      "bytes": 1815,
+      "sha256": "16adc08a4843ed97c4727f2c054638cd88dad2f025bf2594f235354180f4c404"
     },
     {
       "file": "reverse/UNCERTAIN.md",
@@ -514,6 +554,11 @@
       "file": "reverse/USB_AND_BOOT.md",
       "bytes": 4438,
       "sha256": "7ae9debc12ef62300c70230f5680e76c79dfeb50c618cef038145c909d817f62"
+    },
+    {
+      "file": "reverse/evidence/abi/APACHE-2.0.txt",
+      "bytes": 11358,
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
     },
     {
       "file": "reverse/evidence/abi/SDK-LICENSE",
@@ -787,8 +832,8 @@
     },
     {
       "file": "reverse/tools/render_readme.py",
-      "bytes": 6750,
-      "sha256": "1b84b9661164a8e8d2b74a069685f07bd64ef878728ebbc4f1b57e48053b9383"
+      "bytes": 7376,
+      "sha256": "c184dd4af144d59b3461863d3def23720014786dcc0e9c015896f443dab0a515"
     },
     {
       "file": "reverse/tools/requirements.txt",
@@ -796,6 +841,6 @@
       "sha256": "853fa721a3fa04d3bf7835bb6a158084f29f7d5844f6f8548010ba19dcfb6cb5"
     }
   ],
-  "count": 159,
-  "bytes": 3022255
+  "count": 168,
+  "bytes": 3156725
 }

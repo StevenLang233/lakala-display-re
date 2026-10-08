@@ -19,7 +19,7 @@ Push-Location $root
 try{
     $paths=@(Run-Git -Arguments @('-c','core.quotepath=false','ls-files','--cached','--others','--exclude-standard')) | Sort-Object -Unique
     foreach($path in $paths){
-        if($path -notmatch '^(README\.md|\.gitignore|\.gitattributes|main/)' -or
+        if($path -notmatch '^(README\.md$|LICENSE$|\.gitignore$|\.gitattributes$|main/)' -or
            $path -match '^(junk/|main/reverse/private/|main/demo/build/)' -or
            $path -match '\.(exe|dll|msi|img|zip|nupkg)$' -or
            ($path -match '\.bin$' -and $path -notmatch '^main/reverse/evidence/protocol/(hello|hello_ack_example)\.bin$')){

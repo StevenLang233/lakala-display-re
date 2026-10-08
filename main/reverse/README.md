@@ -1,5 +1,7 @@
 # 逆向文档索引
 
+本项目有权许可的原创说明采用 CC BY-NC-SA 4.0；原厂引用、SDK 声明及非原创照片等不重新授权，适用范围和来源疑点见 [LICENSE_SCOPE](../LICENSE_SCOPE.md)。
+
 先读 [硬件映射](HARDWARE.md)，再读 [内存和 ABI](MEMORY_AND_ABI.md)、[主屏显示](DISPLAY.md) 和 [音频](AUDIO.md)。写独立电脑端可直接实现 [QDC1 二进制协议](PROTOCOL.md)，不需要复制现有客户端。
 
 | 文档 | 独立实现需要的信息 |

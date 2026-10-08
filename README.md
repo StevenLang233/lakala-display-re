@@ -22,17 +22,18 @@
 
 ## 使用限制与商家授权声明
 
-**本项目禁止商用，仅限个人使用。**
+**本项目有权许可的原创部分采用 CC BY-NC-SA 4.0（署名—非商业性使用—相同方式共享），不授予商业用途许可。** 完整条款见 [LICENSE](LICENSE)，适用范围及例外见[许可范围与兼容核对](#许可范围与兼容核对)。第三方内容保留原许可，不能用本项目的非商业条款覆盖它们。
 
-没给任何卖这个终端的商家授权。
+没给任何卖这个终端的商家单独商业授权。下面是我的个人使用倡议和商家声明：
 
 > 本项目仅限个人使用，任何贩卖此终端的商家禁止使用，包括但不限于，告诉买家有这个项目可以刷，直接附带本项目链接等。如有发现，乐意的话可以向我举报，我会感激不尽。
 
-这些限制针对本项目原创内容。第三方部分仍按各自许可证使用，见[第三方来源与许可](#第三方来源与许可)。
+上面的“仅限个人”和商家介绍、附链接限制是作者请求，不是标准 CC 许可的额外条件；正式授权以 CC 原文为准，不限制 CC 允许或依法无需许可的使用。第三方部分仍按各自许可证使用，见[第三方来源与许可](#第三方来源与许可)。
 
 ## 目录
 
 - [使用限制与商家授权声明](#使用限制与商家授权声明)
+- [许可范围与兼容核对](#许可范围与兼容核对)
 - [板卡与信号映射](#板卡与信号映射)
 - [内存、版本与 ABI](#内存版本与-abi)
 - [R03 已解析导入表](#r03-已解析导入表)
@@ -48,6 +49,63 @@
 - [第三方来源与许可](#第三方来源与许可)
 - [源码和安装包分别发布](#源码和安装包分别发布)
 - [首个 Demo 版本说明](#首个-demo-版本说明)
+
+## 许可范围与兼容核对
+
+本项目有权许可的原创内容采用 **CC BY-NC-SA 4.0**（署名—非商业性使用—相同方式共享）。许可人和署名名称为 **StevenLang233**，项目名称为 **Lakala Display RE**，项目地址为 <https://github.com/StevenLang233/lakala-display-re>。完整、未经修改的许可原文在仓库根目录 [LICENSE](LICENSE)，[官方中文说明](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh-hans)便于阅读；说明不替代正式条款。
+
+### 覆盖哪些内容
+
+这项授权只覆盖作者有权许可、且受著作权或类似权利保护的原创部分，包括原创说明文字、分析表达、C/C# 实现、辅助脚本和界面设计。它也适用于发布的 BIN、EXE、DLL、MSI 中相应的原创部分，**不把整个文件或整个安装包里的第三方内容统一改成 CC 许可**。
+
+分享时保留项目名称、StevenLang233 署名、项目链接、许可说明及免责说明，标明所做修改。改编后分享须遵守 CC BY-NC-SA 4.0 的相同方式共享条款；正式条款也允许其中指定的后续版本或兼容许可。项目不授予商业用途许可。
+
+这是 AI 辅助生成与逆向项目。这里不保证每一行输出都有独立著作权，也不对不受保护的事实、算法、接口、引脚编号、地址或协议参数主张额外权利。依法无需许可的使用不受这项许可限制。
+
+CC 官方不推荐把 CC 许可用于软件，因为它不专门处理源码分发和专利授权。本项目按作者的选择将上述原创部分纳入 CC BY-NC-SA 4.0，不声称它是专门的软件许可或符合 OSI 定义的开源许可。[CC 官方说明](https://creativecommons.org/faq/#can-i-apply-a-creative-commons-license-to-software)
+
+### 排除的内容
+
+| 内容或位置 | 如何处理 |
+|---|---|
+| `demo/firmware/src/third_party/` 的 LZ4、xxHash | 保持原 BSD-2-Clause 许可，文件头、版权和免责文本全部保留 |
+| `demo/third_party/sprdflash/` 及其上游衍生部分 | 保持 MIT，不声称是本项目原创，不覆盖上游或本机修改的既有许可 |
+| `demo/dependencies/desktop/` 的外部依赖和通知 | 保持对应 MIT 及包内第三方条款；锁定版本见 `packages.lock.json` |
+| `reverse/evidence/abi/` 的 Helios 声明 | 保留 SDK 原 Apache-2.0 声明及完整 Apache 文本；这不代表官方核心、loader 或全部 SDK 二进制开放授权 |
+| `demo/third_party/runtime/` 及编译器带入的运行库 | 按现用工具链的原许可和 GCC Runtime Library Exception 处理；不是项目原创代码 |
+| `reverse/evidence/` 中除 `protocol/` 外的原厂反汇编、提取字节、字符串、截图、照片及其引用 | 不作 CC 重新授权；原厂或其他权利人的权利保留。原创分析文字与原始引用应分开理解，公开证据不表示取得完整原厂再分发许可 |
+| `demo/firmware/assets/panel_init.h` 及其他由原厂内容生成的片段 | 保留原始来源，不能因为换成 C 数组就称为原创 |
+| `assets/steven-appreciation.jpg` | 仅作为作者提供的赞赏展示图片；其中平台标识、收款码等不纳入 CC 授权，不授予冒用或替换收款信息的权利 |
+| 字体文件、商标、官方核心/loader、外部驱动、用户照片和音乐 | 不纳入本项目的 CC 授权；未随项目发布的文件仍需自行按权利人规定取得和使用 |
+
+第三方内容即使与原创内容放在同一个文件、静态链接进固件或装进同一个 MSI，其原版权及许可也不消失。**本项目的非商业声明不限制他人按原许可独立取得、使用这些第三方部分的权利。** 遇到未标明来源或无法确认授权的材料，不能仅凭根目录 LICENSE 认定它可以重新授权。
+
+### 兼容核对结论（2026-10-09）
+
+核对了本仓库发布源码的第三方目录、五个锁定 NuGet 包及其通知、SDK 声明、构建输入、已部署固件的链接 map 和等待页/亮度条生成方式。逐项来源和义务见 [THIRD_PARTY.md](#第三方来源与许可)。
+
+目前随源码直接提供的 LZ4/xxHash 库文件为 BSD-2-Clause，sprdflash 和桌面依赖为 MIT，SDK 声明为 Apache-2.0。这些已核对条款未要求本项目独立原创部分沿用同一种许可；按上表保留第三方授权、署名、免责和必要通知，可以与本项目原创部分的 CC 许可并列提供。这个结论不是“全部第三方代码已被重新许可为 CC”。
+
+固件确实链接了 newlib 和 libgcc，不能只看源代码目录就漏掉它们。现用 GCC 8.2.1 的 Runtime Library Exception 3.1 允许符合条件的独立模块采用不同条款；本次保留了工具链里的 `COPYING3`、`COPYING.RUNTIME`、newlib 3.0.0 的 `COPYING.NEWLIB`。改编运行库源码、换编译器或改用不符合例外条件的构建流程时，需要重新核对。[GNU 说明](https://www.gnu.org/licenses/gcc-exception-3.1-faq.en.html)
+
+sprdflash 注释还提到了 [iscle/sprdclient](https://github.com/iscle/sprdclient)（GPL-3.0）及其他协议参考项目。当前快照自述为独立的 Python 协议实现，按其随附 MIT 提供，没有把这些参考项目的 C/C++ 文件打包进来。这里没有完成历史代码的逐行来源鉴定，不能把“协议参考”当成可以复制 GPL 源码的授权。**如果后续确认包含 GPL 衍生代码，必须按上游 GPL 处理，不能加上本项目的 NC 限制；不相容的部分应移除、替换或另行取得授权。**
+
+等待页和亮度条是完整词句/百分比的图片，不是逐字拆开的字体库；本次核对了生成脚本，没有打包 TTF/TTC。微软允许把完整文本渲染成用于应用的图片，但禁止借此转换、分发位图字体。此处仅授权本项目原创布局等权利，不重新授权字体；若重做字库或移植到其他系统，须重新核对字体许可。[微软字体说明](https://learn.microsoft.com/en-us/typography/fonts/font-faq)
+
+完整厂商核心、loader、历史卖家 ESP 工程、Logicrom、外部虚拟屏驱动、私人素材和本地工具环境不在此次源码授权范围内，也没有据此保证它们可再分发。当前证据和声明只能支持上面已列出的范围；以后增加依赖或发现遗漏来源，应更新这份清单。
+
+### 作者的个人使用倡议和商家声明
+
+作者希望项目用于个人折腾，没有给卖此终端的商家单独商业授权，也没有授权商家宣称得到作者合作、背书或认可。
+
+README 中“仅限个人”和不希望商家介绍项目、附带链接的原话，保留为作者请求，**不是对标准 CC BY-NC-SA 4.0 增加的许可条件**。CC 的 NonCommercial 判断取决于具体用途，不等于“只有个人才能用”。正式授权以 CC 原文为准，不对许可本身允许或依法无需许可的行为追加限制，也不声称可以仅凭此许可禁止一切提及或链接。[CC 正式条款第 1(k)、2(a)(5)、8(a) 条](https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode.en)
+
+### 免责和问题反馈
+
+资料和 Demo 按现状提供，仍可能有逆向错误、遗漏和硬件适配问题；没有对准确性、完整性、特定用途或第三方权利作保证。正式免责范围以各自许可证及适用法律为准，不能用一句“AI 生成”免除依法不能排除的责任。
+
+如果发现版权、来源或许可标注问题，请通过仓库反馈具体文件、上游链接及相关证据，方便核对并修正、替换或移除。反馈入口不代表已确认存在侵权，也不承诺所有材料都取得了权利人的授权。
+
 
 ## 板卡与信号映射
 
@@ -571,7 +629,7 @@ MSI 安装 LocalSystem 自动启动服务 `QDisplayDevice`、图形界面和系�
 
 历史上旧构建曾被卡巴斯基拦截，本目录保留的是之后实际安装且2026-10-09本机扫描未检出的版本；这不是数字签名，也不能承诺所有杀毒软件都不会误报。没有要求关闭杀毒/添加排除。
 
-本项目原创源码、固件、上位机软件和文档**禁止商用，仅限个人使用**。未授权任何贩卖此商品的商家；完整商家授权与举报声明见[仓库 README](#使用限制与商家授权声明)。已有第三方许可保留，见 [THIRD_PARTY](#第三方来源与许可)，对应组件和上游资料仍遵循各自许可证。
+本项目有权许可的原创源码、固件、上位机软件和文档采用 **CC BY-NC-SA 4.0**，不授予商业用途许可。完整条款见 [LICENSE](LICENSE)，排除的第三方、原厂内容及兼容核对结论见 [LICENSE_SCOPE](#许可范围与兼容核对) 和 [THIRD_PARTY](#第三方来源与许可)。这不把安装包中的第三方组件改成 CC 许可。个人使用倡议、商家声明及举报原话见[仓库 README](#使用限制与商家授权声明)，不追加 CC 许可条件。
 
 
 ## 重建与更新 Demo
@@ -580,7 +638,7 @@ MSI 安装 LocalSystem 自动启动服务 `QDisplayDevice`、图形界面和系�
 
 ### Windows C# 上位机
 
-需要 Windows x64、.NET Framework 4.8 及系统自带 Framework64 C# 编译器。本仓库保留NuGet依赖的版本、下载地址、包/DLL指纹和许可；构建脚本会恢复缺失依赖并核对SHA-256。DLL和下载缓存不进入Git，不需要原项目的虚拟环境。
+需要 Windows x64、.NET Framework 4.8、系统自带 Framework64 C# 编译器，以及 PATH 中可调用的 Python 3.11+（仅用于离线许可打包）。本仓库保留NuGet依赖的版本、下载地址、包/DLL指纹和许可；构建脚本会恢复缺失依赖并核对SHA-256。DLL和下载缓存不进入Git，不需要原项目的虚拟环境。
 
 ```powershell
 powershell.exe -NoProfile -ExecutionPolicy Bypass -File main/demo/scripts/build_desktop.ps1
@@ -591,7 +649,7 @@ powershell.exe -NoProfile -ExecutionPolicy Bypass -File main/demo/scripts/build_
 
 核对原快照源文件、BIN、MSI和依赖可运行 `python main/demo/scripts/verify_snapshot.py`。重建固件已复现与发布BIN完全相同的SHA-256；C# PE/MSI包含构建时间/包标识，重新构建不要求字节哈希相同，不要把“编译成功”表述为已再次做完硬件验收。
 
-原快照MSI是0.3.0；为公开发布新版本，请同步修改程序集和MSI版本/ProductCode并完成升级验证。本整理没有制造一个行为改变的新版本。现有代码没有Linux/macOS UI/USB实现，仅Core协议层可复用。
+原快照MSI是0.3.0；为公开发布新版本，请同步修改程序集和MSI版本/ProductCode并完成升级验证。本整理没有制造一个行为改变的新版本。现有代码没有Linux/macOS UI/USB实现，仅Core协议层可复用。新构建会在原 `THIRD-PARTY-NOTICES.txt` 中附上 CC 原文、范围及完整第三方通知；既有 Release 的二进制保持原字节，另附许可包。
 
 已有无硬件检查在 `desktop/src/Checks`；例如恢复策略：
 
@@ -636,25 +694,53 @@ loader也必须匹配 [USB_AND_BOOT](#usb下载与恢复) 指纹。备份和读�
 
 ## 第三方来源与许可
 
-本项目原创内容的非商业个人使用限制及商家授权声明见[仓库 README](#使用限制与商家授权声明)。以下第三方组件和上游资料仍适用各自许可证，本项目声明不变更这些许可证。
+本项目的 CC BY-NC-SA 4.0 只覆盖有权许可的原创部分，**不覆盖第三方代码、运行库和原厂引用**。它们仍适用原许可证，版权、许可与免责文本保留；原许可允许的独立商业使用不因本项目的 NC 声明而消失。完整范围见 [LICENSE_SCOPE](#许可范围与兼容核对)，根目录 [LICENSE](LICENSE) 是标准 CC 原文。核对日期：2026-10-09。
 
 | 部件 | 来源/版本 | 许可与保留位置 |
 |---|---|---|
-| Helios SDK 声明/链接输入 | QuecPython/Helios-SDK，commit de3b7eb84c4523957ab21a3a0488d9246fe5e361 | SDK根许可Apache-2.0，快照在 `../reverse/evidence/abi/SDK-LICENSE`；完整核心/loader二进制再分发权限没有逐件核对，所以没有打包 |
-| LZ4 C实现 | 固件原快照，头部包含版本信息 | BSD-2-Clause，`firmware/src/third_party/LICENSE.lz4` |
-| xxHash C头 | 固件原快照 | BSD-2-Clause，`firmware/src/third_party/LICENSE.xxhash` |
-| sprdflash Python | ajsb85/sprdflash 的本机快照 | MIT，`third_party/sprdflash-LICENSE` |
+| Helios SDK 声明/链接输入 | [QuecPython/Helios-SDK](https://github.com/QuecPython/Helios-SDK/tree/de3b7eb84c4523957ab21a3a0488d9246fe5e361)，commit de3b7eb84c4523957ab21a3a0488d9246fe5e361 | 根许可 Apache-2.0；[SDK声明](main/reverse/evidence/abi/SDK-LICENSE)和[完整条款](main/reverse/evidence/abi/APACHE-2.0.txt)；完整核心/loader 二进制再分发权限未逐件核对，没有打包 |
+| LZ4 C库 | [lz4/lz4](https://github.com/lz4/lz4/tree/v1.10.0/lib)，本地头文件版本1.10.0 | BSD-2-Clause，[原快照许可](main/demo/firmware/src/third_party/LICENSE.lz4)、源文件完整头及[当前头部通知](main/demo/third_party/SOURCE-HEADER-NOTICES.txt)；没有使用上游另有 GPL 条款的命令行程序 |
+| xxHash C头 | [Cyan4973/xxHash](https://github.com/Cyan4973/xxHash/tree/v0.8.3)，本地头版本0.8.3 | BSD-2-Clause，[原快照许可](main/demo/firmware/src/third_party/LICENSE.xxhash)、源文件完整头及[当前头部通知](main/demo/third_party/SOURCE-HEADER-NOTICES.txt) |
+| sprdflash Python | [ajsb85/sprdflash](https://github.com/ajsb85/sprdflash) 的本机快照；不声称逐文件等于某个上游commit | MIT，[许可](main/demo/third_party/sprdflash-LICENSE)；源码及本机衍生部分保留随附 MIT，不重新许可为 CC |
 | K4os.Compression.LZ4 | 1.3.8 | MIT，`dependencies/desktop/k4os.compression.lz4-LICENSE` |
 | System.Memory / Buffers / Unsafe / Numerics.Vectors | 4.5.5 / 4.5.1 / 6.0.0 / 4.5.0 | 对应LICENSE与THIRD-PARTY-NOTICES在 `dependencies/desktop/` |
-| 等待页、亮度条栅格字形 | 本机Microsoft YaHei渲染结果 | 保留匹配固件的生成图片/头，不复制字体文件；重新生成可选择有授权的本地字体 |
-| Windows虚拟屏驱动 | VirtualDrivers/Virtual-Display-Driver，上游独立项目 | 本公开demo未打包驱动或测试证书，按上游版本许可处理 |
+| newlib C运行库 | 现用ARM工具链 newlib 3.0.0；已部署链接map可见 libc.a 的 memcpy/memmove/memset对象 | 各来源许可集合，[COPYING.NEWLIB](main/demo/third_party/runtime/COPYING.NEWLIB)原样复制自工具链；不是原创 |
+| libgcc运行库 | 现用GCC 8.2.1；链接map可见 libgcc.a 算术辅助对象 | [GPLv3](main/demo/third_party/runtime/COPYING3)及 [Runtime Library Exception 3.1](main/demo/third_party/runtime/COPYING.RUNTIME)；例外允许符合条件的独立模块使用不同条款，不能据此改许可分发GCC本体 |
+| 等待页、亮度条图片 | Microsoft YaHei渲染完整词句/百分比，已核对生成脚本 | 不复制TTF/TTC，不是逐字位图字体；原创布局可授权，字体本身除外。[微软说明](https://learn.microsoft.com/en-us/typography/fonts/font-faq) |
+| Windows虚拟屏驱动 | [VirtualDrivers/Virtual-Display-Driver](https://github.com/VirtualDrivers/Virtual-Display-Driver)，本机历史使用25.7.23 | 当前上游 [MIT](https://github.com/VirtualDrivers/Virtual-Display-Driver/blob/master/LICENSE)；未打包驱动、运行时或测试证书，独立获取时核对对应版本许可 |
 
-NuGet下载URL、包SHA和实际DLL SHA锁定在 [packages.lock.json](main/demo/dependencies/desktop/packages.lock.json)。引用SDK声明不意味着官方R03核心为开源软件。历史Logicrom/卖家ESP候选及下载工具已收纳到本地junk，未混进此demo。
+NuGet下载URL、包SHA和实际DLL SHA锁定在 [packages.lock.json](main/demo/dependencies/desktop/packages.lock.json)。微软包内还有 Unicode、zlib、BSD、Apache 等通知，不能只写 MIT 就丢掉它们，本次保留了完整 THIRD-PARTY-NOTICES。
+
+BSD/MIT 条款没有要求独立原创代码沿用同一种许可；Apache 第4条也允许在遵守原义务的前提下给自己的修改/衍生部分采用不同条款。本项目选择并列保留第三方原许可，不给它们追加 NC 限制。LZ4/xxHash 独立 LICENSE 快照的年份较旧，当前源文件保留了2023年版权头；新增通知直接复制当前完整头部，原快照字节不变。
+
+### 协议参考与尚未完成的来源鉴定
+
+sprdflash 注释提到了其他开源协议项目：
+
+- [kagaimiq/sprdproto](https://github.com/kagaimiq/sprdproto) 是 MIT，控制请求值和校验行为出现在注释中，本次附上其[原MIT文本](main/demo/third_party/sprdproto-LICENSE)。
+- [iscle/sprdclient](https://github.com/iscle/sprdclient) 是 GPL-3.0。当前快照自述为独立的 Python 协议实现，没有打包该项目的 C/C++ 源文件；没有完成历史代码的逐行溯源，不能据此保证不存在衍生关系。
+- `spreadtrum_flash`/`spd_dump` 历史参考没有固定版本，不能把未核对版本的许可写成已确认；它的代码和二进制没有随本仓库分发。
+
+**如果确认有 GPL 衍生代码，必须按其 GPL 处理，不能对必须按 GPL 分发的部分加上 CC 的非商业限制。** 应移除、替换、另行取得授权，或在符合 GPL 的前提下单独提供；不能用“第三方例外”消除不相容的组合。[GNU GPL FAQ](https://www.gnu.org/licenses/gpl-faq.html#DoesTheGPLAllowMoney)
+
+### 仅开发时使用、没有打包的依赖
+
+构建/逆向脚本使用 pyelftools、xxhash、pyserial、capstone，sprdflash 可选 USB 路径还调用 PyUSB/libusb；没有把这些包塞进固件或上位机。pyelftools 主体为 public domain/Unlicense（随附 construct 有独立许可），xxhash Python 包、pyserial 和 PyUSB 按各自 BSD 条款，capstone 按 BSD 及其随附通知，libusb 为 LGPL-2.1-or-later。自行安装原包；以后若封装 Python 可执行文件或分发 libusb，需要按实际版本补齐许可、通知及 LGPL 的替换/重新链接等义务。
+
+来源：[pyelftools](https://github.com/eliben/pyelftools/blob/main/LICENSE)、[xxhash Python](https://github.com/ifduyue/python-xxhash/blob/master/LICENSE)、[pyserial](https://github.com/pyserial/pyserial/blob/master/LICENSE.txt)、[capstone](https://www.capstone-engine.org/download)、[PyUSB](https://github.com/pyusb/pyusb/blob/master/LICENSE)、[libusb](https://github.com/libusb/libusb/blob/master/COPYING)。
+
+完整厂商核心、loader、原厂/NV dump没有分发。历史 Logicrom、卖家 ESP 候选和下载工具只在本地 `junk/`，未混进此 Demo，不能据此声称这些工程已兼容 CC。
+
+### 二进制分发通知
+
+保留根目录 CC 原文、[范围说明](#许可范围与兼容核对)、本清单及各第三方版权/许可/通知。现有 Release 增加 `QDisplay-0.3.0-LICENSES.zip`，与 BIN/MSI 一起下载和转发；BIN/MSI原文件不改字节。桌面包已有 NuGet 的 `THIRD-PARTY-NOTICES.txt`，不替代固件运行库等其他通知。构建/发布脚本会生成完整许可包；增加依赖、修改第三方源文件或发布新版时同步更新通知。
 
 
 ## 源码和安装包分别发布
 
 使用 `-RepositoryName` 参数指定仓库名。源码树保留逆向文档、证据、C/C#源代码、第三方许可、锁定依赖和版本说明；安装包作为 **GitHub Releases** 附件，不进入源码提交历史。当前版本标签：`v0.3.0-demo.20261009`。
+
+发布准备需要 PATH 中可调用的 Python 3.11+，用于离线许可打包。`prepare_release_payload.ps1` 会附上 `QDisplay-0.3.0-LICENSES.zip`，校验和及 Release manifest 同时记录这个附件；二进制转发时一并保留它。许可附件的指纹和文件清单在 [license-bundle.json](main/demo/releases/license-bundle.json)。原有 BIN/MSI/Windows 文件包不因补充许可而重编译或替换。
 
 | 位置 | 用途 |
 |---|---|
@@ -699,6 +785,7 @@ powershell.exe -NoProfile -ExecutionPolicy Bypass -File main/demo/scripts/publis
 | `qdisplay_native.bin` | 154400字节APP2容器，只适用于匹配R03核心的APP更新 |
 | `QDisplay-0.3.0-x64.msi` | Windows x64上位机、设备后台服务和系统托盘程序 |
 | `QDisplay-0.3.0-Windows-files.zip` | 同版GUI/服务/依赖原文件，供检查和开发；不替代MSI注册服务 |
+| `QDisplay-0.3.0-LICENSES.zip` | CC 原文、适用范围、第三方及固件运行库完整许可/通知；与 BIN/MSI 一起下载和转发 |
 | `release-manifest.json` | 核心身份、APP基址、版本、文件SHA-256及大小 |
 | `SHA256SUMS.txt` | 下载后逐文件核验 |
 
@@ -712,13 +799,15 @@ Windows副屏另需上游Virtual Display Driver；MSI没有打包该驱动。此
 
 ### 使用限制与商家授权声明
 
-**本项目禁止商用，仅限个人使用。**
+**本项目有权许可的原创部分采用 CC BY-NC-SA 4.0，不授予商业用途许可。** 完整条款及原文在许可附件中，也见[仓库 LICENSE](https://github.com/StevenLang233/lakala-display-re/blob/main/LICENSE)；第三方部分保留原许可，不附加本项目的 NC 限制。[适用范围与兼容核对](https://github.com/StevenLang233/lakala-display-re/blob/main/main/LICENSE_SCOPE.md)列出了排除项及尚未确认的来源。
 
-没给任何卖这个终端的商家授权。
+没给任何卖这个终端的商家单独商业授权。以下是作者的个人使用倡议和商家声明：
 
 > 本项目仅限个人使用，任何贩卖此终端的商家禁止使用，包括但不限于，告诉买家有这个项目可以刷，直接附带本项目链接等。如有发现，乐意的话可以向我举报，我会感激不尽。
 
-这些限制针对本项目原创内容。第三方部分仍按各自许可证使用。完整资料见[仓库 README](#使用限制与商家授权声明)。
+上面的“仅限个人”和商家介绍、附链接限制是作者请求，不增加标准 CC 许可条件；正式授权以 CC 原文为准，不限制 CC 允许或依法无需许可的行为。完整资料见[仓库 README](#使用限制与商家授权声明)。
+
+此次补充许可文件和说明，现有 BIN、MSI、Windows运行文件包字节不变。资料和 Demo 按现状提供，不保证逆向准确性、硬件兼容性或每份材料都取得第三方授权；各自许可的正式免责条款及适用法律优先。
 
 
 分章节文档更新后，可运行 `python main/reverse/tools/render_readme.py` 同步本 README。

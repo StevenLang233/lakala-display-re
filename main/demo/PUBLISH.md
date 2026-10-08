@@ -2,6 +2,8 @@
 
 使用 `-RepositoryName` 参数指定仓库名。源码树保留逆向文档、证据、C/C#源代码、第三方许可、锁定依赖和版本说明；安装包作为 **GitHub Releases** 附件，不进入源码提交历史。当前版本标签：`v0.3.0-demo.20261009`。
 
+发布准备需要 PATH 中可调用的 Python 3.11+，用于离线许可打包。`prepare_release_payload.ps1` 会附上 `QDisplay-0.3.0-LICENSES.zip`，校验和及 Release manifest 同时记录这个附件；二进制转发时一并保留它。许可附件的指纹和文件清单在 [license-bundle.json](releases/license-bundle.json)。原有 BIN/MSI/Windows 文件包不因补充许可而重编译或替换。
+
 | 位置 | 用途 |
 |---|---|
 | `main/reverse/` | 公开逆向文档与已整理证据 |

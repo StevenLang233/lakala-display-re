@@ -4,7 +4,7 @@
 
 ## Windows C# 上位机
 
-需要 Windows x64、.NET Framework 4.8 及系统自带 Framework64 C# 编译器。本仓库保留NuGet依赖的版本、下载地址、包/DLL指纹和许可；构建脚本会恢复缺失依赖并核对SHA-256。DLL和下载缓存不进入Git，不需要原项目的虚拟环境。
+需要 Windows x64、.NET Framework 4.8、系统自带 Framework64 C# 编译器，以及 PATH 中可调用的 Python 3.11+（仅用于离线许可打包）。本仓库保留NuGet依赖的版本、下载地址、包/DLL指纹和许可；构建脚本会恢复缺失依赖并核对SHA-256。DLL和下载缓存不进入Git，不需要原项目的虚拟环境。
 
 ```powershell
 powershell.exe -NoProfile -ExecutionPolicy Bypass -File main/demo/scripts/build_desktop.ps1
@@ -15,7 +15,7 @@ powershell.exe -NoProfile -ExecutionPolicy Bypass -File main/demo/scripts/build_
 
 核对原快照源文件、BIN、MSI和依赖可运行 `python main/demo/scripts/verify_snapshot.py`。重建固件已复现与发布BIN完全相同的SHA-256；C# PE/MSI包含构建时间/包标识，重新构建不要求字节哈希相同，不要把“编译成功”表述为已再次做完硬件验收。
 
-原快照MSI是0.3.0；为公开发布新版本，请同步修改程序集和MSI版本/ProductCode并完成升级验证。本整理没有制造一个行为改变的新版本。现有代码没有Linux/macOS UI/USB实现，仅Core协议层可复用。
+原快照MSI是0.3.0；为公开发布新版本，请同步修改程序集和MSI版本/ProductCode并完成升级验证。本整理没有制造一个行为改变的新版本。现有代码没有Linux/macOS UI/USB实现，仅Core协议层可复用。新构建会在原 `THIRD-PARTY-NOTICES.txt` 中附上 CC 原文、范围及完整第三方通知；既有 Release 的二进制保持原字节，另附许可包。
 
 已有无硬件检查在 `desktop/src/Checks`；例如恢复策略：
 
