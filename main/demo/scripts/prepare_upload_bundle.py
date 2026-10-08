@@ -12,7 +12,7 @@ def listed():
     return sorted(set(name.decode('utf-8') for name in result.stdout.split(b'\0') if name))
 paths=listed()
 for name in paths:
-    if not (name in ('README.md','LICENSE','.gitignore','.gitattributes') or name.startswith('main/')): raise SystemExit('Unexpected source path: '+name)
+    if not (name in ('README.md','LICENSE','.gitignore','.gitattributes','一键刷机.bat') or name.startswith('main/')): raise SystemExit('Unexpected source path: '+name)
     if re.search(r'^(junk/|main/reverse/private/|main/demo/build/)',name): raise SystemExit('Local data in Git: '+name)
     if Path(name).suffix.lower() in ('.exe','.dll','.msi','.img','.zip','.nupkg'): raise SystemExit('Binary artifact in source: '+name)
     if Path(name).suffix.lower()=='.bin' and name not in ('main/reverse/evidence/protocol/hello.bin','main/reverse/evidence/protocol/hello_ack_example.bin'):

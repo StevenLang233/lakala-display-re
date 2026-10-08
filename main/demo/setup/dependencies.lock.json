@@ -1,0 +1,69 @@
+{
+  "version": "1.0.0",
+  "repository": "StevenLang233/lakala-display-re",
+  "release": "v0.3.0-demo.20261009",
+  "downloads": {
+    "python": {
+      "file": "python-3.13.16-embed-amd64.zip",
+      "url": "https://www.python.org/ftp/python/3.13.16/python-3.13.16-embed-amd64.zip",
+      "sha256": "97dae5274cc54867065e8d5a3226e48c35017ed332a0fdb0e27d5b5821961297"
+    },
+    "serial": {
+      "file": "pyserial-3.5-py2.py3-none-any.whl",
+      "url": "https://files.pythonhosted.org/packages/07/bc/587a445451b253b285629263eb51c2d8e9bcea4fc97826266d186f96f558/pyserial-3.5-py2.py3-none-any.whl",
+      "sha256": "c4451db6ba391ca6ca299fb3ec7bae67a5c55dde170964c7a14ceefec02f2cf0"
+    },
+    "core": {
+      "file": "QPY_OCPU_V0004_EC600U_CNLB_FW.zip",
+      "url": "https://developer.quectel.com/wp-content/uploads/2024/09/QPY_OCPU_V0004_EC600U_CNLB_FW.zip",
+      "sha256": "8182d7b62e220e3033cefcca4300376bfb4279821f4ba08fa43e25ffcf3ab510"
+    },
+    "app": {
+      "file": "qdisplay_native.bin",
+      "url": "https://github.com/StevenLang233/lakala-display-re/releases/download/v0.3.0-demo.20261009/qdisplay_native.bin",
+      "sha256": "4e6da49fcff0628532ed325b7c722db4e83971015b4f6783a0655c4f099fb437"
+    },
+    "host": {
+      "file": "QDisplay-0.3.0-x64.msi",
+      "url": "https://github.com/StevenLang233/lakala-display-re/releases/download/v0.3.0-demo.20261009/QDisplay-0.3.0-x64.msi",
+      "sha256": "129e947933e041bf0e93c482c4d8bd9cb6e66e3fd28ba6d4f43c9f40bd4efa07"
+    },
+    "licenses": {
+      "file": "QDisplay-0.3.0-LICENSES.zip",
+      "url": "https://github.com/StevenLang233/lakala-display-re/releases/download/v0.3.0-demo.20261009/QDisplay-0.3.0-LICENSES.zip",
+      "sha256": "8451e8743b1fa38b0624e603fc97bfe056b8122b911b48ef8cfc683de08a237b"
+    },
+    "usb": {
+      "file": "quectel-usb-u-1.1.0.zip",
+      "url": "https://raw.githubusercontent.com/QuectelWB/windows-drivers/0b015416177f1509528e163613be959d40ed3b8a/Quectel_Windows_USB_Driver(U)_V1.1.0.zip",
+      "sha256": "46825288a83ce1d4d92ba41ab593ceb58872705269dc5c3d946debf549d71252"
+    },
+    "sevenzip": {
+      "file": "7zr.exe",
+      "url": "https://github.com/ip7z/7zip/releases/download/26.04/7zr.exe",
+      "sha256": "256feca8e274e5da655e2a284fabafd9f554365eb164862089dacd4e8276d282"
+    },
+    "isx": {
+      "file": "ISx-v0.3.11.7z",
+      "url": "https://github.com/lifenjoiner/ISx/releases/download/v0.3.11/ISx-v0.3.11.7z",
+      "sha256": "145c254a8e656a2f1df9a384759700a2e686ca5e760fea1103224e3a2b818417"
+    },
+    "vdd": {
+      "file": "vdd-25.7.23.zip",
+      "url": "https://github.com/VirtualDrivers/Virtual-Display-Driver/releases/download/25.7.23/VirtualDisplayDriver-x86.Driver.Only.zip",
+      "sha256": "e24210692b442b39af763536330ce78b423f19342b7a7792c26de3944e418b3a"
+    },
+    "dotnet": {
+      "file": "NDP48-x86-x64-AllOS-ENU.exe",
+      "url": "https://go.microsoft.com/fwlink/?linkid=2088631",
+      "sha256": "0a3a390c47e639d0f7fc65b21195fee6b7f65b066f80f70c60fab191d14b7e40"
+    }
+  },
+  "usb_msi_sha256": "eb71f03f1bd082c78078fe0a32d9c0888cb83dd846e2bf6e9eb96f92f9d31a56",
+  "isx_exe_sha256": "9372125e250745f2c5188e174f65d97efeaca20fea7a6f00b6124dd100aa3331",
+  "vdd_files": {
+    "MttVDD.inf": "550d211fe481e74dfe3f9d724ed78be48b3a9113405965d683d9373e8d672f5d",
+    "MttVDD.dll": "c9ca837f57a98fbd43bc416a7f535a95843626e7759eaf85cf0cd7ce334dbb05",
+    "mttvdd.cat": "08a0093fc9b2e32b287a6f8a77ca4de0a31830d29fc33d2b13a918dc859468f6"
+  }
+}

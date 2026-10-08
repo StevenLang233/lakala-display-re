@@ -1,5 +1,8 @@
 # Local archives, device-specific dumps/NV and personal session history.
 /junk/
+/.qdisplay/
+/offline/
+/QDisplay-log-*.zip
 /main/reverse/private/
 
 # Release binaries and restored dependency DLLs are local; Git stores metadata/source.

@@ -39,4 +39,6 @@ APP2 容器长度从头部 u32@4 读出，必须等于文件实际长度并≤`0
 
 当前工具读核心AP并核对固定SHA，双读APP旧区验证，才发送新APP到 `0x60260000`，随后逐字节读回比较并 reset。核心/loader指纹不符就停止写。只支持上述 R03 核心上更新 APP，**不能直接用于原厂R05板子首次转换**。
 
+上面描述的是维护者旧脚本 `deploy_native_app.py`。新的一键入口和 `setup/qflash.py` 已另外编排 R05 首次转换、R03 APP 更新及本机完整内部备份/恢复；它在写入前双读整个内部 8 MiB，并显示阶段、错误及可选日志。新用户从[一键刷写说明](../demo/SETUP.md)进入，不必手工找 AT 口或安装 Python。尚未用新入口在第二台原厂板完成首次转换实测，不能用模拟测试替代这项验证。
+
 原厂恢复使用自己的完整内部双读备份，包含产品核心/APP/校准等，恢复布局及证据保留在本地 `private/backups/factory_restore/`、`private/backups/internal/`；旧恢复工具在 `junk/archive/scripts/restore_lakala_factory_20261008.py`。换一台设备时不要拿这台的 NV/IMEI/整机 dump 当通用 ROM。首次从原厂转 R03 需要合法来源的匹配官方 PAC、保存新设备本身备份、核对布局；本 demo 不打包完整官方核心/PAC。外部16MiB没有全片备份，原厂内部恢复不能证明外部也已完整恢复。

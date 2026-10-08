@@ -1,4 +1,4 @@
-param(
+﻿param(
     [ValidatePattern('^[A-Za-z0-9][A-Za-z0-9._-]{0,99}$')][string]$RepositoryName,
     [ValidateSet('public','private')][string]$Visibility='private',
     [ValidatePattern('^[A-Za-z0-9-]+$')][string]$Owner,
@@ -19,7 +19,7 @@ Push-Location $root
 try{
     $paths=@(Run-Git -Arguments @('-c','core.quotepath=false','ls-files','--cached','--others','--exclude-standard')) | Sort-Object -Unique
     foreach($path in $paths){
-        if($path -notmatch '^(README\.md$|LICENSE$|\.gitignore$|\.gitattributes$|main/)' -or
+        if($path -notmatch '^(README\.md$|LICENSE$|\.gitignore$|\.gitattributes$|一键刷机\.bat$|main/)' -or
            $path -match '^(junk/|main/reverse/private/|main/demo/build/)' -or
            $path -match '\.(exe|dll|msi|img|zip|nupkg)$' -or
            ($path -match '\.bin$' -and $path -notmatch '^main/reverse/evidence/protocol/(hello|hello_ack_example)\.bin$')){
@@ -63,7 +63,7 @@ try{
     if(-not $gitName){Run-Git -Arguments @('config','user.name',$user.login) | Out-Null}
     $gitEmail=& $git config --get user.email
     if(-not $gitEmail){Run-Git -Arguments @('config','user.email',($user.id.ToString()+'+'+$user.login+'@users.noreply.github.com')) | Out-Null}
-    Run-Git -Arguments @('add','--','README.md','.gitignore','.gitattributes','main') | Out-Null
+    Run-Git -Arguments @('add','--','README.md','LICENSE','.gitignore','.gitattributes','一键刷机.bat','main') | Out-Null
     $staged=@(Run-Git -Arguments @('diff','--cached','--name-only'))
     if($staged.Count){Run-Git -Arguments @('commit','-m',('Publish reverse-engineering notes and QDisplay demo '+$plan.tag)) | Out-Null}
     $head=(Run-Git -Arguments @('rev-parse','HEAD')).Trim()

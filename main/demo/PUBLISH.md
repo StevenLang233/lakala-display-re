@@ -2,6 +2,15 @@
 
 使用 `-RepositoryName` 参数指定仓库名。源码树保留逆向文档、证据、C/C#源代码、第三方许可、锁定依赖和版本说明；安装包作为 **GitHub Releases** 附件，不进入源码提交历史。当前版本标签：`v0.3.0-demo.20261009`。
 
+一键入口单独用 `setup-v1.0.0` 标签和 [版本说明](releases/setup-v1.0.0.md)，Demo BIN/MSI不改版本和字节。用 `prepare_setup_bundle.py` 从 Git 可见源文件及 0.3.0 原附件生成 `QDisplay-Setup-1.0.0.zip`、独立 manifest 和 SHA256SUMS，默认保存在本机 `junk/publish/setup-v1.0.0/`。包内 `offline/` 带 APP/MSI/原许可 ZIP，外部依赖仍由入口锁定下载；不把原厂核心、USB 驱动、NV 或私人历史打包。
+
+```powershell
+python main/demo/scripts/prepare_upload_bundle.py
+python main/demo/scripts/prepare_setup_bundle.py
+```
+
+更新入口发布说明或依赖锁时使用新入口版本；不要重用已有同名包覆盖不同源码，不要移动旧 Demo 标签。现有 0.3.0 Release 的不可变 BIN/MSI 和依赖锁对应，用于一键包的哈希核验；修改安装器/固件行为时必须另外更新 Demo 版本、二进制指纹和验证结果。
+
 发布准备需要 PATH 中可调用的 Python 3.11+，用于离线许可打包。`prepare_release_payload.ps1` 会附上 `QDisplay-0.3.0-LICENSES.zip`，校验和及 Release manifest 同时记录这个附件；二进制转发时一并保留它。许可附件的指纹和文件清单在 [license-bundle.json](releases/license-bundle.json)。原有 BIN/MSI/Windows 文件包不因补充许可而重编译或替换。
 
 | 位置 | 用途 |

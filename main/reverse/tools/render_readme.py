@@ -7,6 +7,7 @@ from urllib.parse import unquote, urlsplit
 ROOT = Path(__file__).resolve().parents[3]
 CHAPTERS = (
     ("main/LICENSE_SCOPE.md", "许可范围与兼容核对", "许可范围与兼容核对"),
+    ("main/demo/SETUP.md", "一键刷写和基础使用", "一键刷写和基础使用"),
     ("main/reverse/HARDWARE.md", "板卡与信号映射", "板卡与信号映射"),
     ("main/reverse/MEMORY_AND_ABI.md", "内存、版本与 ABI", "内存版本与-abi"),
     ("main/reverse/IMPORTS_R03.md", "R03 已解析导入表", "r03-已解析导入表"),
@@ -45,6 +46,8 @@ INTRO = """# Lakala Display RE
 实机测过的、从固件里分析出的、还不确定的内容，分别标成 **实机确认**、**静态逆向** 和 **候选／地址不确定**。屏幕闪烁、撕裂和电脑声音采集还没完全解决，具体看对应章节。
 
 固件 BIN、Windows MSI 和运行文件包从 [GitHub Releases](https://github.com/StevenLang233/lakala-display-re/releases) 下载。参考实现源码在 [C 固件](main/demo/firmware/src) 与 [C# 上位机](main/demo/desktop/src)。
+
+新用户下载 [QDisplay-Setup-1.0.0.zip](https://github.com/StevenLang233/lakala-display-re/releases/tag/setup-v1.0.0)，完整解压，双击 **一键刷机.bat**，选 **1** 后确认。设备检测、依赖准备、备份刷写、上位机安装与日志都由入口处理。具体条件和验证范围见[一键刷写和基础使用](#一键刷写和基础使用)。
 
 ## 使用限制与商家授权声明
 

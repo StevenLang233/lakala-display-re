@@ -20,6 +20,8 @@
 
 固件 BIN、Windows MSI 和运行文件包从 [GitHub Releases](https://github.com/StevenLang233/lakala-display-re/releases) 下载。参考实现源码在 [C 固件](main/demo/firmware/src) 与 [C# 上位机](main/demo/desktop/src)。
 
+新用户下载 [QDisplay-Setup-1.0.0.zip](https://github.com/StevenLang233/lakala-display-re/releases/tag/setup-v1.0.0)，完整解压，双击 **一键刷机.bat**，选 **1** 后确认。设备检测、依赖准备、备份刷写、上位机安装与日志都由入口处理。具体条件和验证范围见[一键刷写和基础使用](#一键刷写和基础使用)。
+
 ## 使用限制与商家授权声明
 
 **本项目有权许可的原创部分采用 CC BY-NC-SA 4.0（署名—非商业性使用—相同方式共享），不授予商业用途许可。** 完整条款见 [LICENSE](LICENSE)，适用范围及例外见[许可范围与兼容核对](#许可范围与兼容核对)。第三方内容保留原许可，不能用本项目的非商业条款覆盖它们。
@@ -34,6 +36,7 @@
 
 - [使用限制与商家授权声明](#使用限制与商家授权声明)
 - [许可范围与兼容核对](#许可范围与兼容核对)
+- [一键刷写和基础使用](#一键刷写和基础使用)
 - [板卡与信号映射](#板卡与信号映射)
 - [内存、版本与 ABI](#内存版本与-abi)
 - [R03 已解析导入表](#r03-已解析导入表)
@@ -105,6 +108,94 @@ README 中“仅限个人”和不希望商家介绍项目、附带链接的原�
 资料和 Demo 按现状提供，仍可能有逆向错误、遗漏和硬件适配问题；没有对准确性、完整性、特定用途或第三方权利作保证。正式免责范围以各自许可证及适用法律为准，不能用一句“AI 生成”免除依法不能排除的责任。
 
 如果发现版权、来源或许可标注问题，请通过仓库反馈具体文件、上游链接及相关证据，方便核对并修正、替换或移除。反馈入口不代表已确认存在侵权，也不承诺所有材料都取得了权利人的授权。
+
+
+## 一键刷写和基础使用
+
+新用户下载 [一键入口 Release](https://github.com/StevenLang233/lakala-display-re/releases/tag/setup-v1.0.0) 的 **QDisplay-Setup-1.0.0.zip**，解压到自己有写权限的文件夹，双击根目录的 **一键刷机.bat**。不要在压缩包预览窗口里直接运行。
+
+入口适用于 **Windows 10/11 x64** 和本文档对应的 **EC600U-CNLB 拉卡拉客显屏**。初次准备需要联网；固件和上位机已放在包内，官方核心、刷写环境、需要的驱动从锁定来源获取。源码 ZIP 也能运行同一个 BAT，但需要另外取得 Release 附件；私有仓库的附件先在登录后的浏览器下载，放进项目根目录的 `offline/`，脚本不会索要 GitHub Token。
+
+### 怎么用
+
+1. 用 USB **数据线**接入一台客显屏，保持供电。暂时只连接这一台待刷设备。
+2. 双击 `一键刷机.bat`。入口先检查设备状态、准备独立刷写环境并校验文件。
+3. 选 **1：刷写 QDisplay 并安装/打开上位机**。核对设备和核心版本，确认刷写时输入 `y`。默认不刷。
+4. Windows 需要安装驱动、注册服务时会出现 UAC。依次等待备份、写入、读回核对和重启完成。
+5. 上位机自动打开，入口显示实际连接结果。先选**硬件信息**或**相框**检查基础使用；初次音频默认关闭。
+6. 需要 Windows 扩展副屏时，同意安装虚拟屏驱动，再在上位机选择**副屏**。默认准备 800×1280、30/60 Hz 配置。不是把画面预览到上位机窗口，也没有改已有采集/传图逻辑。
+7. 结束时，无论成功、失败或取消，都会问是否导出日志。输入 `y` 后在项目根目录生成 `QDisplay-log-时间.zip`。
+
+正常关闭上位机窗口进入托盘；完整退出使用托盘菜单。离开副屏模式时，上位机会撤销虚拟屏连接。配置、USB 重连恢复、滚动图表和音量行为沿用现有 Demo，不在安装入口中重写。
+
+菜单还有 **2：只安装/打开上位机**、**3：只备份内部 Flash**、**4：恢复本机备份**、**0：退出**。仅备份也会短暂进入下载并重启，所以会先确认。只安装上位机时，即使板卡不在，也能完成软件安装；此时明确显示“设备连接尚未确认”，退出码为 3。
+
+### 入口实际做什么
+
+| 阶段 | 行为及成功条件 |
+|---|---|
+| 环境 | 项目 `.qdisplay/` 内的 Python 3.13.16 + pyserial 3.5；不装全局 pip、不改变 PATH。Python仅用于刷写，日常上位机仍是 C# GUI/服务 |
+| 设备 | 按 VID/PID 与 MI_02/MI_20 确认 AT/数据口，按 `0525:a4a7` 识别下载口；拒绝多台设备，不用 COM 编号猜接口 |
+| 依赖 | 下载与缓存都核对 SHA-256；PAC 校验 CRC、loader 指纹和关键地址，APP 校验 APP2 长度与描述符范围 |
+| 驱动 | 只装签名通过的 `qcser.inf`、`unisoc_iot.inf`。下载口通常使用 Windows 自带驱动；若进入下载后未生成 COM，先补 `rdavcom.inf` 再尝试一次。不会运行厂商整包 `setup.exe`、安装复合过滤组件或调整安全设置 |
+| 确认 | 正常模式先只读查 `ATI`。仅接受已核对的原厂 R05 或指定 R03。实际写入前再次从 Flash 验证核心 |
+| 备份 | 每次写入前完整读取内部 8 MiB 两遍并逐字节比较；一致才生成 `backup.json` 与正式 BIN。不把未完成的 `.partial` 当有效备份 |
+| 原厂 R05 首次转换 | 使用指定官方内置 Flash 版 PAC，写 AP/APPIMG/PS/boot，按 PAC 重建内部文件系统及运行 NV；先启动官方 R03，再更新 QDisplay APP。不使用 EXTFS8M 包 |
+| 已有 R03 更新 | 仅更新 `0x60260000` 的 QDisplay APP，不格式化或改写其他分区 |
+| 核对 | 每个物理写入区读回比对；NV END 返回错误立即停止。QDisplay 更新后必须收到校验正确的 QDC1 HELLO |
+| 软件 | 必要时补 .NET Framework 4.8，安装 MSI/自动服务，在当前用户会话启动 GUI；通过服务进程身份核对状态管道，再检查 Connected |
+| 异常 | 给出阶段和错误码；写入未完成不强制重启到残缺固件。没有把“下载成功”“写完”或“服务启动”单独当作整套联动成功 |
+
+核心来源是 [移远官方内置版 V0004](https://developer.quectel.com/wp-content/uploads/2024/09/QPY_OCPU_V0004_EC600U_CNLB_FW.zip)，不是本项目声称拥有的完整系统。原始 ZIP 与其中 PAC 分别锁定为 `8182d7b6…3ab510`、`a85f766d…47ebc8`。完整指纹和所有下载地址在 [dependencies.lock.json](main/demo/setup/dependencies.lock.json)，不能删除校验来使用其他固件。官方[烧录说明](https://python.quectel.com/doc/quecpython/Getting_started/zh/4G/flash_firmware.html)可用于核对模块版本和下载来源。
+
+### 备份与恢复
+
+备份保存在 `.qdisplay/backups/时间/`。这个目录默认不进入 Git，也不会随诊断日志导出。里面含设备自己的 NV/校准等数据，应独立保存；**外部 16 MiB Flash 没有全片备份**，这里的“完整”只指内部 8 MiB。
+
+失败后先看错误阶段。如果 Flash 未写入，设备可以按提示重试；若写入中断，保留 USB 连接和下载状态。菜单 4 可以选择本入口生成的有效本机备份，恢复前也会双读保存当前内部状态，按变化的 64 KiB 区域恢复，boot 最后写，并核对整个 8 MiB。
+
+下载口没有可依赖的唯一板卡身份，软件不能证明同款板卡到底是哪一台。恢复必须由使用者明确确认“备份属于当前设备”；不能拿作者或其他买家的整机 dump/NV 来刷。恢复原厂 R05 后，原厂界面不会与 QDisplay 上位机联动；需要继续使用 Demo 时重新选菜单 1。
+
+如果设备在写入中断后已经掉电，又完全没有枚举 AT/下载口，软件入口无法凭空控制未连接的 USB 设备；需要先按已确认的板卡下载接入办法使下载口出现。本文不编造未核实的短接点。下载入口及原厂恢复的逆向资料见 [USB、下载与恢复](#usb下载与恢复)。
+
+### 看进度与处理报错
+
+下载、两遍备份、FDL 装载、各分区写入/读回会显示阶段和百分比；等待设备和系统安装也有状态提示。USB 后台长时间没有新进度会超时退出并保留资料。备份可能比日常传图慢，不能用传图帧率估算刷写耗时。
+
+| 错误码 | 处理 |
+|---|---|
+| `NO_DEVICE` / `DATA_PORT_MISSING` | 检查数据线、USB 接口和设备管理器；必要的接口驱动会自动补齐。已写完 APP 但数据口缺驱动时只重新验证握手，不重复刷写 |
+| `MULTIPLE_DEVICES` | 只留下待操作的一台客显屏 |
+| `PORT_BUSY` / `AT_NO_RESPONSE` | 关闭 QPYcom、串口工具和其他刷写进程，不改其他设备的串口 |
+| `HASH_MISMATCH` / `PAC_HASH` / `APP_HASH` | 文件损坏、版本不符或下载源变更；重新取得锁定原包，不能跳过校验 |
+| `UNSUPPORTED_CORE` | 核心版本未核对；保留备份，停止写入 |
+| `READBACK_MISMATCH` / `SHORT_READ` | USB 读取不完整或内容不一致；不报告成功，保留本机备份和失败日志 |
+| `LOADER_REJECTED` / `USB_BOOT_TIMEOUT` / `HELLO_*` | 按失败阶段检查供电、接口和固件身份；写入未完成时不要盲目重启 |
+| `UAC_CANCELLED` | 本次管理员步骤没做完；重新运行并允许所需 UAC |
+| `REBOOT_REQUIRED` | 安装器要求重启；入口不会自动重启电脑，重启后再次运行 |
+
+退出码：`0` 对应本次所选操作确认完成；`1` 失败；`2` 取消；`3` 软件已装但联动待确认；`3010` Windows 安装器要求重启。成功/失败的本地原始日志都保存在 `.qdisplay/logs/`；可选导出会排除固件备份、NV、配置和媒体，并替换项目/用户目录及 USB 实例路径。分享前仍可自行查看 ZIP 内文本。
+
+### 离线准备与验证范围
+
+离线用户可把 `dependencies.lock.json` 中相同版本的原包放进项目 `offline/`。脚本按原文件名及哈希使用它们，不扫描个人下载/桌面目录。全离线准备需要 Python ZIP、pyserial wheel、官方核心 ZIP、BIN/MSI/许可 ZIP；需要补 USB 驱动时还要官方 USB ZIP、7zr、ISx 包，需要副屏时准备 VDD ZIP，缺 .NET 4.8 时准备微软离线安装器。
+
+维护者可运行：
+
+```powershell
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File main/demo/setup/setup.ps1 -CheckOnly -NoPrompt
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File main/demo/setup/setup.ps1 -PrepareOnly -NoPrompt
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File main/demo/setup/setup.ps1 -PrepareOnly -Offline -NoPrompt
+.qdisplay/python-3.13.16/python.exe -m unittest discover -s main/demo/setup/tests -v
+```
+
+`CheckOnly` 只准备项目内刷写环境并枚举接口，不停止服务、安装系统驱动或进下载；`PrepareOnly` 下载/解包/校验依赖，不做系统安装或刷写。`NoPrompt` 只能与这两种模式一起使用，不能无提示刷写。
+
+本次验证包括 Windows PowerShell 5.1、实机只读识别 R03/AT/数据口、现有服务身份与连接查询、依赖准备、拒绝刷写、日志导出，以及 22 项 USB/备份/校验/写入故障模拟。**新入口尚未在另一台原厂板上完成首次转换和全新系统安装实测**；首次转换依据已有实机成功记录编排，不能把故障模拟说成全流程硬件验证。
+
+AIDA64 手机 LCD/Odospace 兼容仍未实现，放到后续。本次也不宣称解决旧的闪烁、撕裂或 Windows 音频采集问题。固件和上位机二进制保持 0.3.0 的原始字节。
+
+刷写入口原创部分按仓库 CC BY-NC-SA 4.0；sprdflash、下载到的 Python/pyserial、7zr、ISx、微软/厂商驱动保留各自条款。详情见 [第三方来源](#第三方来源与许可)，不存在把这些依赖统一改成非商用许可的授权。
 
 
 ## 板卡与信号映射
@@ -428,6 +519,8 @@ APP2 容器长度从头部 u32@4 读出，必须等于文件实际长度并≤`0
 
 当前工具读核心AP并核对固定SHA，双读APP旧区验证，才发送新APP到 `0x60260000`，随后逐字节读回比较并 reset。核心/loader指纹不符就停止写。只支持上述 R03 核心上更新 APP，**不能直接用于原厂R05板子首次转换**。
 
+上面描述的是维护者旧脚本 `deploy_native_app.py`。新的一键入口和 `setup/qflash.py` 已另外编排 R05 首次转换、R03 APP 更新及本机完整内部备份/恢复；它在写入前双读整个内部 8 MiB，并显示阶段、错误及可选日志。新用户从[一键刷写说明](#一键刷写和基础使用)进入，不必手工找 AT 口或安装 Python。尚未用新入口在第二台原厂板完成首次转换实测，不能用模拟测试替代这项验证。
+
 原厂恢复使用自己的完整内部双读备份，包含产品核心/APP/校准等，恢复布局及证据保留在本地 `private/backups/factory_restore/`、`private/backups/internal/`；旧恢复工具在 `junk/archive/scripts/restore_lakala_factory_20261008.py`。换一台设备时不要拿这台的 NV/IMEI/整机 dump 当通用 ROM。首次从原厂转 R03 需要合法来源的匹配官方 PAC、保存新设备本身备份、核对布局；本 demo 不打包完整官方核心/PAC。外部16MiB没有全片备份，原厂内部恢复不能证明外部也已完整恢复。
 
 
@@ -605,6 +698,8 @@ python main/reverse/tools/disassemble_arm_range.py own_factory.bin 0x602a43e4 0x
 
 参考实现快照：2026-10-09。固件为原生 **C**，桌面为 **C#/.NET Framework 4.8**；不是 Python/CMD 产品启动器。固件以 APPIMG 方式在指定官方 R03 核心上运行，无 Logicrom 激活/SIM 授权步骤。官方核心和厂商 loader 自行获取，未声明其全部源码开源。安装包见 [GitHub Releases](https://github.com/StevenLang233/lakala-display-re/releases)。
 
+新用户优先用 [一键入口包](https://github.com/StevenLang233/lakala-display-re/releases/tag/setup-v1.0.0)，解压并双击根目录 `一键刷机.bat`。它处理官方依赖获取、原厂 R05 首次转换或 R03 APP 更新、备份校验、MSI 安装与连接检查；日常上位机仍独立运行。流程、恢复和已测试范围见 [SETUP](#一键刷写和基础使用)。AIDA64/Odospace 兼容留待后续。
+
 | 保留内容 | 路径 |
 |---|---|
 | 已刷入版本源码 | [firmware/src](main/demo/firmware/src) |
@@ -624,6 +719,8 @@ python main/reverse/tools/disassemble_arm_range.py own_factory.bin 0x602a43e4 0x
 MSI SHA-256：`129e947933e041bf0e93c482c4d8bd9cb6e66e3fd28ba6d4f43c9f40bd4efa07`。
 
 MSI 安装 LocalSystem 自动启动服务 `QDisplayDevice`、图形界面和系统托盘启动项。每用户配置在 `%LOCALAPPDATA%/QDisplay/ui.json`；板卡重启/USB重连时恢复所选显示/相框/硬件模式及音频意图。运行稳定时不重启采集流水线。虚拟副屏依赖独立的 **MikeTheTech Virtual Display Driver**（`ROOT\MTTVDD`），MSI 本身不包含该驱动；当前实现期望唯一虚拟设备，不改真实主显示器配置。请从 [上游项目](https://github.com/VirtualDrivers/Virtual-Display-Driver) 获取匹配驱动，本机历史使用25.7.23版本。
+
+一键入口可代为取得并安装这个固定版本的签名驱动，不创建重复适配器，不导入测试证书。相框和硬件信息模式无需虚拟屏驱动。
 
 已知限制：部分颜色静态闪烁、动态撕裂仍有用户反馈；任意复杂画面12Hz未保证；本机当前WASAPI loopback报 `0x800706cc`，电脑声音桥未恢复，独立MP3已实机验证；小屏/查询键地址不确定，未启用。Linux/macOS尚无适配，不称跨平台成品；AIDA64手机LCD/Odospace兼容尚未完成。
 
@@ -708,6 +805,10 @@ loader也必须匹配 [USB_AND_BOOT](#usb下载与恢复) 指纹。备份和读�
 | libgcc运行库 | 现用GCC 8.2.1；链接map可见 libgcc.a 算术辅助对象 | [GPLv3](main/demo/third_party/runtime/COPYING3)及 [Runtime Library Exception 3.1](main/demo/third_party/runtime/COPYING.RUNTIME)；例外允许符合条件的独立模块使用不同条款，不能据此改许可分发GCC本体 |
 | 等待页、亮度条图片 | Microsoft YaHei渲染完整词句/百分比，已核对生成脚本 | 不复制TTF/TTC，不是逐字位图字体；原创布局可授权，字体本身除外。[微软说明](https://learn.microsoft.com/en-us/typography/fonts/font-faq) |
 | Windows虚拟屏驱动 | [VirtualDrivers/Virtual-Display-Driver](https://github.com/VirtualDrivers/Virtual-Display-Driver)，本机历史使用25.7.23 | 当前上游 [MIT](https://github.com/VirtualDrivers/Virtual-Display-Driver/blob/master/LICENSE)；未打包驱动、运行时或测试证书，独立获取时核对对应版本许可 |
+| 一键入口的 Python 环境 | [Python 3.13.16 embeddable](https://www.python.org/downloads/release/python-31316/) 与 [pyserial 3.5](https://pypi.org/project/pyserial/3.5/) | Python 的 PSF/配套条款、pyserial 的 BSD；从官方原包下载到本机 `.qdisplay/`，保留包内许可，不装进固件/上位机或一键 ZIP |
+| 7zr 解包程序 | [ip7z/7zip 26.04](https://github.com/ip7z/7zip/releases/tag/26.04) | 按上游 [7-Zip 许可](https://www.7-zip.org/license.html)及该版本配套源码条款，独立下载，未把源码/二进制改成 CC 或塞入发布包；源码获取见 [26.04](https://github.com/ip7z/7zip/tree/26.04) |
+| InstallShield 解包工具 ISx | [lifenjoiner/ISx v0.3.11](https://github.com/lifenjoiner/ISx/releases/tag/v0.3.11) | 上游 [MIT](https://github.com/lifenjoiner/ISx/blob/master/LICENSE)，下载的原包含 LICENSE；独立进程使用，没有复制其 C/解码器到原创脚本 |
+| 官方 USB/.NET/VDD 安装资源 | 固定版本/哈希见 [dependencies.lock.json](main/demo/setup/dependencies.lock.json) | 微软及厂商二进制保留原版权/条款；本项目只记录获取地址，不转授厂商许可或重新打包完整核心/驱动。VDD 从上游签名发行包获取，MIT不代表测试证书可随便安装 |
 
 NuGet下载URL、包SHA和实际DLL SHA锁定在 [packages.lock.json](main/demo/dependencies/desktop/packages.lock.json)。微软包内还有 Unicode、zlib、BSD、Apache 等通知，不能只写 MIT 就丢掉它们，本次保留了完整 THIRD-PARTY-NOTICES。
 
@@ -729,7 +830,7 @@ sprdflash 注释提到了其他开源协议项目：
 
 来源：[pyelftools](https://github.com/eliben/pyelftools/blob/main/LICENSE)、[xxhash Python](https://github.com/ifduyue/python-xxhash/blob/master/LICENSE)、[pyserial](https://github.com/pyserial/pyserial/blob/master/LICENSE.txt)、[capstone](https://www.capstone-engine.org/download)、[PyUSB](https://github.com/pyusb/pyusb/blob/master/LICENSE)、[libusb](https://github.com/libusb/libusb/blob/master/COPYING)。
 
-完整厂商核心、loader、原厂/NV dump没有分发。历史 Logicrom、卖家 ESP 候选和下载工具只在本地 `junk/`，未混进此 Demo，不能据此声称这些工程已兼容 CC。
+完整厂商核心、loader、原厂/NV dump没有分发。一键刷写入口从合法来源下载原包，在用户本地缓存中使用；Ready ZIP 只额外带自己的原版 APP BIN、MSI 和许可附件。第三方独立下载/程序调用不改变其许可，也不把 LGPL 程序链接进 C# 或固件。历史 Logicrom、卖家 ESP 候选和下载工具只在本地 `junk/`，未混进此 Demo，不能据此声称这些工程已兼容 CC。
 
 ### 二进制分发通知
 
@@ -739,6 +840,15 @@ sprdflash 注释提到了其他开源协议项目：
 ## 源码和安装包分别发布
 
 使用 `-RepositoryName` 参数指定仓库名。源码树保留逆向文档、证据、C/C#源代码、第三方许可、锁定依赖和版本说明；安装包作为 **GitHub Releases** 附件，不进入源码提交历史。当前版本标签：`v0.3.0-demo.20261009`。
+
+一键入口单独用 `setup-v1.0.0` 标签和 [版本说明](main/demo/releases/setup-v1.0.0.md)，Demo BIN/MSI不改版本和字节。用 `prepare_setup_bundle.py` 从 Git 可见源文件及 0.3.0 原附件生成 `QDisplay-Setup-1.0.0.zip`、独立 manifest 和 SHA256SUMS，默认保存在本机 `junk/publish/setup-v1.0.0/`。包内 `offline/` 带 APP/MSI/原许可 ZIP，外部依赖仍由入口锁定下载；不把原厂核心、USB 驱动、NV 或私人历史打包。
+
+```powershell
+python main/demo/scripts/prepare_upload_bundle.py
+python main/demo/scripts/prepare_setup_bundle.py
+```
+
+更新入口发布说明或依赖锁时使用新入口版本；不要重用已有同名包覆盖不同源码，不要移动旧 Demo 标签。现有 0.3.0 Release 的不可变 BIN/MSI 和依赖锁对应，用于一键包的哈希核验；修改安装器/固件行为时必须另外更新 Demo 版本、二进制指纹和验证结果。
 
 发布准备需要 PATH 中可调用的 Python 3.11+，用于离线许可打包。`prepare_release_payload.ps1` 会附上 `QDisplay-0.3.0-LICENSES.zip`，校验和及 Release manifest 同时记录这个附件；二进制转发时一并保留它。许可附件的指纹和文件清单在 [license-bundle.json](main/demo/releases/license-bundle.json)。原有 BIN/MSI/Windows 文件包不因补充许可而重编译或替换。
 

@@ -14,6 +14,10 @@
 | libgcc运行库 | 现用GCC 8.2.1；链接map可见 libgcc.a 算术辅助对象 | [GPLv3](third_party/runtime/COPYING3)及 [Runtime Library Exception 3.1](third_party/runtime/COPYING.RUNTIME)；例外允许符合条件的独立模块使用不同条款，不能据此改许可分发GCC本体 |
 | 等待页、亮度条图片 | Microsoft YaHei渲染完整词句/百分比，已核对生成脚本 | 不复制TTF/TTC，不是逐字位图字体；原创布局可授权，字体本身除外。[微软说明](https://learn.microsoft.com/en-us/typography/fonts/font-faq) |
 | Windows虚拟屏驱动 | [VirtualDrivers/Virtual-Display-Driver](https://github.com/VirtualDrivers/Virtual-Display-Driver)，本机历史使用25.7.23 | 当前上游 [MIT](https://github.com/VirtualDrivers/Virtual-Display-Driver/blob/master/LICENSE)；未打包驱动、运行时或测试证书，独立获取时核对对应版本许可 |
+| 一键入口的 Python 环境 | [Python 3.13.16 embeddable](https://www.python.org/downloads/release/python-31316/) 与 [pyserial 3.5](https://pypi.org/project/pyserial/3.5/) | Python 的 PSF/配套条款、pyserial 的 BSD；从官方原包下载到本机 `.qdisplay/`，保留包内许可，不装进固件/上位机或一键 ZIP |
+| 7zr 解包程序 | [ip7z/7zip 26.04](https://github.com/ip7z/7zip/releases/tag/26.04) | 按上游 [7-Zip 许可](https://www.7-zip.org/license.html)及该版本配套源码条款，独立下载，未把源码/二进制改成 CC 或塞入发布包；源码获取见 [26.04](https://github.com/ip7z/7zip/tree/26.04) |
+| InstallShield 解包工具 ISx | [lifenjoiner/ISx v0.3.11](https://github.com/lifenjoiner/ISx/releases/tag/v0.3.11) | 上游 [MIT](https://github.com/lifenjoiner/ISx/blob/master/LICENSE)，下载的原包含 LICENSE；独立进程使用，没有复制其 C/解码器到原创脚本 |
+| 官方 USB/.NET/VDD 安装资源 | 固定版本/哈希见 [dependencies.lock.json](setup/dependencies.lock.json) | 微软及厂商二进制保留原版权/条款；本项目只记录获取地址，不转授厂商许可或重新打包完整核心/驱动。VDD 从上游签名发行包获取，MIT不代表测试证书可随便安装 |
 
 NuGet下载URL、包SHA和实际DLL SHA锁定在 [packages.lock.json](dependencies/desktop/packages.lock.json)。微软包内还有 Unicode、zlib、BSD、Apache 等通知，不能只写 MIT 就丢掉它们，本次保留了完整 THIRD-PARTY-NOTICES。
 
@@ -35,7 +39,7 @@ sprdflash 注释提到了其他开源协议项目：
 
 来源：[pyelftools](https://github.com/eliben/pyelftools/blob/main/LICENSE)、[xxhash Python](https://github.com/ifduyue/python-xxhash/blob/master/LICENSE)、[pyserial](https://github.com/pyserial/pyserial/blob/master/LICENSE.txt)、[capstone](https://www.capstone-engine.org/download)、[PyUSB](https://github.com/pyusb/pyusb/blob/master/LICENSE)、[libusb](https://github.com/libusb/libusb/blob/master/COPYING)。
 
-完整厂商核心、loader、原厂/NV dump没有分发。历史 Logicrom、卖家 ESP 候选和下载工具只在本地 `junk/`，未混进此 Demo，不能据此声称这些工程已兼容 CC。
+完整厂商核心、loader、原厂/NV dump没有分发。一键刷写入口从合法来源下载原包，在用户本地缓存中使用；Ready ZIP 只额外带自己的原版 APP BIN、MSI 和许可附件。第三方独立下载/程序调用不改变其许可，也不把 LGPL 程序链接进 C# 或固件。历史 Logicrom、卖家 ESP 候选和下载工具只在本地 `junk/`，未混进此 Demo，不能据此声称这些工程已兼容 CC。
 
 ## 二进制分发通知
 

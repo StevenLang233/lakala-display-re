@@ -1,0 +1,15 @@
+{
+  "K4os.Compression.LZ4.dll": "6dade79664f48a163d6864c84a0a6c5c55b856bdfaf34ba187c87f18f9167238",
+  "QDisplay.Core.dll": "9aa28e6ea35565051ab1b4f52c35fdf1b3c0de1966d0686bf0077760480b00cd",
+  "QDisplay.exe": "1b451ca4f3bba4d575d8bbe49328753aab97d596b3448b56c5b522307efe1d3e",
+  "QDisplay.exe.config": "fa66af44402e44c778556fe3c980892d0d25bb826274fdc1590b7fb8fcfebcd8",
+  "QDisplay.ico": "2e6ef9b6f2eb5f08a0576c190f110a7f43f917ef78a0b1b5b168235608ee7cb0",
+  "QDisplay.Service.exe": "4d218aa10e5811779e97aef904dfd6f6409c64c41d278655d1087a1beb8c5ae7",
+  "QDisplay.Service.exe.config": "fa66af44402e44c778556fe3c980892d0d25bb826274fdc1590b7fb8fcfebcd8",
+  "QDisplay.Windows.dll": "8045f8d4e059e281871cf34848c2f24554ee4e8a750c335a2fef73478ec22ba7",
+  "System.Buffers.dll": "accccfbe45d9f08ffeed9916e37b33e98c65be012cfff6e7fa7b67210ce1fefb",
+  "System.Memory.dll": "bf3fb84664f4097f1a8a9bc71a51dcf8cf1a905d4080a4d290da1730866e856f",
+  "System.Numerics.Vectors.dll": "1d3ef8698281e7cf7371d1554afef5872b39f96c26da772210a33da041ba1183",
+  "System.Runtime.CompilerServices.Unsafe.dll": "37768488e8ef45729bc7d9a2677633c6450042975bb96516e186da6cb9cd0dcf",
+  "THIRD-PARTY-NOTICES.txt": "9e7dd4927e9d41b13d8a4f0504c8f593251bf2a68fe7708839be180fcdf2d95d"
+}
