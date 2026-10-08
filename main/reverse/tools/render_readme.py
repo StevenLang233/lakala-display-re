@@ -29,11 +29,29 @@ INTRO = """# Lakala Display RE
 
 本项目是一个 **Vibe Coding** 与 **Vibe Reverse Engineering（VibeRE）** 项目。由项目作者 **StevenLang233** 指挥，**Codex（OpenAI）** 辅助执行资料检索、固件逆向分析、C/C# 代码编写、调试和文档整理；作者负责需求、方案取舍，并观察和反馈实物画面、声音及按键效果。VibeRE 在本项目中指 AI 辅助逆向工程。
 
+**作者的话**
+
+> 我是个废物，但是废物也想给大家做点贡献，所以就选择了点燃token照亮大家的行为，希望大家可以用我抽ai生成出来的屎山代码做出很牛逼的项目！
+
 研究对象为使用 Quectel EC600U-CN 的拉卡拉客显屏音响设备，资料截至 **2026-10-09**。下文直接包含完整的逆向章节、协议、构建方法和版本说明，供开发者依据硬件与接口资料编写自己的实现。
 
 证据分为 **实机确认**、**静态逆向** 和 **候选／地址不确定**。软件 ACK、计时与校验通过不等于光学刷新率、无撕裂或声学质量；具体依据及剩余问题在对应章节列出。
 
 固件 BIN、Windows MSI 和运行文件包从 [GitHub Releases](https://github.com/StevenLang233/lakala-display-re/releases) 下载。参考实现源码在 [C 固件](main/demo/firmware/src) 与 [C# 上位机](main/demo/desktop/src)。
+
+## 使用限制与商家授权声明
+
+**本项目禁止商用，仅限个人使用。**
+
+本项目没有授权给任何贩卖此商品的商家，也未授权任何商家使用本项目成果进行商业宣传、售卖或提供服务。
+
+如您发现商家将本项目用于商业用途、贩卖本项目成果，或声称获得了本项目授权，并且您愿意协助，请向项目作者举报，万分感激。
+
+作者补充声明：
+
+> 本项目仅限个人使用，任何贩卖此终端的商家禁止使用，包括但不限于，告诉买家有这个项目可以刷，直接附带本项目链接等。如有发现，乐意的话可以向我举报，我会感激不尽。
+
+上述限制适用于本项目原创内容；第三方组件和上游资料仍遵循各自许可证，详见[第三方来源与许可](#第三方来源与许可)。
 
 ## 目录
 
@@ -51,7 +69,9 @@ def rewrite_link(match, document):
     if relative.startswith(("main/reverse/private/", "junk/")):
         # These originals exist only locally; do not create dead GitHub links.
         return "`" + relative + "`"
-    if resolved in ANCHORS and not url.fragment and not url.query:
+    if resolved == ROOT / "README.md" and url.fragment and not url.query:
+        destination = "#" + url.fragment
+    elif resolved in ANCHORS and not url.fragment and not url.query:
         destination = "#" + ANCHORS[resolved]
     else:
         destination = relative
@@ -90,7 +110,8 @@ def chapter(path, title):
 
 
 def render():
-    contents = "\n".join("- [" + title + "](#" + anchor + ")" for _, title, anchor in CHAPTERS)
+    contents = "- [使用限制与商家授权声明](#使用限制与商家授权声明)\n"
+    contents += "\n".join("- [" + title + "](#" + anchor + ")" for _, title, anchor in CHAPTERS)
     body = "\n\n".join(chapter(path, title) for path, title, _ in CHAPTERS)
     return INTRO + contents + "\n\n" + body + "\n\n分章节文档更新后，可运行 `python main/reverse/tools/render_readme.py` 同步本 README。\n"
 

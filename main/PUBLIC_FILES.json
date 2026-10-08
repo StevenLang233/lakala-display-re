@@ -2,8 +2,8 @@
   "files": [
     {
       "file": "README.md",
-      "bytes": 1573,
-      "sha256": "f54fc99380b8f95967b24638f8b953cbe0a65ea1fc711124e9cede1ac02e26ff"
+      "bytes": 1805,
+      "sha256": "aa2c7d1668d1c98609b6db7115819285e330ce6f4cc24f1826f148516fd7d6c9"
     },
     {
       "file": "demo/BUILD.md",
@@ -17,8 +17,8 @@
     },
     {
       "file": "demo/README.md",
-      "bytes": 3154,
-      "sha256": "2a94574a3d812ed2631335f1ea2bddcb8489ee282bb29b09e30e422355923e11"
+      "bytes": 3306,
+      "sha256": "88b20bcfc3913dc8d09e90290b0755cef6788c3a2858546e577be850b52508c1"
     },
     {
       "file": "demo/SOURCE_SNAPSHOT.json",
@@ -27,8 +27,8 @@
     },
     {
       "file": "demo/THIRD_PARTY.md",
-      "bytes": 1519,
-      "sha256": "d536d5f69a239c8f766b4db2bca3e26fb6f9f741a5fab745c0a6f06b8f6de4a2"
+      "bytes": 1770,
+      "sha256": "776db90d5ed253c2fc1e77a2b115ed63c8640416bbec48c1cf695af9c36eeefb"
     },
     {
       "file": "demo/dependencies/desktop/k4os.compression.lz4-LICENSE",
@@ -347,8 +347,8 @@
     },
     {
       "file": "demo/releases/v0.3.0-demo.20261009.md",
-      "bytes": 1815,
-      "sha256": "eb83dda2506d57fb886192b5e6073d1ff993f4e40172b23469af64006cc5863c"
+      "bytes": 2687,
+      "sha256": "c794f004d9f827ab5d8969907121fb655c3c63c70599c2f70120c8e29fef96aa"
     },
     {
       "file": "demo/requirements-build.txt",
@@ -782,8 +782,8 @@
     },
     {
       "file": "reverse/tools/render_readme.py",
-      "bytes": 5760,
-      "sha256": "42723a03c87ebe61517da43f9b3bc6bda7439a87a1c217eafedfc0d3194bb2dd"
+      "bytes": 7036,
+      "sha256": "9eecb30f283d2f626032ffcaf73b1696a1aff65b200edf1f29b202f07a02959f"
     },
     {
       "file": "reverse/tools/requirements.txt",
@@ -792,5 +792,5 @@
     }
   ],
   "count": 158,
-  "bytes": 2918438
+  "bytes": 2921221
 }

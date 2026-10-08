@@ -1,5 +1,7 @@
 # 第三方来源
 
+本项目原创内容的非商业个人使用限制及商家授权声明见[仓库 README](../../README.md#使用限制与商家授权声明)。以下第三方组件和上游资料仍适用各自许可证，本项目声明不变更这些许可证。
+
 | 部件 | 来源/版本 | 许可与保留位置 |
 |---|---|---|
 | Helios SDK 声明/链接输入 | QuecPython/Helios-SDK，commit de3b7eb84c4523957ab21a3a0488d9246fe5e361 | SDK根许可Apache-2.0，快照在 `../reverse/evidence/abi/SDK-LICENSE`；完整核心/loader二进制再分发权限没有逐件核对，所以没有打包 |
