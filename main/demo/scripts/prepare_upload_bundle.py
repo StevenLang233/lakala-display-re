@@ -19,7 +19,7 @@ for name in paths:
         raise SystemExit('Firmware/package in source: '+name)
     path=ROOT/name
     if not path.is_file(): raise SystemExit('Missing source file: '+name)
-    if path.suffix.lower() in ('.md','.json','.cs','.c','.h','.py','.ps1','.txt'):
+    if path.suffix.lower() in ('.md','.json','.cs','.c','.h','.py','.ps1','.txt','.cmd','.bat'):
         value=path.read_text(encoding='utf-8-sig')
         if re.search(r'(?:[A-Za-z]:[\\/]+Users[\\/]+[A-Za-z0-9._-]+|/Users/[A-Za-z0-9._-]+|-----BEGIN (?:RSA |OPENSSH |EC )?PRIVATE KEY-----|gh[pousr]_[A-Za-z0-9]{25,})',value):
             raise SystemExit('Private path/key in public file: '+name)

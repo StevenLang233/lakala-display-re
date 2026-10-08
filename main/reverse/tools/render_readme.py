@@ -47,7 +47,7 @@ INTRO = """# Lakala Display RE
 
 固件 BIN、Windows MSI 和运行文件包从 [GitHub Releases](https://github.com/StevenLang233/lakala-display-re/releases) 下载。参考实现源码在 [C 固件](main/demo/firmware/src) 与 [C# 上位机](main/demo/desktop/src)。
 
-新用户下载 [QDisplay-Setup-1.0.0.zip](https://github.com/StevenLang233/lakala-display-re/releases/tag/setup-v1.0.0)，完整解压，双击 **一键刷机.bat**，选 **1** 后确认。设备检测、依赖准备、备份刷写、上位机安装与日志都由入口处理。具体条件和验证范围见[一键刷写和基础使用](#一键刷写和基础使用)。
+新用户到 [下载合集](https://github.com/StevenLang233/lakala-display-re/releases/tag/tools-v1.0.0) 取得 **QDisplay-Flash.cmd**，双击后自动取得并校验完整刷写包。也可下载 ZIP，完整解压后双击 **一键刷机.bat**。同页有固件 BIN、上位机 MSI 和运行文件包，刷写器源码在 [setup](main/demo/setup)。选 **1** 后确认刷写；设备检测、依赖准备、备份刷写、上位机安装与日志都由入口处理。具体条件和验证范围见[一键刷写和基础使用](#一键刷写和基础使用)。
 
 ## 使用限制与商家授权声明
 

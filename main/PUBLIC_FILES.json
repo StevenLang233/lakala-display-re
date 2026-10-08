@@ -22,18 +22,18 @@
     },
     {
       "file": "demo/PUBLISH.md",
-      "bytes": 4274,
-      "sha256": "f107531a711f65bd883d76d12127ebcdc1af549ca3dca83a42166ec70312cafd"
+      "bytes": 4958,
+      "sha256": "f3bde15c24a4bc8fad1d4b74d35de74ec8d10926bf9f91f9f5ecde552e1c334d"
     },
     {
       "file": "demo/README.md",
-      "bytes": 4038,
-      "sha256": "9200edb512b46ddd055e9f7fe311cddf58c02cd0ec4f92ba87e8d797252bc227"
+      "bytes": 4224,
+      "sha256": "8e22ecabaada3383db98c37c65c00cd9010a1cdeed5530ab00485286c5fa9e85"
     },
     {
       "file": "demo/SETUP.md",
-      "bytes": 9913,
-      "sha256": "1704f6ae4d21f1a9e89d4f9f431b7766057fc9234a1cb941d06c39a9a94a0d85"
+      "bytes": 10581,
+      "sha256": "5011d375e6e15d6d74a4133cf4cd87beb205b977a3cdc5564fbdfe6d8bfede1a"
     },
     {
       "file": "demo/SOURCE_SNAPSHOT.json",
@@ -371,6 +371,11 @@
       "sha256": "085f7c3b45f0c3eb4f3ef8a2be1642774606df9a71cee65fd30964b5609eeb16"
     },
     {
+      "file": "demo/releases/tools-v1.0.0.md",
+      "bytes": 2008,
+      "sha256": "071790322f1eb072ded0e0538dc9d45808f6a0eceaecac87ce2f1b59b1bd1edf"
+    },
+    {
       "file": "demo/releases/v0.3.0-demo.20261009.md",
       "bytes": 3368,
       "sha256": "ee50df28c1b07a16aaf823e25413dfe0cfd9fb117f8d7ee67cd861fbef75743a"
@@ -421,9 +426,14 @@
       "sha256": "3bf792531ccbdde5b520509402cb7b18374334b1e1e124173c600c2b142b34e1"
     },
     {
+      "file": "demo/scripts/prepare_tools_bundle.py",
+      "bytes": 3065,
+      "sha256": "4343e642e1bf327ffb8096eb4d5f14809b701492c7c1ce15e34fa681f3580487"
+    },
+    {
       "file": "demo/scripts/prepare_upload_bundle.py",
-      "bytes": 4155,
-      "sha256": "a7e21e334ee33ad0a47617c16167eb67d9e50fbb31c7224e096320fade93cc96"
+      "bytes": 4169,
+      "sha256": "05fcf302d0a7a5e040c44f4f26c3d1bed65199166d1bdbcab69d73c270451a54"
     },
     {
       "file": "demo/scripts/publish_github.ps1",
@@ -444,6 +454,11 @@
       "file": "demo/setup/ExtractMsi.cs",
       "bytes": 5346,
       "sha256": "80b54559ddb2fb0f29a7a2873dfc6a3679021158b3e98ad2fc1a3fe869dc970e"
+    },
+    {
+      "file": "demo/setup/QDisplay-Flash.cmd",
+      "bytes": 7283,
+      "sha256": "2857b3f22b9e7e2ec0f38ba5b593f05c23f7a699f2ea9acc49e0d2192b26c719"
     },
     {
       "file": "demo/setup/RuntimeChecks.cs",
@@ -902,8 +917,8 @@
     },
     {
       "file": "reverse/tools/render_readme.py",
-      "bytes": 7840,
-      "sha256": "e08bdb61a2a503e1116a98449bb2fc67e9765e39cb1c328d4e28cc4a0ebb69f6"
+      "bytes": 8031,
+      "sha256": "b94e86497f317b8164ed426615cf1dec7d5362417bba749c67248d90743f0cdd"
     },
     {
       "file": "reverse/tools/requirements.txt",
@@ -911,6 +926,6 @@
       "sha256": "853fa721a3fa04d3bf7835bb6a158084f29f7d5844f6f8548010ba19dcfb6cb5"
     }
   ],
-  "count": 182,
-  "bytes": 3280387
+  "count": 185,
+  "bytes": 3294486
 }

@@ -2,7 +2,7 @@
 
 参考实现快照：2026-10-09。固件为原生 **C**，桌面为 **C#/.NET Framework 4.8**；不是 Python/CMD 产品启动器。固件以 APPIMG 方式在指定官方 R03 核心上运行，无 Logicrom 激活/SIM 授权步骤。官方核心和厂商 loader 自行获取，未声明其全部源码开源。安装包见 [GitHub Releases](https://github.com/StevenLang233/lakala-display-re/releases)。
 
-新用户优先用 [一键入口包](https://github.com/StevenLang233/lakala-display-re/releases/tag/setup-v1.0.0)，解压并双击根目录 `一键刷机.bat`。它处理官方依赖获取、原厂 R05 首次转换或 R03 APP 更新、备份校验、MSI 安装与连接检查；日常上位机仍独立运行。流程、恢复和已测试范围见 [SETUP](SETUP.md)。AIDA64/Odospace 兼容留待后续。
+新用户到 [下载合集](https://github.com/StevenLang233/lakala-display-re/releases/tag/tools-v1.0.0) 取得 `QDisplay-Flash.cmd`，双击后自动下载并校验完整入口包；也可以下载 ZIP，解压并双击根目录 `一键刷机.bat`。同一页放固件 BIN、上位机 MSI 和运行文件包。刷写器源码在 [setup](setup/)。它处理官方依赖获取、原厂 R05 首次转换或 R03 APP 更新、备份校验、MSI 安装与连接检查；日常上位机仍独立运行。流程、恢复和已测试范围见 [SETUP](SETUP.md)。AIDA64/Odospace 兼容留待后续。
 
 | 保留内容 | 路径 |
 |---|---|

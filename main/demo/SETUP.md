@@ -1,6 +1,10 @@
 # 一键刷写和基础使用
 
-新用户下载 [一键入口 Release](https://github.com/StevenLang233/lakala-display-re/releases/tag/setup-v1.0.0) 的 **QDisplay-Setup-1.0.0.zip**，解压到自己有写权限的文件夹，双击根目录的 **一键刷机.bat**。不要在压缩包预览窗口里直接运行。
+新用户到 [下载合集](https://github.com/StevenLang233/lakala-display-re/releases/tag/tools-v1.0.0) 下载 **QDisplay-Flash.cmd**，双击即可自动取得并校验完整刷写包，再进入下面的菜单。同一页也有固件 BIN、上位机 MSI、运行文件包和许可附件。
+
+也可以下载 **QDisplay-Setup-1.0.0.zip**，解压到自己有写权限的文件夹，双击根目录的 **一键刷机.bat**。不要在压缩包预览窗口里直接运行。把原名 ZIP 和 CMD 放在同一文件夹时，CMD 会使用本地包。
+
+CMD 缓存及解压内容在 CMD 旁的 `.qdisplay-launcher/setup-v1.0.0/QDisplay-Setup-1.0.0/`；其中 `.qdisplay/backups/` 是自己的设备备份，保留它以便恢复。CMD 只负责取得固定版本完整包，刷写与上位机安装仍由包内原入口完成。准备阶段失败也会询问是否导出日志。CMD、PowerShell 入口和 USB 刷写后端的源码均在 [setup](setup/)。
 
 入口适用于 **Windows 10/11 x64** 和本文档对应的 **EC600U-CNLB 拉卡拉客显屏**。初次准备需要联网；固件和上位机已放在包内，官方核心、刷写环境、需要的驱动从锁定来源获取。源码 ZIP 也能运行同一个 BAT，但需要另外取得 Release 附件；私有仓库的附件先在登录后的浏览器下载，放进项目根目录的 `offline/`，脚本不会索要 GitHub Token。
 

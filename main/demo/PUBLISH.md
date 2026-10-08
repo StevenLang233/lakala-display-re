@@ -2,6 +2,10 @@
 
 使用 `-RepositoryName` 参数指定仓库名。源码树保留逆向文档、证据、C/C#源代码、第三方许可、锁定依赖和版本说明；安装包作为 **GitHub Releases** 附件，不进入源码提交历史。当前版本标签：`v0.3.0-demo.20261009`。
 
+普通用户优先看 `tools-v1.0.0` [下载合集](releases/tools-v1.0.0.md)：独立 `QDisplay-Flash.cmd`、已发布的完整 Setup ZIP、原 Demo BIN/MSI/运行文件包和许可 ZIP 放在同一 Release。CMD 源码在 `main/demo/setup/`，固定校验原 `setup-v1.0.0` ZIP 的指纹；合集只复制原附件，不重新构建或覆盖旧 Release。合集自己的 manifest 和 SHA256SUMS 对这些附件重新列清单。
+
+提交源码后运行 `python main/demo/scripts/prepare_tools_bundle.py` 生成合集，输出到本机 `junk/publish/tools-v1.0.0/`。脚本核对原附件指纹、复制后读回核对，并记录源码提交；不从当前树重建旧 Setup ZIP。
+
 一键入口单独用 `setup-v1.0.0` 标签和 [版本说明](releases/setup-v1.0.0.md)，Demo BIN/MSI不改版本和字节。用 `prepare_setup_bundle.py` 从 Git 可见源文件及 0.3.0 原附件生成 `QDisplay-Setup-1.0.0.zip`、独立 manifest 和 SHA256SUMS，默认保存在本机 `junk/publish/setup-v1.0.0/`。包内 `offline/` 带 APP/MSI/原许可 ZIP，外部依赖仍由入口锁定下载；不把原厂核心、USB 驱动、NV 或私人历史打包。
 
 ```powershell

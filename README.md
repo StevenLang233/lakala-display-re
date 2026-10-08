@@ -20,7 +20,7 @@
 
 固件 BIN、Windows MSI 和运行文件包从 [GitHub Releases](https://github.com/StevenLang233/lakala-display-re/releases) 下载。参考实现源码在 [C 固件](main/demo/firmware/src) 与 [C# 上位机](main/demo/desktop/src)。
 
-新用户下载 [QDisplay-Setup-1.0.0.zip](https://github.com/StevenLang233/lakala-display-re/releases/tag/setup-v1.0.0)，完整解压，双击 **一键刷机.bat**，选 **1** 后确认。设备检测、依赖准备、备份刷写、上位机安装与日志都由入口处理。具体条件和验证范围见[一键刷写和基础使用](#一键刷写和基础使用)。
+新用户到 [下载合集](https://github.com/StevenLang233/lakala-display-re/releases/tag/tools-v1.0.0) 取得 **QDisplay-Flash.cmd**，双击后自动取得并校验完整刷写包。也可下载 ZIP，完整解压后双击 **一键刷机.bat**。同页有固件 BIN、上位机 MSI 和运行文件包，刷写器源码在 [setup](main/demo/setup)。选 **1** 后确认刷写；设备检测、依赖准备、备份刷写、上位机安装与日志都由入口处理。具体条件和验证范围见[一键刷写和基础使用](#一键刷写和基础使用)。
 
 ## 使用限制与商家授权声明
 
@@ -112,7 +112,11 @@ README 中“仅限个人”和不希望商家介绍项目、附带链接的原�
 
 ## 一键刷写和基础使用
 
-新用户下载 [一键入口 Release](https://github.com/StevenLang233/lakala-display-re/releases/tag/setup-v1.0.0) 的 **QDisplay-Setup-1.0.0.zip**，解压到自己有写权限的文件夹，双击根目录的 **一键刷机.bat**。不要在压缩包预览窗口里直接运行。
+新用户到 [下载合集](https://github.com/StevenLang233/lakala-display-re/releases/tag/tools-v1.0.0) 下载 **QDisplay-Flash.cmd**，双击即可自动取得并校验完整刷写包，再进入下面的菜单。同一页也有固件 BIN、上位机 MSI、运行文件包和许可附件。
+
+也可以下载 **QDisplay-Setup-1.0.0.zip**，解压到自己有写权限的文件夹，双击根目录的 **一键刷机.bat**。不要在压缩包预览窗口里直接运行。把原名 ZIP 和 CMD 放在同一文件夹时，CMD 会使用本地包。
+
+CMD 缓存及解压内容在 CMD 旁的 `.qdisplay-launcher/setup-v1.0.0/QDisplay-Setup-1.0.0/`；其中 `.qdisplay/backups/` 是自己的设备备份，保留它以便恢复。CMD 只负责取得固定版本完整包，刷写与上位机安装仍由包内原入口完成。准备阶段失败也会询问是否导出日志。CMD、PowerShell 入口和 USB 刷写后端的源码均在 [setup](main/demo/setup)。
 
 入口适用于 **Windows 10/11 x64** 和本文档对应的 **EC600U-CNLB 拉卡拉客显屏**。初次准备需要联网；固件和上位机已放在包内，官方核心、刷写环境、需要的驱动从锁定来源获取。源码 ZIP 也能运行同一个 BAT，但需要另外取得 Release 附件；私有仓库的附件先在登录后的浏览器下载，放进项目根目录的 `offline/`，脚本不会索要 GitHub Token。
 
@@ -698,7 +702,7 @@ python main/reverse/tools/disassemble_arm_range.py own_factory.bin 0x602a43e4 0x
 
 参考实现快照：2026-10-09。固件为原生 **C**，桌面为 **C#/.NET Framework 4.8**；不是 Python/CMD 产品启动器。固件以 APPIMG 方式在指定官方 R03 核心上运行，无 Logicrom 激活/SIM 授权步骤。官方核心和厂商 loader 自行获取，未声明其全部源码开源。安装包见 [GitHub Releases](https://github.com/StevenLang233/lakala-display-re/releases)。
 
-新用户优先用 [一键入口包](https://github.com/StevenLang233/lakala-display-re/releases/tag/setup-v1.0.0)，解压并双击根目录 `一键刷机.bat`。它处理官方依赖获取、原厂 R05 首次转换或 R03 APP 更新、备份校验、MSI 安装与连接检查；日常上位机仍独立运行。流程、恢复和已测试范围见 [SETUP](#一键刷写和基础使用)。AIDA64/Odospace 兼容留待后续。
+新用户到 [下载合集](https://github.com/StevenLang233/lakala-display-re/releases/tag/tools-v1.0.0) 取得 `QDisplay-Flash.cmd`，双击后自动下载并校验完整入口包；也可以下载 ZIP，解压并双击根目录 `一键刷机.bat`。同一页放固件 BIN、上位机 MSI 和运行文件包。刷写器源码在 [setup](main/demo/setup)。它处理官方依赖获取、原厂 R05 首次转换或 R03 APP 更新、备份校验、MSI 安装与连接检查；日常上位机仍独立运行。流程、恢复和已测试范围见 [SETUP](#一键刷写和基础使用)。AIDA64/Odospace 兼容留待后续。
 
 | 保留内容 | 路径 |
 |---|---|
@@ -840,6 +844,10 @@ sprdflash 注释提到了其他开源协议项目：
 ## 源码和安装包分别发布
 
 使用 `-RepositoryName` 参数指定仓库名。源码树保留逆向文档、证据、C/C#源代码、第三方许可、锁定依赖和版本说明；安装包作为 **GitHub Releases** 附件，不进入源码提交历史。当前版本标签：`v0.3.0-demo.20261009`。
+
+普通用户优先看 `tools-v1.0.0` [下载合集](main/demo/releases/tools-v1.0.0.md)：独立 `QDisplay-Flash.cmd`、已发布的完整 Setup ZIP、原 Demo BIN/MSI/运行文件包和许可 ZIP 放在同一 Release。CMD 源码在 `main/demo/setup/`，固定校验原 `setup-v1.0.0` ZIP 的指纹；合集只复制原附件，不重新构建或覆盖旧 Release。合集自己的 manifest 和 SHA256SUMS 对这些附件重新列清单。
+
+提交源码后运行 `python main/demo/scripts/prepare_tools_bundle.py` 生成合集，输出到本机 `junk/publish/tools-v1.0.0/`。脚本核对原附件指纹、复制后读回核对，并记录源码提交；不从当前树重建旧 Setup ZIP。
 
 一键入口单独用 `setup-v1.0.0` 标签和 [版本说明](main/demo/releases/setup-v1.0.0.md)，Demo BIN/MSI不改版本和字节。用 `prepare_setup_bundle.py` 从 Git 可见源文件及 0.3.0 原附件生成 `QDisplay-Setup-1.0.0.zip`、独立 manifest 和 SHA256SUMS，默认保存在本机 `junk/publish/setup-v1.0.0/`。包内 `offline/` 带 APP/MSI/原许可 ZIP，外部依赖仍由入口锁定下载；不把原厂核心、USB 驱动、NV 或私人历史打包。
 
