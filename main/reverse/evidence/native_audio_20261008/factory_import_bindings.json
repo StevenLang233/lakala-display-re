@@ -1,0 +1,1191 @@
+[
+  {
+    "ram_address": "0x80fe0000",
+    "hash": "598ba3bc",
+    "name": "__getreent",
+    "arm_veneer": "0x60310670"
+  },
+  {
+    "ram_address": "0x80fe0008",
+    "hash": "87f3eb30",
+    "name": "calloc",
+    "arm_veneer": "0x60310450"
+  },
+  {
+    "ram_address": "0x80fe0010",
+    "hash": "fad595ad",
+    "name": "free",
+    "arm_veneer": "0x60310878"
+  },
+  {
+    "ram_address": "0x80fe0018",
+    "hash": "6cb8129e",
+    "name": "ip4addr_aton",
+    "arm_veneer": "0x603102e0"
+  },
+  {
+    "ram_address": "0x80fe0020",
+    "hash": "8f76e66a",
+    "name": "ip4addr_ntoa",
+    "arm_veneer": "0x603102d0"
+  },
+  {
+    "ram_address": "0x80fe0028",
+    "hash": "6014703e",
+    "name": "ip6addr_ntoa",
+    "arm_veneer": "0x603106c0"
+  },
+  {
+    "ram_address": "0x80fe0030",
+    "hash": "aef852de",
+    "name": "lwip_bind",
+    "arm_veneer": "0x60310830"
+  },
+  {
+    "ram_address": "0x80fe0038",
+    "hash": "a86e27a6",
+    "name": "lwip_close",
+    "arm_veneer": "0x60310600"
+  },
+  {
+    "ram_address": "0x80fe0040",
+    "hash": "3194f6ef",
+    "name": "lwip_connect",
+    "arm_veneer": "0x603103b8"
+  },
+  {
+    "ram_address": "0x80fe0048",
+    "hash": "dbf98108",
+    "name": "lwip_fcntl",
+    "arm_veneer": "0x603106a8"
+  },
+  {
+    "ram_address": "0x80fe0050",
+    "hash": "44ac2160",
+    "name": "lwip_freeaddrinfo",
+    "arm_veneer": "0x603105b0"
+  },
+  {
+    "ram_address": "0x80fe0058",
+    "hash": "5ac24691",
+    "name": "lwip_get_error",
+    "arm_veneer": "0x603105a0"
+  },
+  {
+    "ram_address": "0x80fe0060",
+    "hash": "8ae0439a",
+    "name": "lwip_getaddrinfo",
+    "arm_veneer": "0x60310520"
+  },
+  {
+    "ram_address": "0x80fe0068",
+    "hash": "0c72b3e0",
+    "name": "lwip_getsockopt",
+    "arm_veneer": "0x60310488"
+  },
+  {
+    "ram_address": "0x80fe0070",
+    "hash": "4510f4b6",
+    "name": "lwip_htonl",
+    "arm_veneer": "0x603108a0"
+  },
+  {
+    "ram_address": "0x80fe0078",
+    "hash": "d9f990d8",
+    "name": "lwip_htons",
+    "arm_veneer": "0x60310288"
+  },
+  {
+    "ram_address": "0x80fe0080",
+    "hash": "3e03c151",
+    "name": "lwip_recv",
+    "arm_veneer": "0x603104e8"
+  },
+  {
+    "ram_address": "0x80fe0088",
+    "hash": "a497b98d",
+    "name": "lwip_recvfrom",
+    "arm_veneer": "0x60310278"
+  },
+  {
+    "ram_address": "0x80fe0090",
+    "hash": "65b03ac0",
+    "name": "lwip_select",
+    "arm_veneer": "0x60310940"
+  },
+  {
+    "ram_address": "0x80fe0098",
+    "hash": "c44ab55f",
+    "name": "lwip_send",
+    "arm_veneer": "0x60310370"
+  },
+  {
+    "ram_address": "0x80fe00a0",
+    "hash": "64bdfc99",
+    "name": "lwip_sendto",
+    "arm_veneer": "0x603107a8"
+  },
+  {
+    "ram_address": "0x80fe00a8",
+    "hash": "0fdc84d8",
+    "name": "lwip_setsockopt",
+    "arm_veneer": "0x60310280"
+  },
+  {
+    "ram_address": "0x80fe00b0",
+    "hash": "4a158e18",
+    "name": "lwip_shutdown",
+    "arm_veneer": "0x60310500"
+  },
+  {
+    "ram_address": "0x80fe00b8",
+    "hash": "5148b2b7",
+    "name": "lwip_socket",
+    "arm_veneer": "0x603103c0"
+  },
+  {
+    "ram_address": "0x80fe00c0",
+    "hash": "bf2ec5e3",
+    "name": "malloc",
+    "arm_veneer": "0x60310838"
+  },
+  {
+    "ram_address": "0x80fe00c8",
+    "hash": "c5a046bc",
+    "name": "unknown",
+    "arm_veneer": "0x60310620"
+  },
+  {
+    "ram_address": "0x80fe00d0",
+    "hash": "39f817d3",
+    "name": "unknown",
+    "arm_veneer": "0x60310318"
+  },
+  {
+    "ram_address": "0x80fe00d8",
+    "hash": "b0d5f13c",
+    "name": "unknown",
+    "arm_veneer": "0x603103f8"
+  },
+  {
+    "ram_address": "0x80fe00e0",
+    "hash": "38c925ff",
+    "name": "unknown"
+  },
+  {
+    "ram_address": "0x80fe00e8",
+    "hash": "b813c265",
+    "name": "unknown"
+  },
+  {
+    "ram_address": "0x80fe00f0",
+    "hash": "56debabf",
+    "name": "unknown"
+  },
+  {
+    "ram_address": "0x80fe00f8",
+    "hash": "9b622836",
+    "name": "unknown",
+    "arm_veneer": "0x603104e0"
+  },
+  {
+    "ram_address": "0x80fe0100",
+    "hash": "6415a59a",
+    "name": "unknown",
+    "arm_veneer": "0x60310628"
+  },
+  {
+    "ram_address": "0x80fe0108",
+    "hash": "f4112880",
+    "name": "unknown",
+    "arm_veneer": "0x60310848"
+  },
+  {
+    "ram_address": "0x80fe0110",
+    "hash": "636402ba",
+    "name": "unknown",
+    "arm_veneer": "0x60310338"
+  },
+  {
+    "ram_address": "0x80fe0118",
+    "hash": "cdca4404",
+    "name": "unknown",
+    "arm_veneer": "0x60310320"
+  },
+  {
+    "ram_address": "0x80fe0120",
+    "hash": "b1359275",
+    "name": "unknown",
+    "arm_veneer": "0x603107c8"
+  },
+  {
+    "ram_address": "0x80fe0128",
+    "hash": "3e14d093",
+    "name": "unknown",
+    "arm_veneer": "0x603104f8"
+  },
+  {
+    "ram_address": "0x80fe0130",
+    "hash": "acbf9e36",
+    "name": "unknown",
+    "arm_veneer": "0x603104a0"
+  },
+  {
+    "ram_address": "0x80fe0138",
+    "hash": "f2dad52f",
+    "name": "unknown",
+    "arm_veneer": "0x60310468"
+  },
+  {
+    "ram_address": "0x80fe0140",
+    "hash": "30210954",
+    "name": "unknown",
+    "arm_veneer": "0x603107b0"
+  },
+  {
+    "ram_address": "0x80fe0148",
+    "hash": "c1d33b1d",
+    "name": "unknown",
+    "arm_veneer": "0x60310538"
+  },
+  {
+    "ram_address": "0x80fe0150",
+    "hash": "1d9e685e",
+    "name": "unknown",
+    "arm_veneer": "0x60310250"
+  },
+  {
+    "ram_address": "0x80fe0158",
+    "hash": "3900d10b",
+    "name": "unknown",
+    "arm_veneer": "0x60310458"
+  },
+  {
+    "ram_address": "0x80fe0160",
+    "hash": "ef2b6c40",
+    "name": "unknown",
+    "arm_veneer": "0x60310928"
+  },
+  {
+    "ram_address": "0x80fe0168",
+    "hash": "acce3846",
+    "name": "unknown",
+    "arm_veneer": "0x603102b0"
+  },
+  {
+    "ram_address": "0x80fe0170",
+    "hash": "5c607ae5",
+    "name": "unknown",
+    "arm_veneer": "0x60310530"
+  },
+  {
+    "ram_address": "0x80fe0178",
+    "hash": "9d1682eb",
+    "name": "unknown",
+    "arm_veneer": "0x603103d0"
+  },
+  {
+    "ram_address": "0x80fe0180",
+    "hash": "05c3dc96",
+    "name": "unknown",
+    "arm_veneer": "0x60310690"
+  },
+  {
+    "ram_address": "0x80fe0188",
+    "hash": "89872de6",
+    "name": "unknown",
+    "arm_veneer": "0x603104d8"
+  },
+  {
+    "ram_address": "0x80fe0190",
+    "hash": "f001ec4c",
+    "name": "unknown",
+    "arm_veneer": "0x603104a8"
+  },
+  {
+    "ram_address": "0x80fe0198",
+    "hash": "fad20c2e",
+    "name": "unknown",
+    "arm_veneer": "0x603104b8"
+  },
+  {
+    "ram_address": "0x80fe01a0",
+    "hash": "d4ce3496",
+    "name": "unknown",
+    "arm_veneer": "0x603105e8"
+  },
+  {
+    "ram_address": "0x80fe01a8",
+    "hash": "804eab13",
+    "name": "unknown",
+    "arm_veneer": "0x603102d8"
+  },
+  {
+    "ram_address": "0x80fe01b0",
+    "hash": "64fe8996",
+    "name": "unknown",
+    "arm_veneer": "0x603105d8"
+  },
+  {
+    "ram_address": "0x80fe01b8",
+    "hash": "a1e9bf52",
+    "name": "unknown",
+    "arm_veneer": "0x60310460"
+  },
+  {
+    "ram_address": "0x80fe01c0",
+    "hash": "fa64bbfa",
+    "name": "unknown",
+    "arm_veneer": "0x60310640"
+  },
+  {
+    "ram_address": "0x80fe01c8",
+    "hash": "b2f04516",
+    "name": "unknown",
+    "arm_veneer": "0x60310610"
+  },
+  {
+    "ram_address": "0x80fe01d0",
+    "hash": "9c6f38fc",
+    "name": "unknown",
+    "arm_veneer": "0x603103a8"
+  },
+  {
+    "ram_address": "0x80fe01d8",
+    "hash": "ae5b22af",
+    "name": "unknown",
+    "arm_veneer": "0x60310868"
+  },
+  {
+    "ram_address": "0x80fe01e0",
+    "hash": "eaca5efb",
+    "name": "unknown",
+    "arm_veneer": "0x60310788"
+  },
+  {
+    "ram_address": "0x80fe01e8",
+    "hash": "6151e80d",
+    "name": "unknown"
+  },
+  {
+    "ram_address": "0x80fe01f0",
+    "hash": "892276e6",
+    "name": "unknown"
+  },
+  {
+    "ram_address": "0x80fe01f8",
+    "hash": "2e83ee00",
+    "name": "unknown",
+    "arm_veneer": "0x60310758"
+  },
+  {
+    "ram_address": "0x80fe0200",
+    "hash": "7cdbfb6a",
+    "name": "unknown",
+    "arm_veneer": "0x603103f0"
+  },
+  {
+    "ram_address": "0x80fe0208",
+    "hash": "1c875bab",
+    "name": "unknown",
+    "arm_veneer": "0x60310508"
+  },
+  {
+    "ram_address": "0x80fe0210",
+    "hash": "88d5bd61",
+    "name": "unknown",
+    "arm_veneer": "0x603102b8"
+  },
+  {
+    "ram_address": "0x80fe0218",
+    "hash": "33f5d1ad",
+    "name": "unknown",
+    "arm_veneer": "0x60310560"
+  },
+  {
+    "ram_address": "0x80fe0220",
+    "hash": "faf29405",
+    "name": "osiTraceBasic",
+    "arm_veneer": "0x60310738"
+  },
+  {
+    "ram_address": "0x80fe0228",
+    "hash": "3db19f79",
+    "name": "osiTracePrintf",
+    "arm_veneer": "0x60310708"
+  },
+  {
+    "ram_address": "0x80fe0230",
+    "hash": "c502bee7",
+    "name": "ql_aud_data_done",
+    "arm_veneer": "0x60310748"
+  },
+  {
+    "ram_address": "0x80fe0238",
+    "hash": "607508a5",
+    "name": "ql_aud_play_file_start",
+    "arm_veneer": "0x603108f8"
+  },
+  {
+    "ram_address": "0x80fe0240",
+    "hash": "bd876df6",
+    "name": "ql_aud_player_stop",
+    "arm_veneer": "0x603103d8"
+  },
+  {
+    "ram_address": "0x80fe0248",
+    "hash": "fc9ae48b",
+    "name": "ql_aud_set_icvolume_level_gain",
+    "arm_veneer": "0x60310428"
+  },
+  {
+    "ram_address": "0x80fe0250",
+    "hash": "3c64a1a8",
+    "name": "ql_aud_set_volume",
+    "arm_veneer": "0x60310258"
+  },
+  {
+    "ram_address": "0x80fe0258",
+    "hash": "69ae456d",
+    "name": "ql_aud_wait_play_finish",
+    "arm_veneer": "0x603107e0"
+  },
+  {
+    "ram_address": "0x80fe0260",
+    "hash": "922fc4ae",
+    "name": "ql_autosleep_enable",
+    "arm_veneer": "0x60310340"
+  },
+  {
+    "ram_address": "0x80fe0268",
+    "hash": "cb9a3c9f",
+    "name": "ql_bind_speakerpa_cb",
+    "arm_veneer": "0x603106e8"
+  },
+  {
+    "ram_address": "0x80fe0270",
+    "hash": "f3dbec54",
+    "name": "ql_closedir",
+    "arm_veneer": "0x60310578"
+  },
+  {
+    "ram_address": "0x80fe0278",
+    "hash": "d4a25308",
+    "name": "ql_datacall_register_cb",
+    "arm_veneer": "0x60310898"
+  },
+  {
+    "ram_address": "0x80fe0280",
+    "hash": "6389972e",
+    "name": "ql_datacall_unregister_cb",
+    "arm_veneer": "0x60310790"
+  },
+  {
+    "ram_address": "0x80fe0288",
+    "hash": "b3146206",
+    "name": "ql_delay_us",
+    "arm_veneer": "0x60310870"
+  },
+  {
+    "ram_address": "0x80fe0290",
+    "hash": "31512fe2",
+    "name": "ql_dev_cfg_wdt",
+    "arm_veneer": "0x60310270"
+  },
+  {
+    "ram_address": "0x80fe0298",
+    "hash": "fce6fd0b",
+    "name": "ql_dev_check_property",
+    "arm_veneer": "0x60310358"
+  },
+  {
+    "ram_address": "0x80fe02a0",
+    "hash": "d37ad6e1",
+    "name": "ql_dev_feed_wdt",
+    "arm_veneer": "0x60310558"
+  },
+  {
+    "ram_address": "0x80fe02a8",
+    "hash": "f8f9bf62",
+    "name": "ql_dev_get_imei",
+    "arm_veneer": "0x603102c8"
+  },
+  {
+    "ram_address": "0x80fe02b0",
+    "hash": "7fbc3bea",
+    "name": "ql_dev_get_model",
+    "arm_veneer": "0x60310400"
+  },
+  {
+    "ram_address": "0x80fe02b8",
+    "hash": "f4df0780",
+    "name": "ql_dev_get_sn",
+    "arm_veneer": "0x60310310"
+  },
+  {
+    "ram_address": "0x80fe02c0",
+    "hash": "f03005e5",
+    "name": "ql_dev_memory_size_query",
+    "arm_veneer": "0x60310588"
+  },
+  {
+    "ram_address": "0x80fe02c8",
+    "hash": "40c82ba9",
+    "name": "ql_dev_set_modem_fun",
+    "arm_veneer": "0x603105f0"
+  },
+  {
+    "ram_address": "0x80fe02d0",
+    "hash": "14d72835",
+    "name": "ql_event_try_wait",
+    "arm_veneer": "0x60310518"
+  },
+  {
+    "ram_address": "0x80fe02d8",
+    "hash": "b98d3439",
+    "name": "ql_event_wait",
+    "arm_veneer": "0x603104c0"
+  },
+  {
+    "ram_address": "0x80fe02e0",
+    "hash": "bf99ebe2",
+    "name": "ql_fclose",
+    "arm_veneer": "0x60310678"
+  },
+  {
+    "ram_address": "0x80fe02e8",
+    "hash": "a6b07da4",
+    "name": "ql_file_exist",
+    "arm_veneer": "0x603103e8"
+  },
+  {
+    "ram_address": "0x80fe02f0",
+    "hash": "b25b8260",
+    "name": "ql_fopen",
+    "arm_veneer": "0x603108e0"
+  },
+  {
+    "ram_address": "0x80fe02f8",
+    "hash": "790c3761",
+    "name": "ql_fota_file_reset",
+    "arm_veneer": "0x603102f0"
+  },
+  {
+    "ram_address": "0x80fe0300",
+    "hash": "f7372895",
+    "name": "ql_fota_get_result",
+    "arm_veneer": "0x603108f0"
+  },
+  {
+    "ram_address": "0x80fe0308",
+    "hash": "1a58d3b1",
+    "name": "ql_fota_image_verify",
+    "arm_veneer": "0x60310800"
+  },
+  {
+    "ram_address": "0x80fe0310",
+    "hash": "8b3cd605",
+    "name": "ql_fread",
+    "arm_veneer": "0x60310720"
+  },
+  {
+    "ram_address": "0x80fe0318",
+    "hash": "4cdfe487",
+    "name": "ql_fs_free_size",
+    "arm_veneer": "0x60310658"
+  },
+  {
+    "ram_address": "0x80fe0320",
+    "hash": "848884b8",
+    "name": "ql_fs_total_size",
+    "arm_veneer": "0x603107b8"
+  },
+  {
+    "ram_address": "0x80fe0328",
+    "hash": "c0d42fd5",
+    "name": "ql_fseek",
+    "arm_veneer": "0x60310390"
+  },
+  {
+    "ram_address": "0x80fe0330",
+    "hash": "33561233",
+    "name": "ql_fsize",
+    "arm_veneer": "0x60310710"
+  },
+  {
+    "ram_address": "0x80fe0338",
+    "hash": "50bf8b4a",
+    "name": "ql_fsync",
+    "arm_veneer": "0x60310590"
+  },
+  {
+    "ram_address": "0x80fe0340",
+    "hash": "00ac6c28",
+    "name": "ql_ftell",
+    "arm_veneer": "0x60310768"
+  },
+  {
+    "ram_address": "0x80fe0348",
+    "hash": "c761a43e",
+    "name": "ql_fwrite",
+    "arm_veneer": "0x60310490"
+  },
+  {
+    "ram_address": "0x80fe0350",
+    "hash": "7bf845a8",
+    "name": "ql_get_data_call_info",
+    "arm_veneer": "0x60310968"
+  },
+  {
+    "ram_address": "0x80fe0358",
+    "hash": "29e8617d",
+    "name": "ql_gettimeofday",
+    "arm_veneer": "0x60310470"
+  },
+  {
+    "ram_address": "0x80fe0360",
+    "hash": "5a439d3f",
+    "name": "ql_gpio_deinit",
+    "arm_veneer": "0x603103b0"
+  },
+  {
+    "ram_address": "0x80fe0368",
+    "hash": "f4ce6c89",
+    "name": "ql_gpio_get_level",
+    "arm_veneer": "0x603108d8"
+  },
+  {
+    "ram_address": "0x80fe0370",
+    "hash": "bbd44ee5",
+    "name": "ql_gpio_init",
+    "arm_veneer": "0x60310900"
+  },
+  {
+    "ram_address": "0x80fe0378",
+    "hash": "6b2c263c",
+    "name": "ql_gpio_set_direction",
+    "arm_veneer": "0x603106e0"
+  },
+  {
+    "ram_address": "0x80fe0380",
+    "hash": "9588b8a3",
+    "name": "ql_gpio_set_level",
+    "arm_veneer": "0x60310858"
+  },
+  {
+    "ram_address": "0x80fe0388",
+    "hash": "4abd7c4e",
+    "name": "ql_int_disable",
+    "arm_veneer": "0x60310770"
+  },
+  {
+    "ram_address": "0x80fe0390",
+    "hash": "56f488e8",
+    "name": "ql_int_enable",
+    "arm_veneer": "0x60310908"
+  },
+  {
+    "ram_address": "0x80fe0398",
+    "hash": "900dc98d",
+    "name": "ql_int_register",
+    "arm_veneer": "0x60310638"
+  },
+  {
+    "ram_address": "0x80fe03a0",
+    "hash": "87cca08f",
+    "name": "ql_lpm_wakelock_unlock",
+    "arm_veneer": "0x60310568"
+  },
+  {
+    "ram_address": "0x80fe03a8",
+    "hash": "f117ac54",
+    "name": "ql_mipi_lcd_init",
+    "arm_veneer": "0x60310850"
+  },
+  {
+    "ram_address": "0x80fe03b0",
+    "hash": "71e83aac",
+    "name": "unknown",
+    "arm_veneer": "0x603104b0"
+  },
+  {
+    "ram_address": "0x80fe03b8",
+    "hash": "eac92904",
+    "name": "ql_mipi_lcd_write_screen",
+    "arm_veneer": "0x60310248"
+  },
+  {
+    "ram_address": "0x80fe03c0",
+    "hash": "535b7b5a",
+    "name": "ql_mkdir",
+    "arm_veneer": "0x60310660"
+  },
+  {
+    "ram_address": "0x80fe03c8",
+    "hash": "765b4d23",
+    "name": "ql_nvm_fread",
+    "arm_veneer": "0x603105e0"
+  },
+  {
+    "ram_address": "0x80fe03d0",
+    "hash": "a1d998fe",
+    "name": "ql_nvm_fwrite",
+    "arm_veneer": "0x603102a8"
+  },
+  {
+    "ram_address": "0x80fe03d8",
+    "hash": "a00f9c10",
+    "name": "ql_nw_get_cell_info",
+    "arm_veneer": "0x60310688"
+  },
+  {
+    "ram_address": "0x80fe03e0",
+    "hash": "72af33d3",
+    "name": "unknown",
+    "arm_veneer": "0x60310730"
+  },
+  {
+    "ram_address": "0x80fe03e8",
+    "hash": "b587b8b1",
+    "name": "ql_nw_get_csq",
+    "arm_veneer": "0x60310930"
+  },
+  {
+    "ram_address": "0x80fe03f0",
+    "hash": "3285ce15",
+    "name": "ql_nw_get_reg_status",
+    "arm_veneer": "0x60310618"
+  },
+  {
+    "ram_address": "0x80fe03f8",
+    "hash": "42c6d58c",
+    "name": "ql_nw_register_cb",
+    "arm_veneer": "0x603102c0"
+  },
+  {
+    "ram_address": "0x80fe0400",
+    "hash": "0285979d",
+    "name": "unknown",
+    "arm_veneer": "0x60310718"
+  },
+  {
+    "ram_address": "0x80fe0408",
+    "hash": "a7a45595",
+    "name": "ql_opendir",
+    "arm_veneer": "0x60310328"
+  },
+  {
+    "ram_address": "0x80fe0410",
+    "hash": "be8d9b77",
+    "name": "ql_pcm_close",
+    "arm_veneer": "0x603108e8"
+  },
+  {
+    "ram_address": "0x80fe0418",
+    "hash": "636a6ba0",
+    "name": "ql_pcm_open",
+    "arm_veneer": "0x603108b8"
+  },
+  {
+    "ram_address": "0x80fe0420",
+    "hash": "9d0e6346",
+    "name": "ql_pcm_write",
+    "arm_veneer": "0x603104f0"
+  },
+  {
+    "ram_address": "0x80fe0428",
+    "hash": "5f640714",
+    "name": "ql_pin_set_func",
+    "arm_veneer": "0x60310448"
+  },
+  {
+    "ram_address": "0x80fe0430",
+    "hash": "9f0a2522",
+    "name": "ql_power_down",
+    "arm_veneer": "0x603105a8"
+  },
+  {
+    "ram_address": "0x80fe0438",
+    "hash": "b1046cae",
+    "name": "ql_power_reset",
+    "arm_veneer": "0x603102e8"
+  },
+  {
+    "ram_address": "0x80fe0440",
+    "hash": "f4c3db32",
+    "name": "ql_pwrkey_callback_register",
+    "arm_veneer": "0x60310888"
+  },
+  {
+    "ram_address": "0x80fe0448",
+    "hash": "6887639e",
+    "name": "ql_pwrkey_longpress_cb_register",
+    "arm_veneer": "0x60310698"
+  },
+  {
+    "ram_address": "0x80fe0450",
+    "hash": "26a1c06e",
+    "name": "ql_pwrkey_press_cb_register",
+    "arm_veneer": "0x603107f8"
+  },
+  {
+    "ram_address": "0x80fe0458",
+    "hash": "3a341b73",
+    "name": "ql_pwrkey_release_cb_register",
+    "arm_veneer": "0x60310378"
+  },
+  {
+    "ram_address": "0x80fe0460",
+    "hash": "7b070b8f",
+    "name": "ql_pwrkey_shutdown_time_set",
+    "arm_veneer": "0x60310608"
+  },
+  {
+    "ram_address": "0x80fe0468",
+    "hash": "2ad23b0e",
+    "name": "ql_readdir",
+    "arm_veneer": "0x60310438"
+  },
+  {
+    "ram_address": "0x80fe0470",
+    "hash": "e3b3fc8f",
+    "name": "ql_remove",
+    "arm_veneer": "0x603106b0"
+  },
+  {
+    "ram_address": "0x80fe0478",
+    "hash": "534dc360",
+    "name": "ql_rename",
+    "arm_veneer": "0x60310430"
+  },
+  {
+    "ram_address": "0x80fe0480",
+    "hash": "def0dfab",
+    "name": "ql_rmdir_ex",
+    "arm_veneer": "0x60310240"
+  },
+  {
+    "ram_address": "0x80fe0488",
+    "hash": "b5f2b16e",
+    "name": "ql_rtc_get_localtime",
+    "arm_veneer": "0x603103e0"
+  },
+  {
+    "ram_address": "0x80fe0490",
+    "hash": "7b055a26",
+    "name": "ql_rtc_get_time",
+    "arm_veneer": "0x603108d0"
+  },
+  {
+    "ram_address": "0x80fe0498",
+    "hash": "ed20ce96",
+    "name": "ql_rtc_get_timezone",
+    "arm_veneer": "0x60310920"
+  },
+  {
+    "ram_address": "0x80fe04a0",
+    "hash": "0ebe7a5a",
+    "name": "ql_rtc_set_time",
+    "arm_veneer": "0x603103a0"
+  },
+  {
+    "ram_address": "0x80fe04a8",
+    "hash": "44b0978c",
+    "name": "ql_rtc_set_timezone",
+    "arm_veneer": "0x603102f8"
+  },
+  {
+    "ram_address": "0x80fe04b0",
+    "hash": "70023c37",
+    "name": "ql_rtos_event_send",
+    "arm_veneer": "0x60310298"
+  },
+  {
+    "ram_address": "0x80fe04b8",
+    "hash": "d2da82e8",
+    "name": "ql_rtos_get_system_tick",
+    "arm_veneer": "0x603104d0"
+  },
+  {
+    "ram_address": "0x80fe04c0",
+    "hash": "10de7030",
+    "name": "ql_rtos_mutex_create",
+    "arm_veneer": "0x603106c8"
+  },
+  {
+    "ram_address": "0x80fe04c8",
+    "hash": "f8216af2",
+    "name": "ql_rtos_mutex_delete",
+    "arm_veneer": "0x60310668"
+  },
+  {
+    "ram_address": "0x80fe04d0",
+    "hash": "981eeb37",
+    "name": "ql_rtos_mutex_lock",
+    "arm_veneer": "0x60310380"
+  },
+  {
+    "ram_address": "0x80fe04d8",
+    "hash": "2524e339",
+    "name": "ql_rtos_mutex_try_lock",
+    "arm_veneer": "0x60310398"
+  },
+  {
+    "ram_address": "0x80fe04e0",
+    "hash": "659bbb91",
+    "name": "ql_rtos_mutex_unlock",
+    "arm_veneer": "0x60310918"
+  },
+  {
+    "ram_address": "0x80fe04e8",
+    "hash": "4b9e7361",
+    "name": "ql_rtos_queue_create",
+    "arm_veneer": "0x60310290"
+  },
+  {
+    "ram_address": "0x80fe04f0",
+    "hash": "a3c233c6",
+    "name": "ql_rtos_queue_get_cnt",
+    "arm_veneer": "0x60310960"
+  },
+  {
+    "ram_address": "0x80fe04f8",
+    "hash": "099f2b12",
+    "name": "ql_rtos_queue_release",
+    "arm_veneer": "0x60310740"
+  },
+  {
+    "ram_address": "0x80fe0500",
+    "hash": "3a991bba",
+    "name": "ql_rtos_queue_wait",
+    "arm_veneer": "0x60310760"
+  },
+  {
+    "ram_address": "0x80fe0508",
+    "hash": "34a950ac",
+    "name": "ql_rtos_semaphore_create",
+    "arm_veneer": "0x60310540"
+  },
+  {
+    "ram_address": "0x80fe0510",
+    "hash": "603cc9b6",
+    "name": "ql_rtos_semaphore_create_ex",
+    "arm_veneer": "0x60310948"
+  },
+  {
+    "ram_address": "0x80fe0518",
+    "hash": "c7077faa",
+    "name": "ql_rtos_semaphore_delete",
+    "arm_veneer": "0x60310330"
+  },
+  {
+    "ram_address": "0x80fe0520",
+    "hash": "873457b8",
+    "name": "ql_rtos_semaphore_get_cnt",
+    "arm_veneer": "0x60310958"
+  },
+  {
+    "ram_address": "0x80fe0528",
+    "hash": "ef7c24dc",
+    "name": "ql_rtos_semaphore_release",
+    "arm_veneer": "0x60310778"
+  },
+  {
+    "ram_address": "0x80fe0530",
+    "hash": "b351ad9e",
+    "name": "ql_rtos_semaphore_wait",
+    "arm_veneer": "0x603108b0"
+  },
+  {
+    "ram_address": "0x80fe0538",
+    "hash": "904c02a8",
+    "name": "ql_rtos_task_create",
+    "arm_veneer": "0x603106d8"
+  },
+  {
+    "ram_address": "0x80fe0540",
+    "hash": "4278b967",
+    "name": "ql_rtos_task_delete",
+    "arm_veneer": "0x60310750"
+  },
+  {
+    "ram_address": "0x80fe0548",
+    "hash": "567491d4",
+    "name": "ql_rtos_task_sleep_ms",
+    "arm_veneer": "0x603108a8"
+  },
+  {
+    "ram_address": "0x80fe0550",
+    "hash": "355b0e5b",
+    "name": "ql_rtos_task_sleep_s",
+    "arm_veneer": "0x60310820"
+  },
+  {
+    "ram_address": "0x80fe0558",
+    "hash": "bc12ff2f",
+    "name": "ql_rtos_timer_create",
+    "arm_veneer": "0x60310570"
+  },
+  {
+    "ram_address": "0x80fe0560",
+    "hash": "f8e95a64",
+    "name": "ql_rtos_timer_start_us",
+    "arm_veneer": "0x60310360"
+  },
+  {
+    "ram_address": "0x80fe0568",
+    "hash": "0afc9959",
+    "name": "ql_set_audio_path_speaker",
+    "arm_veneer": "0x60310348"
+  },
+  {
+    "ram_address": "0x80fe0570",
+    "hash": "5e8adad6",
+    "name": "ql_set_data_call_asyn_mode",
+    "arm_veneer": "0x60310268"
+  },
+  {
+    "ram_address": "0x80fe0578",
+    "hash": "040bdf48",
+    "name": "ql_set_volume",
+    "arm_veneer": "0x60310630"
+  },
+  {
+    "ram_address": "0x80fe0580",
+    "hash": "67c7240b",
+    "name": "ql_sfs_setkey",
+    "arm_veneer": "0x60310798"
+  },
+  {
+    "ram_address": "0x80fe0588",
+    "hash": "b298c180",
+    "name": "ql_sim_get_card_status",
+    "arm_veneer": "0x60310890"
+  },
+  {
+    "ram_address": "0x80fe0590",
+    "hash": "b5f1bb42",
+    "name": "unknown",
+    "arm_veneer": "0x603106f0"
+  },
+  {
+    "ram_address": "0x80fe0598",
+    "hash": "ecaa608e",
+    "name": "ql_sim_get_iccid",
+    "arm_veneer": "0x60310368"
+  },
+  {
+    "ram_address": "0x80fe05a0",
+    "hash": "9138b692",
+    "name": "ql_sleep_register_cb",
+    "arm_veneer": "0x60310528"
+  },
+  {
+    "ram_address": "0x80fe05a8",
+    "hash": "efab42c6",
+    "name": "ql_spi6_ext_nor_flash_init",
+    "arm_veneer": "0x603108c8"
+  },
+  {
+    "ram_address": "0x80fe05b0",
+    "hash": "89451eef",
+    "name": "ql_spi6_ext_nor_flash_sffs_mkfs",
+    "arm_veneer": "0x60310818"
+  },
+  {
+    "ram_address": "0x80fe05b8",
+    "hash": "2db79806",
+    "name": "ql_spi6_ext_nor_flash_sffs_mount",
+    "arm_veneer": "0x60310938"
+  },
+  {
+    "ram_address": "0x80fe05c0",
+    "hash": "33db1cda",
+    "name": "ql_start_data_call",
+    "arm_veneer": "0x603104c8"
+  },
+  {
+    "ram_address": "0x80fe05c8",
+    "hash": "fc661427",
+    "name": "ql_stat",
+    "arm_veneer": "0x603106b8"
+  },
+  {
+    "ram_address": "0x80fe05d0",
+    "hash": "caae9e88",
+    "name": "ql_stop_data_call",
+    "arm_veneer": "0x603107a0"
+  },
+  {
+    "ram_address": "0x80fe05d8",
+    "hash": "cdbc6d08",
+    "name": "ql_uart_close",
+    "arm_veneer": "0x603106f8"
+  },
+  {
+    "ram_address": "0x80fe05e0",
+    "hash": "a9333a37",
+    "name": "ql_uart_get_dcbconfig",
+    "arm_veneer": "0x60310700"
+  },
+  {
+    "ram_address": "0x80fe05e8",
+    "hash": "83415934",
+    "name": "ql_uart_open",
+    "arm_veneer": "0x603105d0"
+  },
+  {
+    "ram_address": "0x80fe05f0",
+    "hash": "26b87a4e",
+    "name": "ql_uart_read",
+    "arm_veneer": "0x60310580"
+  },
+  {
+    "ram_address": "0x80fe05f8",
+    "hash": "046305ff",
+    "name": "ql_uart_register_cb",
+    "arm_veneer": "0x603108c0"
+  },
+  {
+    "ram_address": "0x80fe0600",
+    "hash": "b187eda3",
+    "name": "ql_uart_set_dcbconfig",
+    "arm_veneer": "0x60310440"
+  },
+  {
+    "ram_address": "0x80fe0608",
+    "hash": "75432b56",
+    "name": "ql_uart_write",
+    "arm_veneer": "0x60310300"
+  },
+  {
+    "ram_address": "0x80fe0610",
+    "hash": "471b08e7",
+    "name": "ql_ucs2_to_utf8",
+    "arm_veneer": "0x60310910"
+  },
+  {
+    "ram_address": "0x80fe0618",
+    "hash": "6b21cbe1",
+    "name": "ql_usb_bind_hotplug_cb",
+    "arm_veneer": "0x60310548"
+  },
+  {
+    "ram_address": "0x80fe0620",
+    "hash": "8931271b",
+    "name": "ql_utf8_to_gbk",
+    "arm_veneer": "0x60310510"
+  },
+  {
+    "ram_address": "0x80fe0628",
+    "hash": "b760f01b",
+    "name": "ql_wakeup_register_cb",
+    "arm_veneer": "0x60310650"
+  },
+  {
+    "ram_address": "0x80fe0630",
+    "hash": "14c8e1a2",
+    "name": "realloc",
+    "arm_veneer": "0x603103c8"
+  }
+]

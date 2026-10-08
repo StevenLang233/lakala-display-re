@@ -1,0 +1,28 @@
+# Local archives, device-specific dumps/NV and personal session history.
+/junk/
+/main/reverse/private/
+
+# Release binaries and restored dependency DLLs are local; Git stores metadata/source.
+/main/demo/releases/**/*.bin
+/main/demo/releases/**/*.img
+/main/demo/releases/**/*.msi
+/main/demo/releases/**/*.exe
+/main/demo/releases/**/*.dll
+/main/demo/releases/**/*.zip
+/main/demo/dependencies/desktop/*.dll
+/main/demo/dependencies/desktop/*.nupkg
+
+# Rebuilds and local dependencies.
+/main/demo/build/
+/main/demo/.venv/
+/main/demo/dependencies/cache/
+/main/demo/dependencies/firmware-sdk/
+/main/demo/dependencies/toolchain/
+/main/reverse/tools/output/
+**/__pycache__/
+*.pyc
+.DS_Store
+Thumbs.db
+*.user
+*.suo
+.vs/

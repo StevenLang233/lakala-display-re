@@ -1,0 +1,62 @@
+[
+  {
+    "name": "Helios_Audio_SetDSPGainTable",
+    "targets": [
+      "0x6013d3f9"
+    ]
+  },
+  {
+    "name": "ql_aud_codec_read_nv",
+    "targets": [
+      "0x60241acd"
+    ]
+  },
+  {
+    "name": "ql_aud_codec_write_nv",
+    "targets": [
+      "0x60241ab5"
+    ]
+  },
+  {
+    "name": "ql_aud_get_icvolume_level_gain",
+    "targets": [
+      "0x601e2eb1"
+    ]
+  },
+  {
+    "name": "ql_aud_get_volume",
+    "targets": [
+      "0x601dfac5"
+    ]
+  },
+  {
+    "name": "ql_aud_set_calib_real_time",
+    "targets": [
+      "0x601e2761"
+    ]
+  },
+  {
+    "name": "ql_aud_set_icvolume_level_gain",
+    "targets": [
+      "0x601e2d51"
+    ]
+  },
+  {
+    "name": "ql_aud_set_volume",
+    "targets": [
+      "0x601dfa69"
+    ]
+  },
+  {
+    "name": "ql_set_volume",
+    "targets": [
+      "0x601e2525"
+    ]
+  },
+  {
+    "name": "ql_set_volume_ex",
+    "targets": [
+      "0x601e2559"
+    ]
+  }
+]

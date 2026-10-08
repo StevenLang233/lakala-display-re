@@ -1,0 +1,55 @@
+{
+  "encoding": "all integer fields little-endian; XXH32 seed=0",
+  "hashes": {
+    "empty": "0x2cc5d05",
+    "ascii_abc": "0x32d153ff",
+    "black_frame_800x1280_bgr565": "0x542e4f45"
+  },
+  "hello_seq_1_hex": "51 44 43 31 01 01 00 00 01 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 05 5d cc 02 15 c8 f5 30",
+  "example_ack_seq_1_hex": "51 44 43 31 01 80 00 00 01 00 00 00 00 00 00 00 18 00 00 00 18 00 00 00 ba b7 d4 5e 3e c1 cb b7 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 f0 07 00",
+  "ack_note": "example only: timings and free_heap are zero, detail is block capacity",
+  "black_frame_stop_and_wait_headers": [
+    {
+      "type": "BEGIN",
+      "seq": 2,
+      "header_hex": "51 44 43 31 01 02 00 00 02 00 00 00 00 00 00 00 00 00 00 00 00 40 1f 00 05 5d cc 02 d2 a6 0e 61"
+    },
+    {
+      "type": "DATA",
+      "seq": 3,
+      "offset": 0,
+      "payload_bytes": 520192,
+      "payload": "all zero bytes",
+      "header_hex": "51 44 43 31 01 03 00 00 03 00 00 00 00 00 00 00 00 f0 07 00 00 f0 07 00 fb 49 0e b6 a6 f4 17 08"
+    },
+    {
+      "type": "DATA",
+      "seq": 4,
+      "offset": 520192,
+      "payload_bytes": 520192,
+      "payload": "all zero bytes",
+      "header_hex": "51 44 43 31 01 03 00 00 04 00 00 00 00 f0 07 00 00 f0 07 00 00 f0 07 00 fb 49 0e b6 27 61 cf 5e"
+    },
+    {
+      "type": "DATA",
+      "seq": 5,
+      "offset": 1040384,
+      "payload_bytes": 520192,
+      "payload": "all zero bytes",
+      "header_hex": "51 44 43 31 01 03 00 00 05 00 00 00 00 e0 0f 00 00 f0 07 00 00 f0 07 00 fb 49 0e b6 00 7f 9a db"
+    },
+    {
+      "type": "DATA",
+      "seq": 6,
+      "offset": 1560576,
+      "payload_bytes": 487424,
+      "payload": "all zero bytes",
+      "header_hex": "51 44 43 31 01 03 00 00 06 00 00 00 00 d0 17 00 00 70 07 00 00 70 07 00 1a a8 c9 15 ec 72 2b 1e"
+    },
+    {
+      "type": "COMMIT",
+      "seq": 7,
+      "header_hex": "51 44 43 31 01 04 01 00 07 00 00 00 45 4f 2e 54 00 00 00 00 00 00 00 00 05 5d cc 02 b5 3a eb b3"
+    }
+  ]
+}

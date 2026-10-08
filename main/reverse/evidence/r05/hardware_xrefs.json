@@ -1,0 +1,2391 @@
+[
+  {
+    "string": "App_MipiLCD.c",
+    "string_offset": 2622519,
+    "string_address": "0x60280437",
+    "pointer_offsets": [
+      2622636,
+      2622796,
+      2622960,
+      2623360,
+      2624152,
+      2624532,
+      2624872,
+      2625064,
+      2625732,
+      2626404,
+      2627824,
+      2628224,
+      2628824
+    ],
+    "xrefs": [
+      {
+        "mode": "thumb",
+        "offset": 2622588,
+        "address": "0x6028047c",
+        "instruction": "ldr r0, [pc, #0x28]",
+        "literal_offset": 2622636
+      },
+      {
+        "mode": "thumb",
+        "offset": 2622614,
+        "address": "0x60280496",
+        "instruction": "ldr r2, [pc, #0x14]",
+        "literal_offset": 2622636
+      },
+      {
+        "mode": "thumb",
+        "offset": 2622736,
+        "address": "0x60280510",
+        "instruction": "ldr r0, [pc, #0x34]",
+        "literal_offset": 2622796
+      },
+      {
+        "mode": "thumb",
+        "offset": 2622776,
+        "address": "0x60280538",
+        "instruction": "ldr r2, [pc, #0x10]",
+        "literal_offset": 2622796
+      },
+      {
+        "mode": "thumb",
+        "offset": 2622864,
+        "address": "0x60280590",
+        "instruction": "ldr r2, [pc, #0x5c]",
+        "literal_offset": 2622960
+      },
+      {
+        "mode": "thumb",
+        "offset": 2622946,
+        "address": "0x602805e2",
+        "instruction": "ldr r2, [pc, #0xc]",
+        "literal_offset": 2622960
+      },
+      {
+        "mode": "thumb",
+        "offset": 2623296,
+        "address": "0x60280740",
+        "instruction": "ldr r2, [pc, #0x3c]",
+        "literal_offset": 2623360
+      },
+      {
+        "mode": "thumb",
+        "offset": 2623834,
+        "address": "0x6028095a",
+        "instruction": "ldr r2, [pc, #0x13c]",
+        "literal_offset": 2624152
+      },
+      {
+        "mode": "thumb",
+        "offset": 2623920,
+        "address": "0x602809b0",
+        "instruction": "ldr r2, [pc, #0xe4]",
+        "literal_offset": 2624152
+      },
+      {
+        "mode": "thumb",
+        "offset": 2623970,
+        "address": "0x602809e2",
+        "instruction": "ldr r2, [pc, #0xb4]",
+        "literal_offset": 2624152
+      },
+      {
+        "mode": "thumb",
+        "offset": 2624006,
+        "address": "0x60280a06",
+        "instruction": "ldr r2, [pc, #0x90]",
+        "literal_offset": 2624152
+      },
+      {
+        "mode": "thumb",
+        "offset": 2624022,
+        "address": "0x60280a16",
+        "instruction": "ldr r2, [pc, #0x80]",
+        "literal_offset": 2624152
+      },
+      {
+        "mode": "thumb",
+        "offset": 2624112,
+        "address": "0x60280a70",
+        "instruction": "ldr r2, [pc, #0x24]",
+        "literal_offset": 2624152
+      },
+      {
+        "mode": "thumb",
+        "offset": 2624138,
+        "address": "0x60280a8a",
+        "instruction": "ldr r2, [pc, #0xc]",
+        "literal_offset": 2624152
+      },
+      {
+        "mode": "thumb",
+        "offset": 2624248,
+        "address": "0x60280af8",
+        "instruction": "ldr r2, [pc, #0x118]",
+        "literal_offset": 2624532
+      },
+      {
+        "mode": "thumb",
+        "offset": 2624324,
+        "address": "0x60280b44",
+        "instruction": "ldr r2, [pc, #0xcc]",
+        "literal_offset": 2624532
+      },
+      {
+        "mode": "thumb",
+        "offset": 2624360,
+        "address": "0x60280b68",
+        "instruction": "ldr r2, [pc, #0xa8]",
+        "literal_offset": 2624532
+      },
+      {
+        "mode": "thumb",
+        "offset": 2624400,
+        "address": "0x60280b90",
+        "instruction": "ldr r2, [pc, #0x80]",
+        "literal_offset": 2624532
+      },
+      {
+        "mode": "thumb",
+        "offset": 2624488,
+        "address": "0x60280be8",
+        "instruction": "ldr r2, [pc, #0x28]",
+        "literal_offset": 2624532
+      },
+      {
+        "mode": "thumb",
+        "offset": 2624520,
+        "address": "0x60280c08",
+        "instruction": "ldr r2, [pc, #8]",
+        "literal_offset": 2624532
+      },
+      {
+        "mode": "thumb",
+        "offset": 2624738,
+        "address": "0x60280ce2",
+        "instruction": "ldr r2, [pc, #0x84]",
+        "literal_offset": 2624872
+      },
+      {
+        "mode": "thumb",
+        "offset": 2624772,
+        "address": "0x60280d04",
+        "instruction": "ldr r2, [pc, #0x60]",
+        "literal_offset": 2624872
+      },
+      {
+        "mode": "thumb",
+        "offset": 2624928,
+        "address": "0x60280da0",
+        "instruction": "ldr r2, [pc, #0x84]",
+        "literal_offset": 2625064
+      },
+      {
+        "mode": "thumb",
+        "offset": 2624962,
+        "address": "0x60280dc2",
+        "instruction": "ldr r2, [pc, #0x64]",
+        "literal_offset": 2625064
+      },
+      {
+        "mode": "thumb",
+        "offset": 2625478,
+        "address": "0x60280fc6",
+        "instruction": "ldr r2, [pc, #0xfc]",
+        "literal_offset": 2625732
+      },
+      {
+        "mode": "thumb",
+        "offset": 2625530,
+        "address": "0x60280ffa",
+        "instruction": "ldr r2, [pc, #0xc8]",
+        "literal_offset": 2625732
+      },
+      {
+        "mode": "thumb",
+        "offset": 2625598,
+        "address": "0x6028103e",
+        "instruction": "ldr r2, [pc, #0x84]",
+        "literal_offset": 2625732
+      },
+      {
+        "mode": "thumb",
+        "offset": 2625654,
+        "address": "0x60281076",
+        "instruction": "ldr r2, [pc, #0x4c]",
+        "literal_offset": 2625732
+      },
+      {
+        "mode": "thumb",
+        "offset": 2626010,
+        "address": "0x602811da",
+        "instruction": "ldr r2, [pc, #0x188]",
+        "literal_offset": 2626404
+      },
+      {
+        "mode": "thumb",
+        "offset": 2626054,
+        "address": "0x60281206",
+        "instruction": "ldr r2, [pc, #0x15c]",
+        "literal_offset": 2626404
+      },
+      {
+        "mode": "thumb",
+        "offset": 2626162,
+        "address": "0x60281272",
+        "instruction": "ldr r2, [pc, #0xf0]",
+        "literal_offset": 2626404
+      },
+      {
+        "mode": "thumb",
+        "offset": 2626214,
+        "address": "0x602812a6",
+        "instruction": "ldr r2, [pc, #0xbc]",
+        "literal_offset": 2626404
+      },
+      {
+        "mode": "thumb",
+        "offset": 2626272,
+        "address": "0x602812e0",
+        "instruction": "ldr r2, [pc, #0x80]",
+        "literal_offset": 2626404
+      },
+      {
+        "mode": "thumb",
+        "offset": 2626330,
+        "address": "0x6028131a",
+        "instruction": "ldr r2, [pc, #0x48]",
+        "literal_offset": 2626404
+      },
+      {
+        "mode": "thumb",
+        "offset": 2627704,
+        "address": "0x60281878",
+        "instruction": "ldr r0, [pc, #0x70]",
+        "literal_offset": 2627824
+      },
+      {
+        "mode": "thumb",
+        "offset": 2627710,
+        "address": "0x6028187e",
+        "instruction": "ldr r2, [pc, #0x70]",
+        "literal_offset": 2627824
+      },
+      {
+        "mode": "thumb",
+        "offset": 2627936,
+        "address": "0x60281960",
+        "instruction": "ldr r4, [pc, #0x118]",
+        "literal_offset": 2628224
+      },
+      {
+        "mode": "thumb",
+        "offset": 2627976,
+        "address": "0x60281988",
+        "instruction": "ldr r2, [pc, #0xf4]",
+        "literal_offset": 2628224
+      },
+      {
+        "mode": "thumb",
+        "offset": 2628600,
+        "address": "0x60281bf8",
+        "instruction": "ldr r2, [pc, #0xdc]",
+        "literal_offset": 2628824
+      },
+      {
+        "mode": "thumb",
+        "offset": 2628636,
+        "address": "0x60281c1c",
+        "instruction": "ldr r2, [pc, #0xb8]",
+        "literal_offset": 2628824
+      },
+      {
+        "mode": "thumb",
+        "offset": 2628660,
+        "address": "0x60281c34",
+        "instruction": "ldr r2, [pc, #0xa0]",
+        "literal_offset": 2628824
+      },
+      {
+        "mode": "thumb",
+        "offset": 2628698,
+        "address": "0x60281c5a",
+        "instruction": "ldr r2, [pc, #0x7c]",
+        "literal_offset": 2628824
+      },
+      {
+        "mode": "thumb",
+        "offset": 2628740,
+        "address": "0x60281c84",
+        "instruction": "ldr r2, [pc, #0x50]",
+        "literal_offset": 2628824
+      },
+      {
+        "mode": "thumb",
+        "offset": 2628800,
+        "address": "0x60281cc0",
+        "instruction": "ldr r2, [pc, #0x14]",
+        "literal_offset": 2628824
+      },
+      {
+        "mode": "thumb",
+        "offset": 2628812,
+        "address": "0x60281ccc",
+        "instruction": "ldr r2, [pc, #8]",
+        "literal_offset": 2628824
+      }
+    ]
+  },
+  {
+    "string": "mipi lcd ql_pin_set_func",
+    "string_offset": 2628259,
+    "string_address": "0x60281aa3",
+    "pointer_offsets": [],
+    "xrefs": []
+  },
+  {
+    "string": "MIPI LCD init failed",
+    "string_offset": 2628353,
+    "string_address": "0x60281b01",
+    "pointer_offsets": [],
+    "xrefs": []
+  },
+  {
+    "string": "MipiLcdTaskInit succ",
+    "string_offset": 2628544,
+    "string_address": "0x60281bc0",
+    "pointer_offsets": [],
+    "xrefs": []
+  },
+  {
+    "string": "App_LED.c",
+    "string_offset": 2665067,
+    "string_address": "0x6028aa6b",
+    "pointer_offsets": [
+      2665228
+    ],
+    "xrefs": [
+      {
+        "mode": "thumb",
+        "offset": 2665212,
+        "address": "0x6028aafc",
+        "instruction": "ldr r2, [pc, #0xc]",
+        "literal_offset": 2665228
+      }
+    ]
+  },
+  {
+    "string": "LED_PIN_PWM",
+    "string_offset": 3181118,
+    "string_address": "0x60308a3e",
+    "pointer_offsets": [],
+    "xrefs": []
+  },
+  {
+    "string": "App_Key.c",
+    "string_offset": 2665495,
+    "string_address": "0x6028ac17",
+    "pointer_offsets": [
+      2665640,
+      2666076,
+      2666468,
+      2666736,
+      2668044,
+      2668388,
+      2669444,
+      2669744
+    ],
+    "xrefs": [
+      {
+        "mode": "thumb",
+        "offset": 2665582,
+        "address": "0x6028ac6e",
+        "instruction": "ldr r2, [pc, #0x38]",
+        "literal_offset": 2665640
+      },
+      {
+        "mode": "thumb",
+        "offset": 2665612,
+        "address": "0x6028ac8c",
+        "instruction": "ldr r2, [pc, #0x18]",
+        "literal_offset": 2665640
+      },
+      {
+        "mode": "thumb",
+        "offset": 2665952,
+        "address": "0x6028ade0",
+        "instruction": "ldr r6, [pc, #0x74]",
+        "literal_offset": 2666076
+      },
+      {
+        "mode": "thumb",
+        "offset": 2665958,
+        "address": "0x6028ade6",
+        "instruction": "ldr r2, [pc, #0x74]",
+        "literal_offset": 2666076
+      },
+      {
+        "mode": "thumb",
+        "offset": 2665996,
+        "address": "0x6028ae0c",
+        "instruction": "ldr r2, [pc, #0x4c]",
+        "literal_offset": 2666076
+      },
+      {
+        "mode": "thumb",
+        "offset": 2666026,
+        "address": "0x6028ae2a",
+        "instruction": "ldr r2, [pc, #0x30]",
+        "literal_offset": 2666076
+      },
+      {
+        "mode": "thumb",
+        "offset": 2666312,
+        "address": "0x6028af48",
+        "instruction": "ldr r2, [pc, #0x98]",
+        "literal_offset": 2666468
+      },
+      {
+        "mode": "thumb",
+        "offset": 2666328,
+        "address": "0x6028af58",
+        "instruction": "ldr r2, [pc, #0x88]",
+        "literal_offset": 2666468
+      },
+      {
+        "mode": "thumb",
+        "offset": 2666340,
+        "address": "0x6028af64",
+        "instruction": "ldr r2, [pc, #0x7c]",
+        "literal_offset": 2666468
+      },
+      {
+        "mode": "thumb",
+        "offset": 2666438,
+        "address": "0x6028afc6",
+        "instruction": "ldr r2, [pc, #0x1c]",
+        "literal_offset": 2666468
+      },
+      {
+        "mode": "thumb",
+        "offset": 2666632,
+        "address": "0x6028b088",
+        "instruction": "ldr r4, [pc, #0x60]",
+        "literal_offset": 2666736
+      },
+      {
+        "mode": "thumb",
+        "offset": 2666634,
+        "address": "0x6028b08a",
+        "instruction": "ldr r2, [pc, #0x64]",
+        "literal_offset": 2666736
+      },
+      {
+        "mode": "thumb",
+        "offset": 2667586,
+        "address": "0x6028b442",
+        "instruction": "ldr r2, [pc, #0x1c8]",
+        "literal_offset": 2668044
+      },
+      {
+        "mode": "thumb",
+        "offset": 2667630,
+        "address": "0x6028b46e",
+        "instruction": "ldr r2, [pc, #0x19c]",
+        "literal_offset": 2668044
+      },
+      {
+        "mode": "thumb",
+        "offset": 2667662,
+        "address": "0x6028b48e",
+        "instruction": "ldr r2, [pc, #0x17c]",
+        "literal_offset": 2668044
+      },
+      {
+        "mode": "thumb",
+        "offset": 2667694,
+        "address": "0x6028b4ae",
+        "instruction": "ldr r2, [pc, #0x15c]",
+        "literal_offset": 2668044
+      },
+      {
+        "mode": "thumb",
+        "offset": 2667814,
+        "address": "0x6028b526",
+        "instruction": "ldr r2, [pc, #0xe4]",
+        "literal_offset": 2668044
+      },
+      {
+        "mode": "thumb",
+        "offset": 2668220,
+        "address": "0x6028b6bc",
+        "instruction": "ldr r0, [pc, #0xa0]",
+        "literal_offset": 2668388
+      },
+      {
+        "mode": "thumb",
+        "offset": 2668302,
+        "address": "0x6028b70e",
+        "instruction": "ldr r2, [pc, #0x54]",
+        "literal_offset": 2668388
+      },
+      {
+        "mode": "thumb",
+        "offset": 2668318,
+        "address": "0x6028b71e",
+        "instruction": "ldr r2, [pc, #0x44]",
+        "literal_offset": 2668388
+      },
+      {
+        "mode": "thumb",
+        "offset": 2668824,
+        "address": "0x6028b918",
+        "instruction": "ldr r2, [pc, #0x268]",
+        "literal_offset": 2669444
+      },
+      {
+        "mode": "thumb",
+        "offset": 2668880,
+        "address": "0x6028b950",
+        "instruction": "ldr r2, [pc, #0x230]",
+        "literal_offset": 2669444
+      },
+      {
+        "mode": "thumb",
+        "offset": 2668968,
+        "address": "0x6028b9a8",
+        "instruction": "ldr r2, [pc, #0x1d8]",
+        "literal_offset": 2669444
+      },
+      {
+        "mode": "thumb",
+        "offset": 2668990,
+        "address": "0x6028b9be",
+        "instruction": "ldr r2, [pc, #0x1c4]",
+        "literal_offset": 2669444
+      },
+      {
+        "mode": "thumb",
+        "offset": 2669006,
+        "address": "0x6028b9ce",
+        "instruction": "ldr r7, [pc, #0x1b4]",
+        "literal_offset": 2669444
+      },
+      {
+        "mode": "thumb",
+        "offset": 2669672,
+        "address": "0x6028bc68",
+        "instruction": "ldr r2, [pc, #0x44]",
+        "literal_offset": 2669744
+      },
+      {
+        "mode": "thumb",
+        "offset": 2669716,
+        "address": "0x6028bc94",
+        "instruction": "ldr r2, [pc, #0x18]",
+        "literal_offset": 2669744
+      }
+    ]
+  },
+  {
+    "string": "audio",
+    "string_offset": 126871,
+    "string_address": "0x6001ef97",
+    "pointer_offsets": [],
+    "xrefs": []
+  },
+  {
+    "string": "audio",
+    "string_offset": 133599,
+    "string_address": "0x600209df",
+    "pointer_offsets": [
+      749328
+    ],
+    "xrefs": [
+      {
+        "mode": "thumb",
+        "offset": 748900,
+        "address": "0x600b6d64",
+        "instruction": "ldr r5, [pc, #0x1a4]",
+        "literal_offset": 749328
+      },
+      {
+        "mode": "thumb",
+        "offset": 748920,
+        "address": "0x600b6d78",
+        "instruction": "ldr r0, [pc, #0x194]",
+        "literal_offset": 749328
+      }
+    ]
+  },
+  {
+    "string": "audio",
+    "string_offset": 133608,
+    "string_address": "0x600209e8",
+    "pointer_offsets": [],
+    "xrefs": []
+  },
+  {
+    "string": "audio",
+    "string_offset": 746457,
+    "string_address": "0x600b63d9",
+    "pointer_offsets": [],
+    "xrefs": []
+  },
+  {
+    "string": "audio",
+    "string_offset": 747740,
+    "string_address": "0x600b68dc",
+    "pointer_offsets": [
+      748272
+    ],
+    "xrefs": [
+      {
+        "mode": "thumb",
+        "offset": 747976,
+        "address": "0x600b69c8",
+        "instruction": "ldr r2, [pc, #0x124]",
+        "literal_offset": 748272
+      }
+    ]
+  },
+  {
+    "string": "audio",
+    "string_offset": 748848,
+    "string_address": "0x600b6d30",
+    "pointer_offsets": [
+      749312
+    ],
+    "xrefs": [
+      {
+        "mode": "thumb",
+        "offset": 748866,
+        "address": "0x600b6d42",
+        "instruction": "ldr r0, [pc, #0x1bc]",
+        "literal_offset": 749312
+      }
+    ]
+  },
+  {
+    "string": "audio",
+    "string_offset": 773319,
+    "string_address": "0x600bccc7",
+    "pointer_offsets": [
+      774432
+    ],
+    "xrefs": [
+      {
+        "mode": "thumb",
+        "offset": 774076,
+        "address": "0x600bcfbc",
+        "instruction": "ldr r2, [pc, #0x15c]",
+        "literal_offset": 774432
+      },
+      {
+        "mode": "thumb",
+        "offset": 774208,
+        "address": "0x600bd040",
+        "instruction": "ldr r2, [pc, #0xdc]",
+        "literal_offset": 774432
+      }
+    ]
+  },
+  {
+    "string": "audio",
+    "string_offset": 773350,
+    "string_address": "0x600bcce6",
+    "pointer_offsets": [
+      774408
+    ],
+    "xrefs": [
+      {
+        "mode": "thumb",
+        "offset": 773748,
+        "address": "0x600bce74",
+        "instruction": "ldr r2, [pc, #0x290]",
+        "literal_offset": 774408
+      }
+    ]
+  },
+  {
+    "string": "audio",
+    "string_offset": 773399,
+    "string_address": "0x600bcd17",
+    "pointer_offsets": [
+      774416
+    ],
+    "xrefs": [
+      {
+        "mode": "thumb",
+        "offset": 773796,
+        "address": "0x600bcea4",
+        "instruction": "ldr r1, [pc, #0x264]",
+        "literal_offset": 774416
+      },
+      {
+        "mode": "thumb",
+        "offset": 773812,
+        "address": "0x600bceb4",
+        "instruction": "ldr r2, [pc, #0x258]",
+        "literal_offset": 774416
+      }
+    ]
+  },
+  {
+    "string": "audio",
+    "string_offset": 773428,
+    "string_address": "0x600bcd34",
+    "pointer_offsets": [
+      774424
+    ],
+    "xrefs": [
+      {
+        "mode": "thumb",
+        "offset": 773916,
+        "address": "0x600bcf1c",
+        "instruction": "ldr r2, [pc, #0x1f8]",
+        "literal_offset": 774424
+      }
+    ]
+  },
+  {
+    "string": "audio",
+    "string_offset": 773446,
+    "string_address": "0x600bcd46",
+    "pointer_offsets": [
+      774440
+    ],
+    "xrefs": [
+      {
+        "mode": "thumb",
+        "offset": 774264,
+        "address": "0x600bd078",
+        "instruction": "ldr r2, [pc, #0xa8]",
+        "literal_offset": 774440
+      },
+      {
+        "mode": "thumb",
+        "offset": 774308,
+        "address": "0x600bd0a4",
+        "instruction": "ldr r2, [pc, #0x80]",
+        "literal_offset": 774440
+      }
+    ]
+  },
+  {
+    "string": "audio",
+    "string_offset": 773492,
+    "string_address": "0x600bcd74",
+    "pointer_offsets": [
+      774444
+    ],
+    "xrefs": [
+      {
+        "mode": "thumb",
+        "offset": 774308,
+        "address": "0x600bd0a4",
+        "instruction": "ldr r2, [pc, #0x80]",
+        "literal_offset": 774444
+      },
+      {
+        "mode": "thumb",
+        "offset": 774356,
+        "address": "0x600bd0d4",
+        "instruction": "ldr r2, [pc, #0x54]",
+        "literal_offset": 774444
+      }
+    ]
+  },
+  {
+    "string": "audio",
+    "string_offset": 773593,
+    "string_address": "0x600bcdd9",
+    "pointer_offsets": [
+      774500
+    ],
+    "xrefs": [
+      {
+        "mode": "thumb",
+        "offset": 774458,
+        "address": "0x600bd13a",
+        "instruction": "ldr r2, [pc, #0x28]",
+        "literal_offset": 774500
+      }
+    ]
+  },
+  {
+    "string": "audio",
+    "string_offset": 783810,
+    "string_address": "0x600bf5c2",
+    "pointer_offsets": [
+      784400
+    ],
+    "xrefs": [
+      {
+        "mode": "thumb",
+        "offset": 784150,
+        "address": "0x600bf716",
+        "instruction": "ldr r2, [pc, #0xf8]",
+        "literal_offset": 784400
+      }
+    ]
+  },
+  {
+    "string": "audio",
+    "string_offset": 784484,
+    "string_address": "0x600bf864",
+    "pointer_offsets": [
+      784596
+    ],
+    "xrefs": [
+      {
+        "mode": "thumb",
+        "offset": 784564,
+        "address": "0x600bf8b4",
+        "instruction": "ldr r0, [pc, #0x18]",
+        "literal_offset": 784596
+      },
+      {
+        "mode": "thumb",
+        "offset": 784572,
+        "address": "0x600bf8bc",
+        "instruction": "ldr r2, [pc, #0x14]",
+        "literal_offset": 784596
+      }
+    ]
+  },
+  {
+    "string": "audio",
+    "string_offset": 787758,
+    "string_address": "0x600c052e",
+    "pointer_offsets": [
+      788316
+    ],
+    "xrefs": [
+      {
+        "mode": "thumb",
+        "offset": 788064,
+        "address": "0x600c0660",
+        "instruction": "ldr r2, [pc, #0xf8]",
+        "literal_offset": 788316
+      }
+    ]
+  },
+  {
+    "string": "audio",
+    "string_offset": 787805,
+    "string_address": "0x600c055d",
+    "pointer_offsets": [
+      788324
+    ],
+    "xrefs": [
+      {
+        "mode": "thumb",
+        "offset": 788094,
+        "address": "0x600c067e",
+        "instruction": "ldr r2, [pc, #0xe4]",
+        "literal_offset": 788324
+      },
+      {
+        "mode": "thumb",
+        "offset": 788096,
+        "address": "0x600c0680",
+        "instruction": "ldr r0, [pc, #0xdc]",
+        "literal_offset": 788324
+      }
+    ]
+  },
+  {
+    "string": "audio",
+    "string_offset": 787835,
+    "string_address": "0x600c057b",
+    "pointer_offsets": [
+      788340
+    ],
+    "xrefs": [
+      {
+        "mode": "thumb",
+        "offset": 788102,
+        "address": "0x600c0686",
+        "instruction": "ldr.w r8, [pc, #0xec]",
+        "literal_offset": 788340
+      },
+      {
+        "mode": "thumb",
+        "offset": 788280,
+        "address": "0x600c0738",
+        "instruction": "ldr r2, [pc, #0x34]",
+        "literal_offset": 788340
+      }
+    ]
+  },
+  {
+    "string": "audio",
+    "string_offset": 787869,
+    "string_address": "0x600c059d",
+    "pointer_offsets": [
+      788344
+    ],
+    "xrefs": [
+      {
+        "mode": "thumb",
+        "offset": 788108,
+        "address": "0x600c068c",
+        "instruction": "ldr.w sb, [pc, #0xe8]",
+        "literal_offset": 788344
+      }
+    ]
+  },
+  {
+    "string": "audio",
+    "string_offset": 787917,
+    "string_address": "0x600c05cd",
+    "pointer_offsets": [
+      788328
+    ],
+    "xrefs": [
+      {
+        "mode": "thumb",
+        "offset": 788238,
+        "address": "0x600c070e",
+        "instruction": "ldr r2, [pc, #0x58]",
+        "literal_offset": 788328
+      }
+    ]
+  },
+  {
+    "string": "audio",
+    "string_offset": 787963,
+    "string_address": "0x600c05fb",
+    "pointer_offsets": [
+      788332
+    ],
+    "xrefs": [
+      {
+        "mode": "thumb",
+        "offset": 788264,
+        "address": "0x600c0728",
+        "instruction": "ldr r2, [pc, #0x40]",
+        "literal_offset": 788332
+      }
+    ]
+  },
+  {
+    "string": "audio",
+    "string_offset": 788013,
+    "string_address": "0x600c062d",
+    "pointer_offsets": [
+      788336
+    ],
+    "xrefs": [
+      {
+        "mode": "thumb",
+        "offset": 788264,
+        "address": "0x600c0728",
+        "instruction": "ldr r2, [pc, #0x40]",
+        "literal_offset": 788336
+      },
+      {
+        "mode": "thumb",
+        "offset": 788280,
+        "address": "0x600c0738",
+        "instruction": "ldr r2, [pc, #0x34]",
+        "literal_offset": 788336
+      }
+    ]
+  },
+  {
+    "string": "audio",
+    "string_offset": 788424,
+    "string_address": "0x600c07c8",
+    "pointer_offsets": [
+      788900
+    ],
+    "xrefs": [
+      {
+        "mode": "thumb",
+        "offset": 788692,
+        "address": "0x600c08d4",
+        "instruction": "ldr r2, [pc, #0xcc]",
+        "literal_offset": 788900
+      }
+    ]
+  },
+  {
+    "string": "audio",
+    "string_offset": 788479,
+    "string_address": "0x600c07ff",
+    "pointer_offsets": [
+      788908
+    ],
+    "xrefs": [
+      {
+        "mode": "thumb",
+        "offset": 788720,
+        "address": "0x600c08f0",
+        "instruction": "ldr r1, [pc, #0xb4]",
+        "literal_offset": 788908
+      },
+      {
+        "mode": "thumb",
+        "offset": 788764,
+        "address": "0x600c091c",
+        "instruction": "ldr r2, [pc, #0x8c]",
+        "literal_offset": 788908
+      }
+    ]
+  },
+  {
+    "string": "audio",
+    "string_offset": 788511,
+    "string_address": "0x600c081f",
+    "pointer_offsets": [
+      788912
+    ],
+    "xrefs": [
+      {
+        "mode": "thumb",
+        "offset": 788764,
+        "address": "0x600c091c",
+        "instruction": "ldr r2, [pc, #0x8c]",
+        "literal_offset": 788912
+      },
+      {
+        "mode": "thumb",
+        "offset": 788800,
+        "address": "0x600c0940",
+        "instruction": "ldr r2, [pc, #0x6c]",
+        "literal_offset": 788912
+      }
+    ]
+  },
+  {
+    "string": "audio",
+    "string_offset": 788546,
+    "string_address": "0x600c0842",
+    "pointer_offsets": [],
+    "xrefs": []
+  },
+  {
+    "string": "audio",
+    "string_offset": 788565,
+    "string_address": "0x600c0855",
+    "pointer_offsets": [
+      788916
+    ],
+    "xrefs": [
+      {
+        "mode": "thumb",
+        "offset": 788800,
+        "address": "0x600c0940",
+        "instruction": "ldr r2, [pc, #0x6c]",
+        "literal_offset": 788916
+      },
+      {
+        "mode": "thumb",
+        "offset": 788870,
+        "address": "0x600c0986",
+        "instruction": "ldr r2, [pc, #0x2c]",
+        "literal_offset": 788916
+      }
+    ]
+  },
+  {
+    "string": "audio",
+    "string_offset": 788592,
+    "string_address": "0x600c0870",
+    "pointer_offsets": [
+      788896
+    ],
+    "xrefs": [
+      {
+        "mode": "thumb",
+        "offset": 788660,
+        "address": "0x600c08b4",
+        "instruction": "ldr r0, [pc, #0xe4]",
+        "literal_offset": 788896
+      },
+      {
+        "mode": "thumb",
+        "offset": 788662,
+        "address": "0x600c08b6",
+        "instruction": "ldr r2, [pc, #0xe8]",
+        "literal_offset": 788896
+      },
+      {
+        "mode": "thumb",
+        "offset": 788696,
+        "address": "0x600c08d8",
+        "instruction": "ldr r0, [pc, #0xc0]",
+        "literal_offset": 788896
+      },
+      {
+        "mode": "thumb",
+        "offset": 788792,
+        "address": "0x600c0938",
+        "instruction": "ldr r0, [pc, #0x60]",
+        "literal_offset": 788896
+      },
+      {
+        "mode": "thumb",
+        "offset": 788872,
+        "address": "0x600c0988",
+        "instruction": "ldr r0, [pc, #0x10]",
+        "literal_offset": 788896
+      }
+    ]
+  },
+  {
+    "string": "audio",
+    "string_offset": 788920,
+    "string_address": "0x600c09b8",
+    "pointer_offsets": [
+      789376
+    ],
+    "xrefs": [
+      {
+        "mode": "thumb",
+        "offset": 789106,
+        "address": "0x600c0a72",
+        "instruction": "ldr r2, [pc, #0x10c]",
+        "literal_offset": 789376
+      },
+      {
+        "mode": "thumb",
+        "offset": 789126,
+        "address": "0x600c0a86",
+        "instruction": "ldr r2, [pc, #0xf8]",
+        "literal_offset": 789376
+      },
+      {
+        "mode": "thumb",
+        "offset": 789128,
+        "address": "0x600c0a88",
+        "instruction": "ldr r0, [pc, #0xf0]",
+        "literal_offset": 789376
+      },
+      {
+        "mode": "thumb",
+        "offset": 789328,
+        "address": "0x600c0b50",
+        "instruction": "ldr r0, [pc, #0x28]",
+        "literal_offset": 789376
+      }
+    ]
+  },
+  {
+    "string": "audio",
+    "string_offset": 788943,
+    "string_address": "0x600c09cf",
+    "pointer_offsets": [
+      789380
+    ],
+    "xrefs": [
+      {
+        "mode": "thumb",
+        "offset": 789326,
+        "address": "0x600c0b4e",
+        "instruction": "ldr r2, [pc, #0x34]",
+        "literal_offset": 789380
+      }
+    ]
+  },
+  {
+    "string": "audio",
+    "string_offset": 788974,
+    "string_address": "0x600c09ee",
+    "pointer_offsets": [
+      789384
+    ],
+    "xrefs": [
+      {
+        "mode": "thumb",
+        "offset": 789058,
+        "address": "0x600c0a42",
+        "instruction": "ldr.w r8, [pc, #0x144]",
+        "literal_offset": 789384
+      }
+    ]
+  },
+  {
+    "string": "audio",
+    "string_offset": 789001,
+    "string_address": "0x600c0a09",
+    "pointer_offsets": [
+      789388
+    ],
+    "xrefs": [
+      {
+        "mode": "thumb",
+        "offset": 789064,
+        "address": "0x600c0a48",
+        "instruction": "ldr.w sb, [pc, #0x140]",
+        "literal_offset": 789388
+      }
+    ]
+  },
+  {
+    "string": "audio",
+    "string_offset": 1647013,
+    "string_address": "0x601921a5",
+    "pointer_offsets": [
+      1647612
+    ],
+    "xrefs": []
+  },
+  {
+    "string": "audio",
+    "string_offset": 1647055,
+    "string_address": "0x601921cf",
+    "pointer_offsets": [
+      1647660
+    ],
+    "xrefs": []
+  },
+  {
+    "string": "audio",
+    "string_offset": 2083743,
+    "string_address": "0x601fcb9f",
+    "pointer_offsets": [
+      2082916
+    ],
+    "xrefs": []
+  },
+  {
+    "string": "audio",
+    "string_offset": 2185043,
+    "string_address": "0x60215753",
+    "pointer_offsets": [],
+    "xrefs": []
+  },
+  {
+    "string": "audio",
+    "string_offset": 2185081,
+    "string_address": "0x60215779",
+    "pointer_offsets": [],
+    "xrefs": []
+  },
+  {
+    "string": "audio",
+    "string_offset": 2185136,
+    "string_address": "0x602157b0",
+    "pointer_offsets": [],
+    "xrefs": []
+  },
+  {
+    "string": "audio",
+    "string_offset": 2185166,
+    "string_address": "0x602157ce",
+    "pointer_offsets": [],
+    "xrefs": []
+  },
+  {
+    "string": "audio",
+    "string_offset": 2185200,
+    "string_address": "0x602157f0",
+    "pointer_offsets": [],
+    "xrefs": []
+  },
+  {
+    "string": "audio",
+    "string_offset": 2185231,
+    "string_address": "0x6021580f",
+    "pointer_offsets": [],
+    "xrefs": []
+  },
+  {
+    "string": "audio",
+    "string_offset": 2185266,
+    "string_address": "0x60215832",
+    "pointer_offsets": [],
+    "xrefs": []
+  },
+  {
+    "string": "audio",
+    "string_offset": 2185310,
+    "string_address": "0x6021585e",
+    "pointer_offsets": [],
+    "xrefs": []
+  },
+  {
+    "string": "audio",
+    "string_offset": 2185347,
+    "string_address": "0x60215883",
+    "pointer_offsets": [],
+    "xrefs": []
+  },
+  {
+    "string": "audio",
+    "string_offset": 2185999,
+    "string_address": "0x60215b0f",
+    "pointer_offsets": [
+      2181176
+    ],
+    "xrefs": [
+      {
+        "mode": "thumb",
+        "offset": 2180676,
+        "address": "0x60214644",
+        "instruction": "ldr r5, [pc, #0x1ec]",
+        "literal_offset": 2181176
+      },
+      {
+        "mode": "thumb",
+        "offset": 2180702,
+        "address": "0x6021465e",
+        "instruction": "ldr r2, [pc, #0x1d8]",
+        "literal_offset": 2181176
+      }
+    ]
+  },
+  {
+    "string": "audio",
+    "string_offset": 2186046,
+    "string_address": "0x60215b3e",
+    "pointer_offsets": [],
+    "xrefs": []
+  },
+  {
+    "string": "audio",
+    "string_offset": 2186064,
+    "string_address": "0x60215b50",
+    "pointer_offsets": [],
+    "xrefs": []
+  },
+  {
+    "string": "audio",
+    "string_offset": 2186090,
+    "string_address": "0x60215b6a",
+    "pointer_offsets": [],
+    "xrefs": []
+  },
+  {
+    "string": "audio",
+    "string_offset": 2186117,
+    "string_address": "0x60215b85",
+    "pointer_offsets": [],
+    "xrefs": []
+  },
+  {
+    "string": "audio",
+    "string_offset": 2186377,
+    "string_address": "0x60215c89",
+    "pointer_offsets": [],
+    "xrefs": []
+  },
+  {
+    "string": "audio",
+    "string_offset": 2186408,
+    "string_address": "0x60215ca8",
+    "pointer_offsets": [],
+    "xrefs": []
+  },
+  {
+    "string": "audio",
+    "string_offset": 2186445,
+    "string_address": "0x60215ccd",
+    "pointer_offsets": [],
+    "xrefs": []
+  },
+  {
+    "string": "audio",
+    "string_offset": 2186484,
+    "string_address": "0x60215cf4",
+    "pointer_offsets": [],
+    "xrefs": []
+  },
+  {
+    "string": "audio",
+    "string_offset": 2186512,
+    "string_address": "0x60215d10",
+    "pointer_offsets": [],
+    "xrefs": []
+  },
+  {
+    "string": "audio",
+    "string_offset": 2186546,
+    "string_address": "0x60215d32",
+    "pointer_offsets": [],
+    "xrefs": []
+  },
+  {
+    "string": "audio",
+    "string_offset": 2186578,
+    "string_address": "0x60215d52",
+    "pointer_offsets": [],
+    "xrefs": []
+  },
+  {
+    "string": "audio",
+    "string_offset": 2186611,
+    "string_address": "0x60215d73",
+    "pointer_offsets": [],
+    "xrefs": []
+  },
+  {
+    "string": "audio",
+    "string_offset": 2186653,
+    "string_address": "0x60215d9d",
+    "pointer_offsets": [],
+    "xrefs": []
+  },
+  {
+    "string": "audio",
+    "string_offset": 2186685,
+    "string_address": "0x60215dbd",
+    "pointer_offsets": [],
+    "xrefs": []
+  },
+  {
+    "string": "audio",
+    "string_offset": 2186713,
+    "string_address": "0x60215dd9",
+    "pointer_offsets": [],
+    "xrefs": []
+  },
+  {
+    "string": "audio",
+    "string_offset": 2186745,
+    "string_address": "0x60215df9",
+    "pointer_offsets": [],
+    "xrefs": []
+  },
+  {
+    "string": "audio",
+    "string_offset": 2186782,
+    "string_address": "0x60215e1e",
+    "pointer_offsets": [],
+    "xrefs": []
+  },
+  {
+    "string": "audio",
+    "string_offset": 2186817,
+    "string_address": "0x60215e41",
+    "pointer_offsets": [],
+    "xrefs": []
+  },
+  {
+    "string": "audio",
+    "string_offset": 2186855,
+    "string_address": "0x60215e67",
+    "pointer_offsets": [],
+    "xrefs": []
+  },
+  {
+    "string": "audio",
+    "string_offset": 2186895,
+    "string_address": "0x60215e8f",
+    "pointer_offsets": [],
+    "xrefs": []
+  },
+  {
+    "string": "audio",
+    "string_offset": 2186933,
+    "string_address": "0x60215eb5",
+    "pointer_offsets": [],
+    "xrefs": []
+  },
+  {
+    "string": "audio",
+    "string_offset": 2186961,
+    "string_address": "0x60215ed1",
+    "pointer_offsets": [],
+    "xrefs": []
+  },
+  {
+    "string": "audio",
+    "string_offset": 2186988,
+    "string_address": "0x60215eec",
+    "pointer_offsets": [],
+    "xrefs": []
+  },
+  {
+    "string": "audio",
+    "string_offset": 2187018,
+    "string_address": "0x60215f0a",
+    "pointer_offsets": [],
+    "xrefs": []
+  },
+  {
+    "string": "audio",
+    "string_offset": 2187054,
+    "string_address": "0x60215f2e",
+    "pointer_offsets": [],
+    "xrefs": []
+  },
+  {
+    "string": "audio",
+    "string_offset": 2187081,
+    "string_address": "0x60215f49",
+    "pointer_offsets": [],
+    "xrefs": []
+  },
+  {
+    "string": "audio",
+    "string_offset": 2187114,
+    "string_address": "0x60215f6a",
+    "pointer_offsets": [],
+    "xrefs": []
+  },
+  {
+    "string": "audio",
+    "string_offset": 2187155,
+    "string_address": "0x60215f93",
+    "pointer_offsets": [],
+    "xrefs": []
+  },
+  {
+    "string": "audio",
+    "string_offset": 2187174,
+    "string_address": "0x60215fa6",
+    "pointer_offsets": [],
+    "xrefs": []
+  },
+  {
+    "string": "audio",
+    "string_offset": 2187197,
+    "string_address": "0x60215fbd",
+    "pointer_offsets": [],
+    "xrefs": []
+  },
+  {
+    "string": "audio",
+    "string_offset": 2187232,
+    "string_address": "0x60215fe0",
+    "pointer_offsets": [],
+    "xrefs": []
+  },
+  {
+    "string": "audio",
+    "string_offset": 2187258,
+    "string_address": "0x60215ffa",
+    "pointer_offsets": [],
+    "xrefs": []
+  },
+  {
+    "string": "audio",
+    "string_offset": 2187291,
+    "string_address": "0x6021601b",
+    "pointer_offsets": [],
+    "xrefs": []
+  },
+  {
+    "string": "audio",
+    "string_offset": 2187322,
+    "string_address": "0x6021603a",
+    "pointer_offsets": [],
+    "xrefs": []
+  },
+  {
+    "string": "audio",
+    "string_offset": 2187353,
+    "string_address": "0x60216059",
+    "pointer_offsets": [],
+    "xrefs": []
+  },
+  {
+    "string": "audio",
+    "string_offset": 2187386,
+    "string_address": "0x6021607a",
+    "pointer_offsets": [],
+    "xrefs": []
+  },
+  {
+    "string": "audio",
+    "string_offset": 2187421,
+    "string_address": "0x6021609d",
+    "pointer_offsets": [],
+    "xrefs": []
+  },
+  {
+    "string": "audio",
+    "string_offset": 2187456,
+    "string_address": "0x602160c0",
+    "pointer_offsets": [],
+    "xrefs": []
+  },
+  {
+    "string": "audio",
+    "string_offset": 2187488,
+    "string_address": "0x602160e0",
+    "pointer_offsets": [],
+    "xrefs": []
+  },
+  {
+    "string": "audio",
+    "string_offset": 2187515,
+    "string_address": "0x602160fb",
+    "pointer_offsets": [],
+    "xrefs": []
+  },
+  {
+    "string": "audio",
+    "string_offset": 2187546,
+    "string_address": "0x6021611a",
+    "pointer_offsets": [],
+    "xrefs": []
+  },
+  {
+    "string": "audio",
+    "string_offset": 2187581,
+    "string_address": "0x6021613d",
+    "pointer_offsets": [],
+    "xrefs": []
+  },
+  {
+    "string": "audio",
+    "string_offset": 2187616,
+    "string_address": "0x60216160",
+    "pointer_offsets": [],
+    "xrefs": []
+  },
+  {
+    "string": "audio",
+    "string_offset": 2187657,
+    "string_address": "0x60216189",
+    "pointer_offsets": [],
+    "xrefs": []
+  },
+  {
+    "string": "audio",
+    "string_offset": 2187691,
+    "string_address": "0x602161ab",
+    "pointer_offsets": [],
+    "xrefs": []
+  },
+  {
+    "string": "audio",
+    "string_offset": 2187730,
+    "string_address": "0x602161d2",
+    "pointer_offsets": [],
+    "xrefs": []
+  },
+  {
+    "string": "audio",
+    "string_offset": 2187763,
+    "string_address": "0x602161f3",
+    "pointer_offsets": [],
+    "xrefs": []
+  },
+  {
+    "string": "audio",
+    "string_offset": 2187791,
+    "string_address": "0x6021620f",
+    "pointer_offsets": [],
+    "xrefs": []
+  },
+  {
+    "string": "audio",
+    "string_offset": 2187826,
+    "string_address": "0x60216232",
+    "pointer_offsets": [],
+    "xrefs": []
+  },
+  {
+    "string": "audio",
+    "string_offset": 2187863,
+    "string_address": "0x60216257",
+    "pointer_offsets": [],
+    "xrefs": []
+  },
+  {
+    "string": "audio",
+    "string_offset": 2187895,
+    "string_address": "0x60216277",
+    "pointer_offsets": [],
+    "xrefs": []
+  },
+  {
+    "string": "audio",
+    "string_offset": 2187921,
+    "string_address": "0x60216291",
+    "pointer_offsets": [],
+    "xrefs": []
+  },
+  {
+    "string": "audio",
+    "string_offset": 2187951,
+    "string_address": "0x602162af",
+    "pointer_offsets": [],
+    "xrefs": []
+  },
+  {
+    "string": "audio",
+    "string_offset": 2187982,
+    "string_address": "0x602162ce",
+    "pointer_offsets": [],
+    "xrefs": []
+  },
+  {
+    "string": "audio",
+    "string_offset": 2188009,
+    "string_address": "0x602162e9",
+    "pointer_offsets": [],
+    "xrefs": []
+  },
+  {
+    "string": "audio",
+    "string_offset": 2188041,
+    "string_address": "0x60216309",
+    "pointer_offsets": [],
+    "xrefs": []
+  },
+  {
+    "string": "audio",
+    "string_offset": 2188075,
+    "string_address": "0x6021632b",
+    "pointer_offsets": [],
+    "xrefs": []
+  },
+  {
+    "string": "audio",
+    "string_offset": 2188134,
+    "string_address": "0x60216366",
+    "pointer_offsets": [],
+    "xrefs": []
+  },
+  {
+    "string": "audio",
+    "string_offset": 2188166,
+    "string_address": "0x60216386",
+    "pointer_offsets": [],
+    "xrefs": []
+  },
+  {
+    "string": "audio",
+    "string_offset": 2188197,
+    "string_address": "0x602163a5",
+    "pointer_offsets": [],
+    "xrefs": []
+  },
+  {
+    "string": "audio",
+    "string_offset": 2188206,
+    "string_address": "0x602163ae",
+    "pointer_offsets": [],
+    "xrefs": []
+  },
+  {
+    "string": "audio",
+    "string_offset": 2188219,
+    "string_address": "0x602163bb",
+    "pointer_offsets": [],
+    "xrefs": []
+  },
+  {
+    "string": "audio",
+    "string_offset": 2188248,
+    "string_address": "0x602163d8",
+    "pointer_offsets": [],
+    "xrefs": []
+  },
+  {
+    "string": "audio",
+    "string_offset": 2188277,
+    "string_address": "0x602163f5",
+    "pointer_offsets": [],
+    "xrefs": []
+  },
+  {
+    "string": "audio",
+    "string_offset": 2188312,
+    "string_address": "0x60216418",
+    "pointer_offsets": [],
+    "xrefs": []
+  },
+  {
+    "string": "audio",
+    "string_offset": 2188345,
+    "string_address": "0x60216439",
+    "pointer_offsets": [],
+    "xrefs": []
+  },
+  {
+    "string": "audio",
+    "string_offset": 2188374,
+    "string_address": "0x60216456",
+    "pointer_offsets": [],
+    "xrefs": []
+  },
+  {
+    "string": "audio",
+    "string_offset": 2188396,
+    "string_address": "0x6021646c",
+    "pointer_offsets": [],
+    "xrefs": []
+  },
+  {
+    "string": "audio",
+    "string_offset": 2188428,
+    "string_address": "0x6021648c",
+    "pointer_offsets": [],
+    "xrefs": []
+  },
+  {
+    "string": "audio",
+    "string_offset": 2188461,
+    "string_address": "0x602164ad",
+    "pointer_offsets": [],
+    "xrefs": []
+  },
+  {
+    "string": "audio",
+    "string_offset": 2188495,
+    "string_address": "0x602164cf",
+    "pointer_offsets": [],
+    "xrefs": []
+  },
+  {
+    "string": "audio",
+    "string_offset": 2188523,
+    "string_address": "0x602164eb",
+    "pointer_offsets": [],
+    "xrefs": []
+  },
+  {
+    "string": "audio",
+    "string_offset": 2188556,
+    "string_address": "0x6021650c",
+    "pointer_offsets": [],
+    "xrefs": []
+  },
+  {
+    "string": "audio",
+    "string_offset": 2188588,
+    "string_address": "0x6021652c",
+    "pointer_offsets": [],
+    "xrefs": []
+  },
+  {
+    "string": "audio",
+    "string_offset": 2188621,
+    "string_address": "0x6021654d",
+    "pointer_offsets": [],
+    "xrefs": []
+  },
+  {
+    "string": "audio",
+    "string_offset": 2188652,
+    "string_address": "0x6021656c",
+    "pointer_offsets": [],
+    "xrefs": []
+  },
+  {
+    "string": "audio",
+    "string_offset": 2188681,
+    "string_address": "0x60216589",
+    "pointer_offsets": [],
+    "xrefs": []
+  },
+  {
+    "string": "audio",
+    "string_offset": 2188711,
+    "string_address": "0x602165a7",
+    "pointer_offsets": [],
+    "xrefs": []
+  },
+  {
+    "string": "audio",
+    "string_offset": 2188743,
+    "string_address": "0x602165c7",
+    "pointer_offsets": [],
+    "xrefs": []
+  },
+  {
+    "string": "audio",
+    "string_offset": 2188772,
+    "string_address": "0x602165e4",
+    "pointer_offsets": [],
+    "xrefs": []
+  },
+  {
+    "string": "audio",
+    "string_offset": 2188796,
+    "string_address": "0x602165fc",
+    "pointer_offsets": [],
+    "xrefs": []
+  },
+  {
+    "string": "audio",
+    "string_offset": 2188828,
+    "string_address": "0x6021661c",
+    "pointer_offsets": [],
+    "xrefs": []
+  },
+  {
+    "string": "audio",
+    "string_offset": 2188868,
+    "string_address": "0x60216644",
+    "pointer_offsets": [],
+    "xrefs": []
+  },
+  {
+    "string": "audio",
+    "string_offset": 2235947,
+    "string_address": "0x60221e2b",
+    "pointer_offsets": [],
+    "xrefs": []
+  },
+  {
+    "string": "audio",
+    "string_offset": 2235980,
+    "string_address": "0x60221e4c",
+    "pointer_offsets": [],
+    "xrefs": []
+  },
+  {
+    "string": "audio",
+    "string_offset": 2236013,
+    "string_address": "0x60221e6d",
+    "pointer_offsets": [],
+    "xrefs": []
+  },
+  {
+    "string": "audio",
+    "string_offset": 2236169,
+    "string_address": "0x60221f09",
+    "pointer_offsets": [],
+    "xrefs": []
+  },
+  {
+    "string": "audio",
+    "string_offset": 2236193,
+    "string_address": "0x60221f21",
+    "pointer_offsets": [],
+    "xrefs": []
+  },
+  {
+    "string": "audio",
+    "string_offset": 2236313,
+    "string_address": "0x60221f99",
+    "pointer_offsets": [],
+    "xrefs": []
+  },
+  {
+    "string": "audio",
+    "string_offset": 2236752,
+    "string_address": "0x60222150",
+    "pointer_offsets": [],
+    "xrefs": []
+  },
+  {
+    "string": "audio",
+    "string_offset": 2236813,
+    "string_address": "0x6022218d",
+    "pointer_offsets": [],
+    "xrefs": []
+  },
+  {
+    "string": "audio",
+    "string_offset": 2236846,
+    "string_address": "0x602221ae",
+    "pointer_offsets": [],
+    "xrefs": []
+  },
+  {
+    "string": "audio",
+    "string_offset": 2247004,
+    "string_address": "0x6022495c",
+    "pointer_offsets": [],
+    "xrefs": []
+  },
+  {
+    "string": "audio",
+    "string_offset": 2416063,
+    "string_address": "0x6024ddbf",
+    "pointer_offsets": [],
+    "xrefs": []
+  },
+  {
+    "string": "audio",
+    "string_offset": 2416252,
+    "string_address": "0x6024de7c",
+    "pointer_offsets": [],
+    "xrefs": []
+  },
+  {
+    "string": "audio",
+    "string_offset": 2687503,
+    "string_address": "0x6029020f",
+    "pointer_offsets": [
+      2687892,
+      2688356
+    ],
+    "xrefs": [
+      {
+        "mode": "thumb",
+        "offset": 2687796,
+        "address": "0x60290334",
+        "instruction": "ldr r1, [pc, #0x58]",
+        "literal_offset": 2687892
+      },
+      {
+        "mode": "thumb",
+        "offset": 2687800,
+        "address": "0x60290338",
+        "instruction": "ldr r1, [pc, #0x58]",
+        "literal_offset": 2687892
+      },
+      {
+        "mode": "thumb",
+        "offset": 2688094,
+        "address": "0x6029045e",
+        "instruction": "ldr r1, [pc, #0x104]",
+        "literal_offset": 2688356
+      }
+    ]
+  },
+  {
+    "string": "audio",
+    "string_offset": 2691983,
+    "string_address": "0x6029138f",
+    "pointer_offsets": [],
+    "xrefs": []
+  },
+  {
+    "string": "audio",
+    "string_offset": 2691995,
+    "string_address": "0x6029139b",
+    "pointer_offsets": [],
+    "xrefs": []
+  },
+  {
+    "string": "audio",
+    "string_offset": 2693707,
+    "string_address": "0x60291a4b",
+    "pointer_offsets": [],
+    "xrefs": []
+  },
+  {
+    "string": "audio",
+    "string_offset": 2710879,
+    "string_address": "0x60295d5f",
+    "pointer_offsets": [],
+    "xrefs": []
+  },
+  {
+    "string": "audio",
+    "string_offset": 2730139,
+    "string_address": "0x6029a89b",
+    "pointer_offsets": [],
+    "xrefs": []
+  },
+  {
+    "string": "audio",
+    "string_offset": 2730248,
+    "string_address": "0x6029a908",
+    "pointer_offsets": [],
+    "xrefs": []
+  },
+  {
+    "string": "audio",
+    "string_offset": 2730343,
+    "string_address": "0x6029a967",
+    "pointer_offsets": [],
+    "xrefs": []
+  },
+  {
+    "string": "audio",
+    "string_offset": 2734478,
+    "string_address": "0x6029b98e",
+    "pointer_offsets": [],
+    "xrefs": []
+  },
+  {
+    "string": "audio",
+    "string_offset": 2735474,
+    "string_address": "0x6029bd72",
+    "pointer_offsets": [],
+    "xrefs": []
+  },
+  {
+    "string": "audio",
+    "string_offset": 2735516,
+    "string_address": "0x6029bd9c",
+    "pointer_offsets": [],
+    "xrefs": []
+  },
+  {
+    "string": "audio",
+    "string_offset": 2736323,
+    "string_address": "0x6029c0c3",
+    "pointer_offsets": [],
+    "xrefs": []
+  },
+  {
+    "string": "audio",
+    "string_offset": 2742810,
+    "string_address": "0x6029da1a",
+    "pointer_offsets": [],
+    "xrefs": []
+  },
+  {
+    "string": "audio",
+    "string_offset": 2742828,
+    "string_address": "0x6029da2c",
+    "pointer_offsets": [],
+    "xrefs": []
+  },
+  {
+    "string": "audio",
+    "string_offset": 2759564,
+    "string_address": "0x602a1b8c",
+    "pointer_offsets": [
+      2760564
+    ],
+    "xrefs": [
+      {
+        "mode": "thumb",
+        "offset": 2760112,
+        "address": "0x602a1db0",
+        "instruction": "ldr r2, [pc, #0x1c0]",
+        "literal_offset": 2760564
+      }
+    ]
+  },
+  {
+    "string": "audio",
+    "string_offset": 2759594,
+    "string_address": "0x602a1baa",
+    "pointer_offsets": [],
+    "xrefs": []
+  },
+  {
+    "string": "audio",
+    "string_offset": 2769834,
+    "string_address": "0x602a43aa",
+    "pointer_offsets": [],
+    "xrefs": []
+  },
+  {
+    "string": "audio",
+    "string_offset": 4551176,
+    "string_address": "0x60457208",
+    "pointer_offsets": [],
+    "xrefs": []
+  },
+  {
+    "string": "audio",
+    "string_offset": 4551688,
+    "string_address": "0x60457408",
+    "pointer_offsets": [],
+    "xrefs": []
+  },
+  {
+    "string": "audio",
+    "string_offset": 4603758,
+    "string_address": "0x60463f6e",
+    "pointer_offsets": [],
+    "xrefs": []
+  },
+  {
+    "string": "audio",
+    "string_offset": 4618248,
+    "string_address": "0x60467808",
+    "pointer_offsets": [],
+    "xrefs": []
+  },
+  {
+    "string": "audio",
+    "string_offset": 4682760,
+    "string_address": "0x60477408",
+    "pointer_offsets": [],
+    "xrefs": []
+  },
+  {
+    "string": "audio",
+    "string_offset": 5317640,
+    "string_address": "0x60512408",
+    "pointer_offsets": [],
+    "xrefs": []
+  },
+  {
+    "string": "audio",
+    "string_offset": 5318664,
+    "string_address": "0x60512808",
+    "pointer_offsets": [],
+    "xrefs": []
+  },
+  {
+    "string": "audio",
+    "string_offset": 5326856,
+    "string_address": "0x60514808",
+    "pointer_offsets": [],
+    "xrefs": []
+  },
+  {
+    "string": "audio",
+    "string_offset": 5334536,
+    "string_address": "0x60516608",
+    "pointer_offsets": [],
+    "xrefs": []
+  },
+  {
+    "string": "audio",
+    "string_offset": 5376008,
+    "string_address": "0x60520808",
+    "pointer_offsets": [],
+    "xrefs": []
+  },
+  {
+    "string": "audio",
+    "string_offset": 5412360,
+    "string_address": "0x60529608",
+    "pointer_offsets": [],
+    "xrefs": []
+  },
+  {
+    "string": "audio",
+    "string_offset": 5416456,
+    "string_address": "0x6052a608",
+    "pointer_offsets": [],
+    "xrefs": []
+  },
+  {
+    "string": "audio",
+    "string_offset": 5420552,
+    "string_address": "0x6052b608",
+    "pointer_offsets": [],
+    "xrefs": []
+  },
+  {
+    "string": "audio",
+    "string_offset": 5579784,
+    "string_address": "0x60552408",
+    "pointer_offsets": [],
+    "xrefs": []
+  },
+  {
+    "string": "audio",
+    "string_offset": 5580296,
+    "string_address": "0x60552608",
+    "pointer_offsets": [],
+    "xrefs": []
+  },
+  {
+    "string": "audio",
+    "string_offset": 5584392,
+    "string_address": "0x60553608",
+    "pointer_offsets": [],
+    "xrefs": []
+  },
+  {
+    "string": "audio",
+    "string_offset": 5584904,
+    "string_address": "0x60553808",
+    "pointer_offsets": [],
+    "xrefs": []
+  },
+  {
+    "string": "audio",
+    "string_offset": 5589000,
+    "string_address": "0x60554808",
+    "pointer_offsets": [],
+    "xrefs": []
+  },
+  {
+    "string": "audio",
+    "string_offset": 5593096,
+    "string_address": "0x60555808",
+    "pointer_offsets": [],
+    "xrefs": []
+  },
+  {
+    "string": "audio",
+    "string_offset": 7038852,
+    "string_address": "0x606b6784",
+    "pointer_offsets": [],
+    "xrefs": []
+  },
+  {
+    "string": "audio",
+    "string_offset": 7038884,
+    "string_address": "0x606b67a4",
+    "pointer_offsets": [],
+    "xrefs": []
+  },
+  {
+    "string": "audio",
+    "string_offset": 7039024,
+    "string_address": "0x606b6830",
+    "pointer_offsets": [],
+    "xrefs": []
+  },
+  {
+    "string": "audio",
+    "string_offset": 7040008,
+    "string_address": "0x606b6c08",
+    "pointer_offsets": [],
+    "xrefs": []
+  },
+  {
+    "string": "audio",
+    "string_offset": 7043080,
+    "string_address": "0x606b7808",
+    "pointer_offsets": [],
+    "xrefs": []
+  },
+  {
+    "string": "speaker",
+    "string_offset": 134078,
+    "string_address": "0x60020bbe",
+    "pointer_offsets": [],
+    "xrefs": []
+  },
+  {
+    "string": "speaker",
+    "string_offset": 1675381,
+    "string_address": "0x60199075",
+    "pointer_offsets": [],
+    "xrefs": []
+  },
+  {
+    "string": "speaker",
+    "string_offset": 1679482,
+    "string_address": "0x6019a07a",
+    "pointer_offsets": [],
+    "xrefs": []
+  },
+  {
+    "string": "speaker",
+    "string_offset": 1680222,
+    "string_address": "0x6019a35e",
+    "pointer_offsets": [],
+    "xrefs": []
+  },
+  {
+    "string": "speaker",
+    "string_offset": 2111146,
+    "string_address": "0x602036aa",
+    "pointer_offsets": [],
+    "xrefs": []
+  },
+  {
+    "string": "speaker",
+    "string_offset": 2114555,
+    "string_address": "0x602043fb",
+    "pointer_offsets": [],
+    "xrefs": []
+  },
+  {
+    "string": "speaker",
+    "string_offset": 2115172,
+    "string_address": "0x60204664",
+    "pointer_offsets": [],
+    "xrefs": []
+  },
+  {
+    "string": "speaker",
+    "string_offset": 2186075,
+    "string_address": "0x60215b5b",
+    "pointer_offsets": [],
+    "xrefs": []
+  },
+  {
+    "string": "speaker",
+    "string_offset": 2188572,
+    "string_address": "0x6021651c",
+    "pointer_offsets": [],
+    "xrefs": []
+  }
+]

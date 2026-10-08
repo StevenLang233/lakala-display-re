@@ -1,0 +1,184 @@
+[
+  {
+    "name": "Helios_Audio_FilePlayStart",
+    "hash": "1b3b5945",
+    "targets": [
+      "0x6013cce9"
+    ]
+  },
+  {
+    "name": "Helios_Audio_FilePlayStop",
+    "hash": "37a97933",
+    "targets": [
+      "0x6013cd09"
+    ]
+  },
+  {
+    "name": "Helios_Audio_GetVolume",
+    "hash": "6a439b9d",
+    "targets": [
+      "0x6013d4dd"
+    ]
+  },
+  {
+    "name": "Helios_Audio_Init",
+    "hash": "545aad64",
+    "targets": [
+      "0x6013cbb9"
+    ]
+  },
+  {
+    "name": "Helios_Audio_PCM_para_set",
+    "hash": "2657c4f1",
+    "targets": [
+      "0x6013ce15"
+    ]
+  },
+  {
+    "name": "Helios_Audio_Play_Tone",
+    "hash": "73dfb532",
+    "targets": [
+      "0x6013d5d5"
+    ]
+  },
+  {
+    "name": "Helios_Audio_SetAudioChannle",
+    "hash": "b968cb86",
+    "targets": [
+      "0x6013cc6b"
+    ]
+  },
+  {
+    "name": "Helios_Audio_SetVolume",
+    "hash": "64360235",
+    "targets": [
+      "0x6013d4cd"
+    ]
+  },
+  {
+    "name": "Helios_Audio_StreamPlayStart",
+    "hash": "697cefe7",
+    "targets": [
+      "0x6013cd25"
+    ]
+  },
+  {
+    "name": "Helios_Audio_StreamPlayStop",
+    "hash": "e069fd88",
+    "targets": [
+      "0x6013ce01"
+    ]
+  },
+  {
+    "name": "Helios_fclose",
+    "hash": "e1b01271",
+    "targets": [
+      "0x60143ef9"
+    ]
+  },
+  {
+    "name": "Helios_fopen",
+    "hash": "7a4f1e89",
+    "targets": [
+      "0x60143e89"
+    ]
+  },
+  {
+    "name": "Helios_fread",
+    "hash": "fcde96e6",
+    "targets": [
+      "0x60143ee5"
+    ]
+  },
+  {
+    "name": "Helios_frename",
+    "hash": "8277f442",
+    "targets": [
+      "0x60143e1d"
+    ]
+  },
+  {
+    "name": "Helios_fs_free_size",
+    "hash": "a206361e",
+    "targets": [
+      "0x60143f01"
+    ]
+  },
+  {
+    "name": "Helios_fsize",
+    "hash": "67259075",
+    "targets": [
+      "0x60143efd"
+    ]
+  },
+  {
+    "name": "Helios_fwrite",
+    "hash": "de0638ea",
+    "targets": [
+      "0x60143ee1"
+    ]
+  },
+  {
+    "name": "Helios_remove",
+    "hash": "2701a989",
+    "targets": [
+      "0x60143eb1"
+    ]
+  },
+  {
+    "name": "ql_aud_get_output_type",
+    "hash": "b92c020c",
+    "targets": [
+      "0x601dfb45"
+    ]
+  },
+  {
+    "name": "ql_aud_get_play_state",
+    "hash": "ea52d0c1",
+    "targets": [
+      "0x601dfc51"
+    ]
+  },
+  {
+    "name": "ql_aud_pcm_open",
+    "hash": "c0dd518e",
+    "targets": [
+      "0x601e1969"
+    ]
+  },
+  {
+    "name": "ql_aud_play_stream_start",
+    "hash": "365100f8",
+    "targets": [
+      "0x601e08dd"
+    ]
+  },
+  {
+    "name": "ql_aud_player_stop",
+    "hash": "bd876df6",
+    "targets": [
+      "0x601dfc65"
+    ]
+  },
+  {
+    "name": "ql_pcm_close",
+    "hash": "be8d9b77",
+    "targets": [
+      "0x601e1fa5"
+    ]
+  },
+  {
+    "name": "ql_pcm_open",
+    "hash": "636a6ba0",
+    "targets": [
+      "0x601e2669"
+    ]
+  },
+  {
+    "name": "ql_pcm_write",
+    "hash": "9d0e6346",
+    "targets": [
+      "0x601e2189"
+    ]
+  }
+]

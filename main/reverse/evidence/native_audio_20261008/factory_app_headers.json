@@ -1,0 +1,38 @@
+[
+  {
+    "address": "0x60270000",
+    "length": 657824,
+    "descriptors": [
+      {
+        "kind": 2,
+        "source": 128,
+        "size": 1592,
+        "address": "0x80fe0000"
+      },
+      {
+        "kind": 4,
+        "source": 4736,
+        "size": 653050,
+        "address": "0x60271280"
+      },
+      {
+        "kind": 4,
+        "source": 657824,
+        "size": 0,
+        "address": "0x603109a0"
+      },
+      {
+        "kind": 1,
+        "source": 1728,
+        "size": 2980,
+        "address": "0x80fe0640"
+      },
+      {
+        "kind": 3,
+        "source": 0,
+        "size": 26300,
+        "address": "0x80fe1200"
+      }
+    ]
+  }
+]

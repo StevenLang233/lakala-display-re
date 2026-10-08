@@ -1,0 +1,2 @@
+#define R03_CORE_SIZE 2408960u
+#define R03_CORE_XXH32 0xc9e6788bu

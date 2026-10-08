@@ -1,0 +1,57 @@
+[
+  {
+    "address": "0x6029a41c",
+    "target": "0x60310748",
+    "name": "ql_aud_data_done"
+  },
+  {
+    "address": "0x6029a45e",
+    "target": "0x603107e0",
+    "name": "ql_aud_wait_play_finish"
+  },
+  {
+    "address": "0x6029a61c",
+    "target": "0x603108f8",
+    "name": "ql_aud_play_file_start"
+  },
+  {
+    "address": "0x6029a622",
+    "target": "0x60310748",
+    "name": "ql_aud_data_done"
+  },
+  {
+    "address": "0x6029a636",
+    "target": "0x603103d8",
+    "name": "ql_aud_player_stop"
+  },
+  {
+    "address": "0x6029a656",
+    "target": "0x603107e0",
+    "name": "ql_aud_wait_play_finish"
+  },
+  {
+    "address": "0x6029dc92",
+    "target": "0x60310748",
+    "name": "ql_aud_data_done"
+  },
+  {
+    "address": "0x6029dc9a",
+    "target": "0x603107e0",
+    "name": "ql_aud_wait_play_finish"
+  },
+  {
+    "address": "0x602a433a",
+    "target": "0x60310258",
+    "name": "ql_aud_set_volume"
+  },
+  {
+    "address": "0x602a435c",
+    "target": "0x60310428",
+    "name": "ql_aud_set_icvolume_level_gain"
+  },
+  {
+    "address": "0x602a43e6",
+    "target": "0x60310348",
+    "name": "ql_set_audio_path_speaker"
+  }
+]

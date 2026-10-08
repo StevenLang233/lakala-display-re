@@ -1,0 +1,301 @@
+{
+  "core_version": "EC600UCNLBR03A04M08_OCPU_QPY",
+  "core_ap_sha256": "187abb282fd089e6c3fb9d8bb75b837826b1a726e943fe961e5bf052da433ca9",
+  "address_semantics": "Thumb callable addresses, low bit is 1",
+  "imports": [
+    {
+      "name": "Helios_Audio_FilePlayStart",
+      "hash": "1b3b5945",
+      "core_offset": "0x6670c",
+      "target": "0x6013cce9"
+    },
+    {
+      "name": "Helios_Audio_FilePlayStop",
+      "hash": "37a97933",
+      "core_offset": "0x66444",
+      "target": "0x6013cd09"
+    },
+    {
+      "name": "Helios_Audio_GetVolume",
+      "hash": "6a439b9d",
+      "core_offset": "0x6732c",
+      "target": "0x6013d4dd"
+    },
+    {
+      "name": "Helios_Audio_Init",
+      "hash": "545aad64",
+      "core_offset": "0x66c14",
+      "target": "0x6013cbb9"
+    },
+    {
+      "name": "Helios_Audio_SetAudioChannle",
+      "hash": "b968cb86",
+      "core_offset": "0x67024",
+      "target": "0x6013cc6b"
+    },
+    {
+      "name": "Helios_Audio_SetPaCallback",
+      "hash": "d28eba61",
+      "core_offset": "0x66b64",
+      "target": "0x6013d58d"
+    },
+    {
+      "name": "Helios_Audio_SetVolume",
+      "hash": "64360235",
+      "core_offset": "0x66484",
+      "target": "0x6013d4cd"
+    },
+    {
+      "name": "Helios_Audio_StreamPlayStart",
+      "hash": "697cefe7",
+      "core_offset": "0x67dfc",
+      "target": "0x6013cd25"
+    },
+    {
+      "name": "Helios_Audio_StreamPlayStop",
+      "hash": "e069fd88",
+      "core_offset": "0x67074",
+      "target": "0x6013ce01"
+    },
+    {
+      "name": "Helios_Critical_Enter",
+      "hash": "fe6abb0d",
+      "core_offset": "0x65ef4",
+      "target": "0x60147351"
+    },
+    {
+      "name": "Helios_Critical_Exit",
+      "hash": "8e032f5c",
+      "core_offset": "0x66a64",
+      "target": "0x60147355"
+    },
+    {
+      "name": "Helios_GPIO_GetDirection",
+      "hash": "64886a58",
+      "core_offset": "0x669b4",
+      "target": "0x60144d81"
+    },
+    {
+      "name": "Helios_GPIO_GetLevel",
+      "hash": "b317a6b2",
+      "core_offset": "0x67684",
+      "target": "0x60144d11"
+    },
+    {
+      "name": "Helios_GPIO_Init",
+      "hash": "83fc8e1c",
+      "core_offset": "0x66134",
+      "target": "0x60144b3d"
+    },
+    {
+      "name": "Helios_GetAvailableMemorySize",
+      "hash": "ef2563b7",
+      "core_offset": "0x6773c",
+      "target": "0x60147331"
+    },
+    {
+      "name": "Helios_LCD_MIPIInit",
+      "hash": "ca6846df",
+      "core_offset": "0x67c84",
+      "target": "0x60145f19"
+    },
+    {
+      "name": "Helios_MsgQ_Create",
+      "hash": "49354ac6",
+      "core_offset": "0x67964",
+      "target": "0x6014722f"
+    },
+    {
+      "name": "Helios_MsgQ_Get",
+      "hash": "3596c41e",
+      "core_offset": "0x66174",
+      "target": "0x60147245"
+    },
+    {
+      "name": "Helios_MsgQ_Put",
+      "hash": "853b9ec0",
+      "core_offset": "0x678a4",
+      "target": "0x60147233"
+    },
+    {
+      "name": "Helios_Semaphore_Acquire",
+      "hash": "a3ab6a16",
+      "core_offset": "0x6603c",
+      "target": "0x601471f5"
+    },
+    {
+      "name": "Helios_Semaphore_Create",
+      "hash": "d697c570",
+      "core_offset": "0x66d74",
+      "target": "0x601471f1"
+    },
+    {
+      "name": "Helios_Semaphore_Release",
+      "hash": "bc04f25f",
+      "core_offset": "0x66ae4",
+      "target": "0x60147205"
+    },
+    {
+      "name": "Helios_Thread_Create",
+      "hash": "a63fe9e6",
+      "core_offset": "0x67dbc",
+      "target": "0x60147185"
+    },
+    {
+      "name": "Helios_Thread_Exit",
+      "hash": "e1b8827f",
+      "core_offset": "0x66f3c",
+      "target": "0x601471d1"
+    },
+    {
+      "name": "Helios_UART_Init",
+      "hash": "42881b64",
+      "core_offset": "0x66bdc",
+      "target": "0x60149a15"
+    },
+    {
+      "name": "Helios_UART_Read",
+      "hash": "009a38fd",
+      "core_offset": "0x6810c",
+      "target": "0x60149c31"
+    },
+    {
+      "name": "Helios_fclose",
+      "hash": "e1b01271",
+      "core_offset": "0x66d84",
+      "target": "0x60143ef9"
+    },
+    {
+      "name": "Helios_fopen",
+      "hash": "7a4f1e89",
+      "core_offset": "0x6707c",
+      "target": "0x60143e89"
+    },
+    {
+      "name": "Helios_fread",
+      "hash": "fcde96e6",
+      "core_offset": "0x67d8c",
+      "target": "0x60143ee5"
+    },
+    {
+      "name": "Helios_frename",
+      "hash": "8277f442",
+      "core_offset": "0x666c4",
+      "target": "0x60143e1d"
+    },
+    {
+      "name": "Helios_fs_free_size",
+      "hash": "a206361e",
+      "core_offset": "0x66164",
+      "target": "0x60143f01"
+    },
+    {
+      "name": "Helios_fsize",
+      "hash": "67259075",
+      "core_offset": "0x66dec",
+      "target": "0x60143efd"
+    },
+    {
+      "name": "Helios_fwrite",
+      "hash": "de0638ea",
+      "core_offset": "0x67e64",
+      "target": "0x60143ee1"
+    },
+    {
+      "name": "Helios_msleep",
+      "hash": "1a2f5d6a",
+      "core_offset": "0x66cac",
+      "target": "0x6014732d"
+    },
+    {
+      "name": "Helios_remove",
+      "hash": "2701a989",
+      "core_offset": "0x670a4",
+      "target": "0x60143eb1"
+    },
+    {
+      "name": "free",
+      "hash": "fad595ad",
+      "core_offset": "0x675bc",
+      "target": "0x601c5865"
+    },
+    {
+      "name": "malloc",
+      "hash": "bf2ec5e3",
+      "core_offset": "0x67d1c",
+      "target": "0x601c5719"
+    },
+    {
+      "name": "osiTimerCreate",
+      "hash": "17ad0bca",
+      "core_offset": "0x679ac",
+      "target": "0x601c6085"
+    },
+    {
+      "name": "osiUpTimeUS",
+      "hash": "b7470176",
+      "core_offset": "0x66dfc",
+      "target": "0x60157247"
+    },
+    {
+      "name": "ql_aud_get_icvolume_level_gain",
+      "hash": "e8fdf63d",
+      "core_offset": "0x665cc",
+      "target": "0x601e2eb1"
+    },
+    {
+      "name": "ql_aud_get_output_type",
+      "hash": "b92c020c",
+      "core_offset": "0x65ebc",
+      "target": "0x601dfb45"
+    },
+    {
+      "name": "ql_aud_get_pa_type",
+      "hash": "f92bfa5a",
+      "core_offset": "0x66a34",
+      "target": "0x601df7d9"
+    },
+    {
+      "name": "ql_aud_get_play_state",
+      "hash": "ea52d0c1",
+      "core_offset": "0x678bc",
+      "target": "0x601dfc51"
+    },
+    {
+      "name": "ql_aud_set_icvolume_level_gain",
+      "hash": "fc9ae48b",
+      "core_offset": "0x67104",
+      "target": "0x601e2d51"
+    },
+    {
+      "name": "ql_gpio_deinit",
+      "hash": "5a439d3f",
+      "core_offset": "0x66614",
+      "target": "0x601f62f5"
+    },
+    {
+      "name": "ql_gpio_init",
+      "hash": "bbd44ee5",
+      "core_offset": "0x67d5c",
+      "target": "0x601f6449"
+    },
+    {
+      "name": "ql_gpio_set_level",
+      "hash": "9588b8a3",
+      "core_offset": "0x673ec",
+      "target": "0x601f6079"
+    },
+    {
+      "name": "ql_pin_set_func",
+      "hash": "5f640714",
+      "core_offset": "0x65fcc",
+      "target": "0x601f682d"
+    },
+    {
+      "name": "ql_uart_write",
+      "hash": "75432b56",
+      "core_offset": "0x66974",
+      "target": "0x6020bfa5"
+    }
+  ]
+}

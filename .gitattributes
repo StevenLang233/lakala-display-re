@@ -1,0 +1,6 @@
+# Retain byte-exact deployed source/assets and their SHA-256 snapshots.
+# Git must not silently change CRLF/LF on commit or checkout.
+* -text
+*.png binary
+*.jpg binary
+*.bin binary

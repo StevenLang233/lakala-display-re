@@ -1,0 +1,204 @@
+[
+  {
+    "address": "0x60215b3b",
+    "text": "ql_audio_init",
+    "pointer_references": [
+      "0x60214da0"
+    ]
+  },
+  {
+    "address": "0x60215d9a",
+    "text": "ql_audio:%s %d deinit player ok",
+    "pointer_references": [
+      "0x602131ec"
+    ]
+  },
+  {
+    "address": "0x60215eb2",
+    "text": "ql_audio:%s %d nv init fail",
+    "pointer_references": [
+      "0x60213468"
+    ]
+  },
+  {
+    "address": "0x602162cb",
+    "text": "ql_audio:%s %d nv not init",
+    "pointer_references": [
+      "0x602133a0",
+      "0x60213420"
+    ]
+  },
+  {
+    "address": "0x602163f2",
+    "text": "ql_audio:%s %d ext_codec init fail",
+    "pointer_references": [
+      "0x60214db0"
+    ]
+  },
+  {
+    "address": "0x602165e1",
+    "text": "ql_audio:%s %d not init",
+    "pointer_references": [
+      "0x60213a08",
+      "0x60213d28"
+    ]
+  },
+  {
+    "address": "0x60221f1b",
+    "text": "ql_bt_audio_init",
+    "pointer_references": [
+      "0x60221dc4"
+    ]
+  },
+  {
+    "address": "0x6024ddb4",
+    "text": "quec_atcmd_audio_task_init",
+    "pointer_references": [
+      "0x6024dd34"
+    ]
+  },
+  {
+    "address": "0x6024de76",
+    "text": "%s %d audio at task init ok",
+    "pointer_references": [
+      "0x6024dd78"
+    ]
+  },
+  {
+    "address": "0x60279ad2",
+    "text": "../../components/ql-application/CloudSpeak/App_System.c",
+    "pointer_references": []
+  },
+  {
+    "address": "0x6028040c",
+    "text": "../../components/ql-application/CloudSpeak/App_MipiLCD.c",
+    "pointer_references": []
+  },
+  {
+    "address": "0x60281e89",
+    "text": "../../components/ql-application/CloudSpeak/App_FactoryTest.c",
+    "pointer_references": []
+  },
+  {
+    "address": "0x60283459",
+    "text": "../../components/ql-application/CloudSpeak/App_MQTT.c",
+    "pointer_references": []
+  },
+  {
+    "address": "0x6028736c",
+    "text": "../../components/ql-application/CloudSpeak/App_HTTP.c",
+    "pointer_references": []
+  },
+  {
+    "address": "0x6028881e",
+    "text": "(`../../components/ql-application/CloudSpeak/App_api_qr.c",
+    "pointer_references": []
+  },
+  {
+    "address": "0x6028aa40",
+    "text": "../../components/ql-application/CloudSpeak/App_LED.c",
+    "pointer_references": []
+  },
+  {
+    "address": "0x6028abec",
+    "text": "../../components/ql-application/CloudSpeak/App_Key.c",
+    "pointer_references": []
+  },
+  {
+    "address": "0x6028bdad",
+    "text": "../../components/ql-application/CloudSpeak/App_CommonInterface.c",
+    "pointer_references": []
+  },
+  {
+    "address": "0x6028c740",
+    "text": "../../components/ql-application/CloudSpeak/ext_wifi/ext_wifi_cfg.c",
+    "pointer_references": []
+  },
+  {
+    "address": "0x6028cc23",
+    "text": "../../components/ql-application/CloudSpeak/ext_wifi/ext_wifi.c",
+    "pointer_references": []
+  },
+  {
+    "address": "0x6028d8cc",
+    "text": "../../components/ql-application/CloudSpeak/ext_wifi/serial.c",
+    "pointer_references": []
+  },
+  {
+    "address": "0x6028ede1",
+    "text": "../../components/ql-application/CloudSpeak/App_Tools.c",
+    "pointer_references": []
+  },
+  {
+    "address": "0x60290299",
+    "text": "../../components/ql-application/CloudSpeak/App_Interface.c",
+    "pointer_references": []
+  },
+  {
+    "address": "0x60298150",
+    "text": "../../components/ql-application/CloudSpeak/ext_wifi/ext_wifi_socket.c",
+    "pointer_references": []
+  },
+  {
+    "address": "0x6029a099",
+    "text": "../../components/ql-application/AppGrogram/App_AudioEvent.c",
+    "pointer_references": []
+  },
+  {
+    "address": "0x6029bd92",
+    "text": "<CS>%s %d audio_event_init succ!",
+    "pointer_references": [
+      "0x6029bf1c"
+    ]
+  },
+  {
+    "address": "0x6029c8d5",
+    "text": "xianzaishiWiFi APpeiwangms.mp3",
+    "pointer_references": [
+      "0x60270cf8"
+    ]
+  },
+  {
+    "address": "0x6029cb62",
+    "text": "yijinruWIFI_APpeiwangms.mp3",
+    "pointer_references": [
+      "0x60270e18"
+    ]
+  },
+  {
+    "address": "0x6029cc08",
+    "text": "qingshiyonglklAppsmjh.mp3",
+    "pointer_references": [
+      "0x60270e54"
+    ]
+  },
+  {
+    "address": "0x6029cead",
+    "text": "xzsAPpwdjylqhwifikl.mp3",
+    "pointer_references": [
+      "0x60270f74"
+    ]
+  },
+  {
+    "address": "0x6029cec5",
+    "text": "xzsWIFIklpwmsdjyljqhAPpw.mp3",
+    "pointer_references": [
+      "0x60270f80"
+    ]
+  },
+  {
+    "address": "0x6029da32",
+    "text": "../../components/ql-application/AppGrogram/App_VoiceWavMix.c",
+    "pointer_references": []
+  },
+  {
+    "address": "0x604df804",
+    "text": "FILEqingshiyonglklAppsmjh.mp3",
+    "pointer_references": []
+  },
+  {
+    "address": "0x604e6e04",
+    "text": "FILEyijinruWIFI_APpeiwangms.mp3",
+    "pointer_references": []
+  }
+]

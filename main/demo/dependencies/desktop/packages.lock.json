@@ -1,0 +1,42 @@
+[
+  {
+    "assembly": "K4os.Compression.LZ4.dll",
+    "url": "https://api.nuget.org/v3-flatcontainer/k4os.compression.lz4/1.3.8/k4os.compression.lz4.1.3.8.nupkg",
+    "assembly_sha256": "6DADE79664F48A163D6864C84A0A6C5C55B856BDFAF34BA187C87F18F9167238",
+    "id": "k4os.compression.lz4",
+    "sha256": "3A64F72703B8AA99190CBED7AA216A642CB1C928FAE2CF6DFA65DC3754FE2320",
+    "version": "1.3.8"
+  },
+  {
+    "assembly": "System.Memory.dll",
+    "url": "https://api.nuget.org/v3-flatcontainer/system.memory/4.5.5/system.memory.4.5.5.nupkg",
+    "assembly_sha256": "BF3FB84664F4097F1A8A9BC71A51DCF8CF1A905D4080A4D290DA1730866E856F",
+    "id": "system.memory",
+    "sha256": "10F43DA352A29FB2B3188E4EDD4DCF5100194C8B526E4F61FE2E2B5623775A22",
+    "version": "4.5.5"
+  },
+  {
+    "assembly": "System.Runtime.CompilerServices.Unsafe.dll",
+    "url": "https://api.nuget.org/v3-flatcontainer/system.runtime.compilerservices.unsafe/6.0.0/system.runtime.compilerservices.unsafe.6.0.0.nupkg",
+    "assembly_sha256": "37768488E8EF45729BC7D9A2677633C6450042975BB96516E186DA6CB9CD0DCF",
+    "id": "system.runtime.compilerservices.unsafe",
+    "sha256": "6C41B53E70E9EEE298CFF3A02CE5ACDD15B04125589BE0273F0566026720A762",
+    "version": "6.0.0"
+  },
+  {
+    "assembly": "System.Buffers.dll",
+    "url": "https://api.nuget.org/v3-flatcontainer/system.buffers/4.5.1/system.buffers.4.5.1.nupkg",
+    "assembly_sha256": "ACCCCFBE45D9F08FFEED9916E37B33E98C65BE012CFFF6E7FA7B67210CE1FEFB",
+    "id": "system.buffers",
+    "sha256": "C30B3DD2C7E2F4CEE4B823D692FD42118309B42AB1F5007F923D329A5B0D6B12",
+    "version": "4.5.1"
+  },
+  {
+    "assembly": "System.Numerics.Vectors.dll",
+    "url": "https://api.nuget.org/v3-flatcontainer/system.numerics.vectors/4.5.0/system.numerics.vectors.4.5.0.nupkg",
+    "assembly_sha256": "1D3EF8698281E7CF7371D1554AFEF5872B39F96C26DA772210A33DA041BA1183",
+    "id": "system.numerics.vectors",
+    "sha256": "A9D49320581FDA1B4F4BE6212C68C01A22CDF228026099C20A8EABEFCF90F9CF",
+    "version": "4.5.0"
+  }
+]

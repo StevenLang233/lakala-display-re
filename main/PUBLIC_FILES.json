@@ -1,0 +1,791 @@
+{
+  "files": [
+    {
+      "file": "README.md",
+      "bytes": 1573,
+      "sha256": "f54fc99380b8f95967b24638f8b953cbe0a65ea1fc711124e9cede1ac02e26ff"
+    },
+    {
+      "file": "demo/BUILD.md",
+      "bytes": 4751,
+      "sha256": "d3d18669865176a6eca57cb890fbeeb4caa933226a9203547c5c8b979522970d"
+    },
+    {
+      "file": "demo/PUBLISH.md",
+      "bytes": 2935,
+      "sha256": "28fdfc19fafecb8eec6c80abb25097faff08794b9391f0d66688a82d26bbbf4a"
+    },
+    {
+      "file": "demo/README.md",
+      "bytes": 3154,
+      "sha256": "2a94574a3d812ed2631335f1ea2bddcb8489ee282bb29b09e30e422355923e11"
+    },
+    {
+      "file": "demo/SOURCE_SNAPSHOT.json",
+      "bytes": 6067,
+      "sha256": "d2418ffccad0f32d66e569cdc653006044928b5d024a2b777bf14321fb39d767"
+    },
+    {
+      "file": "demo/THIRD_PARTY.md",
+      "bytes": 1519,
+      "sha256": "d536d5f69a239c8f766b4db2bca3e26fb6f9f741a5fab745c0a6f06b8f6de4a2"
+    },
+    {
+      "file": "demo/dependencies/desktop/k4os.compression.lz4-LICENSE",
+      "bytes": 1073,
+      "sha256": "ef5a021fc2ae3658f4ad8d2526c87fb2cf394285f47abfb784cf73a27ffd9522"
+    },
+    {
+      "file": "demo/dependencies/desktop/packages.lock.json",
+      "bytes": 2057,
+      "sha256": "b5ab9011d5ab4cb438d5d461871e23242c9b0e92961833efb4c63c0a32d84787"
+    },
+    {
+      "file": "demo/dependencies/desktop/system.buffers-LICENSE.TXT",
+      "bytes": 1139,
+      "sha256": "d7a68596ab69b06f51ca278a6545148e4269a9381c26d597c13df5d88e08cf5b"
+    },
+    {
+      "file": "demo/dependencies/desktop/system.buffers-THIRD-PARTY-NOTICES.TXT",
+      "bytes": 15835,
+      "sha256": "7864a01e2fdef7e8fdf81b906efb1466f083206affea7ba7e6dadea429754765"
+    },
+    {
+      "file": "demo/dependencies/desktop/system.memory-LICENSE.TXT",
+      "bytes": 1139,
+      "sha256": "d7a68596ab69b06f51ca278a6545148e4269a9381c26d597c13df5d88e08cf5b"
+    },
+    {
+      "file": "demo/dependencies/desktop/system.memory-THIRD-PARTY-NOTICES.TXT",
+      "bytes": 15835,
+      "sha256": "7864a01e2fdef7e8fdf81b906efb1466f083206affea7ba7e6dadea429754765"
+    },
+    {
+      "file": "demo/dependencies/desktop/system.numerics.vectors-LICENSE.TXT",
+      "bytes": 1139,
+      "sha256": "d7a68596ab69b06f51ca278a6545148e4269a9381c26d597c13df5d88e08cf5b"
+    },
+    {
+      "file": "demo/dependencies/desktop/system.numerics.vectors-THIRD-PARTY-NOTICES.TXT",
+      "bytes": 15835,
+      "sha256": "7864a01e2fdef7e8fdf81b906efb1466f083206affea7ba7e6dadea429754765"
+    },
+    {
+      "file": "demo/dependencies/desktop/system.runtime.compilerservices.unsafe-LICENSE.TXT",
+      "bytes": 1139,
+      "sha256": "d7a68596ab69b06f51ca278a6545148e4269a9381c26d597c13df5d88e08cf5b"
+    },
+    {
+      "file": "demo/dependencies/desktop/system.runtime.compilerservices.unsafe-THIRD-PARTY-NOTICES.TXT",
+      "bytes": 46990,
+      "sha256": "a6344bfb229bc08d1071cec400eea216e307439f961c5943ec1b56d2245acb95"
+    },
+    {
+      "file": "demo/desktop/src/AssemblyInfo.cs",
+      "bytes": 252,
+      "sha256": "a47476cf13ab1c13a7daae1550cb7b7773c53a55d7a09dda87963ade0662361b"
+    },
+    {
+      "file": "demo/desktop/src/Checks/AudioBridgeCheck.cs",
+      "bytes": 5548,
+      "sha256": "aab1d12ade0b2120574d5dde081da51aaa9f050a470041a05a64d41c796f5142"
+    },
+    {
+      "file": "demo/desktop/src/Checks/AudioCheck.cs",
+      "bytes": 1791,
+      "sha256": "980836b339b05ed098b7067cfa1b05010fdaea4f997a5cc165dbdb90a551e21e"
+    },
+    {
+      "file": "demo/desktop/src/Checks/AudioInitCheck.cs",
+      "bytes": 949,
+      "sha256": "3c6616fd7390463690e7395b9ecafedf3610a0202eea293737701486956b1682"
+    },
+    {
+      "file": "demo/desktop/src/Checks/CaptureSave.cs",
+      "bytes": 180,
+      "sha256": "3fdda03babf47db1e90506171a37db3284dd3898fa5aeca06bc542531d51e9f7"
+    },
+    {
+      "file": "demo/desktop/src/Checks/CodecBench.cs",
+      "bytes": 1104,
+      "sha256": "92f037afbd0cfd82953780a080022a18cc7e5f3e9dbbed5363d760203bed156f"
+    },
+    {
+      "file": "demo/desktop/src/Checks/DisplayCheck.cs",
+      "bytes": 1156,
+      "sha256": "6ea4eae9dcb27922b8000be19616252f1a01e24be368e9172d75ce25d26e8f96"
+    },
+    {
+      "file": "demo/desktop/src/Checks/DisplayScenarioBench.cs",
+      "bytes": 3836,
+      "sha256": "484afa741b11f54268a8b8747befddfde7e9964d1ab991312d18a1109187fc3c"
+    },
+    {
+      "file": "demo/desktop/src/Checks/MediaCheck.cs",
+      "bytes": 2392,
+      "sha256": "a345a2585ab30ef9a2919f6db5fb20783d735307b1cc46e8ffd0ab06d8422169"
+    },
+    {
+      "file": "demo/desktop/src/Checks/NativeAudioCheck.cs",
+      "bytes": 1957,
+      "sha256": "9f0c4fdb6c12c894d2ccbd28598c2a0cde83d4383cdbfa5a0faee99214ada82f"
+    },
+    {
+      "file": "demo/desktop/src/Checks/NativeTransportBench.cs",
+      "bytes": 1895,
+      "sha256": "bfe6a24b610a24114dd7d45e0cb76506a18ebbbae6c6f92ee1022fcc28d70dee"
+    },
+    {
+      "file": "demo/desktop/src/Checks/PreparedCodecBench.cs",
+      "bytes": 1074,
+      "sha256": "0a5e1c79943c562675028afd55e8534f090f5289476234a45f1de656c1b0a536"
+    },
+    {
+      "file": "demo/desktop/src/Checks/ReconnectCheck.cs",
+      "bytes": 10370,
+      "sha256": "19fe294e9e7774dd6097732fb82fbc473510aecf3694311a87a34f45a8ec1c33"
+    },
+    {
+      "file": "demo/desktop/src/Checks/RecoveryPolicyCheck.cs",
+      "bytes": 2255,
+      "sha256": "61a8f8e5211e83c9b5f7ac3563684fc01f481a89125f33ffe40d4b1370bb04b0"
+    },
+    {
+      "file": "demo/desktop/src/Checks/RefreshCheck.cs",
+      "bytes": 1648,
+      "sha256": "4ee274e717db48532eb78e3308462da6bca37e0cbe3127f3cff1a6d1fc33a993"
+    },
+    {
+      "file": "demo/desktop/src/Checks/SparseCodecBench.cs",
+      "bytes": 1322,
+      "sha256": "ff2d1dc20ff173a4c595940bd2a7295633adfa3c944aa9d226ba57a79d48945c"
+    },
+    {
+      "file": "demo/desktop/src/Checks/SparseTransportBench.cs",
+      "bytes": 4579,
+      "sha256": "72ecc55cee8604a8ef71f55b8626c8a419c03ec55ef8412adaa2f520e5605efc"
+    },
+    {
+      "file": "demo/desktop/src/Checks/VolumeSenderCheck.cs",
+      "bytes": 3523,
+      "sha256": "8492908e27a8078d1a7fdb4bbbd071f1cc2590cc2ad402264482989dc6d6668c"
+    },
+    {
+      "file": "demo/desktop/src/Core/Media.cs",
+      "bytes": 2495,
+      "sha256": "4c1273ca0a7c3615f447dd2afebe5e16d327e0c965fbcb0c2eabe63216118914"
+    },
+    {
+      "file": "demo/desktop/src/Core/Models.cs",
+      "bytes": 2468,
+      "sha256": "7762a62de67e26c19ec6b1b637295562df54344627dc5011a7edd055a96a5388"
+    },
+    {
+      "file": "demo/desktop/src/Core/Protocol.cs",
+      "bytes": 14686,
+      "sha256": "96246d7373c9eebee224676e0acf0807e16c030ddcff805e9b06cbc5cac92520"
+    },
+    {
+      "file": "demo/desktop/src/Core/SparseFrame.cs",
+      "bytes": 1733,
+      "sha256": "9fca74300e5c249e831aebf364cad534a63629b29a1b84668caf544da589eac5"
+    },
+    {
+      "file": "demo/desktop/src/Program.cs",
+      "bytes": 3604,
+      "sha256": "6c2bc245af40f0291d9326d461e1b94f6a3d29250878fb75eeb78eaf5d733d54"
+    },
+    {
+      "file": "demo/desktop/src/ServiceProgram.cs",
+      "bytes": 282,
+      "sha256": "ebb42dc61e04a3b2192788b17165f013fc21ba8acb0f8bf0b132ed318e4cf17a"
+    },
+    {
+      "file": "demo/desktop/src/Windows/Backend.cs",
+      "bytes": 17633,
+      "sha256": "d6bb669f87846a42a597fcb82e9600cb9df077e2545e030c4019c61c455d9df9"
+    },
+    {
+      "file": "demo/desktop/src/Windows/DesktopCapture.cs",
+      "bytes": 5513,
+      "sha256": "984f37bf98530ac18571359749bb017070bfd62225226c5c7dd3f465c2300829"
+    },
+    {
+      "file": "demo/desktop/src/Windows/Displays.cs",
+      "bytes": 8837,
+      "sha256": "d652e87450123196fff2b8d30517ecdf98e508b90319ca50b8223dfa746e42d2"
+    },
+    {
+      "file": "demo/desktop/src/Windows/FolderPicker.cs",
+      "bytes": 3069,
+      "sha256": "89fb9b8313e5c3a1d79debda32fb4b733e2a130c2de75bca91e1ec237b1c6cfa"
+    },
+    {
+      "file": "demo/desktop/src/Windows/Graphics.cs",
+      "bytes": 8400,
+      "sha256": "f55e2b99b4acd78d397858cad1504ea59abb6f87edda4f080f9e7ba5198632e8"
+    },
+    {
+      "file": "demo/desktop/src/Windows/Ipc.cs",
+      "bytes": 6969,
+      "sha256": "42680de1c59bce4f50bf63e6b90b53e2c4283de11264cd73fff0674f6f37299b"
+    },
+    {
+      "file": "demo/desktop/src/Windows/Loopback.cs",
+      "bytes": 8093,
+      "sha256": "3bac6dbf7f7dd1256dcb69bbce933daea08cdb8435fce07735cd2f0cfe31550b"
+    },
+    {
+      "file": "demo/desktop/src/Windows/MainWindow.cs",
+      "bytes": 33797,
+      "sha256": "062b2af013e0b2647e6620b3b882dd6612a858f3aae1fd964713464b4cce63bb"
+    },
+    {
+      "file": "demo/desktop/src/Windows/SystemLog.cs",
+      "bytes": 987,
+      "sha256": "280a114146aad10dd11f85e8e24ff5ac833ac7362aaf759b8f1e5a6a14bb8f46"
+    },
+    {
+      "file": "demo/firmware/assets/brightness_bar.png",
+      "bytes": 6556,
+      "sha256": "4965f4897df1b6056a33a6de943fd2030bc51c7c4e989e28b8ac6e5b0f205869"
+    },
+    {
+      "file": "demo/firmware/assets/brightness_osd.h",
+      "bytes": 259461,
+      "sha256": "8aa693d628b98f81e0d485beeab5db2b12d10ba1941e419f8167722f351813e8"
+    },
+    {
+      "file": "demo/firmware/assets/core_guard.h",
+      "bytes": 68,
+      "sha256": "8fa368d3dc28cd08ff7b6ef7cd146bf1c211ae91505b052dda545951994744aa"
+    },
+    {
+      "file": "demo/firmware/assets/panel_init.h",
+      "bytes": 879,
+      "sha256": "956115b42b7c4b15eabaf55cbc12c11126aa7869b91ec6af1f15a0c93e9ab926"
+    },
+    {
+      "file": "demo/firmware/assets/waiting_page.h",
+      "bytes": 172039,
+      "sha256": "cfd438b78e30f61397e7d3a6ccefe3f1c995418bb20a033d4f0fd7a779ff1b97"
+    },
+    {
+      "file": "demo/firmware/assets/waiting_page.png",
+      "bytes": 89562,
+      "sha256": "baa9cb08e5c020d55e7e9b1589b7cae2b50f331ed728151ed80e2a8ae84b79a4"
+    },
+    {
+      "file": "demo/firmware/src/audio_impl.h",
+      "bytes": 13947,
+      "sha256": "dbeb7e43bb46f850cb85f1ad5ee529b21e153f87b4d8b3f7811683fb7a720e53"
+    },
+    {
+      "file": "demo/firmware/src/audio_volume.h",
+      "bytes": 1652,
+      "sha256": "8bf1dd3586e75c65ed0b71c30c4e68c84c50dde6c5eabbf76d1a704843ff300e"
+    },
+    {
+      "file": "demo/firmware/src/backlight.h",
+      "bytes": 1728,
+      "sha256": "7842f344370e01e56b1c3cb2b841fd7dec80269cd530a6362fcb911e47544dec"
+    },
+    {
+      "file": "demo/firmware/src/brightness_osd_impl.h",
+      "bytes": 2898,
+      "sha256": "6a5ba0358db7a7a2e33829531d4088f7ea598ee3f893fad289f7af1584e4cb4a"
+    },
+    {
+      "file": "demo/firmware/src/lz4_pixels.h",
+      "bytes": 5035,
+      "sha256": "535ddeb51004f56fcccd99510981999b3768f55b3b67c3e3e4a376f00a05e917"
+    },
+    {
+      "file": "demo/firmware/src/main.c",
+      "bytes": 27848,
+      "sha256": "e8c54ccb5596185c69e1edd52e360bf86eb13782cea4d34810d37644ef5c2115"
+    },
+    {
+      "file": "demo/firmware/src/native_protocol.h",
+      "bytes": 1544,
+      "sha256": "d1772f5a1bc33391d0dc7f72f9f973198095ba9505e2a3eb935e550c62944f05"
+    },
+    {
+      "file": "demo/firmware/src/power_policy.h",
+      "bytes": 3863,
+      "sha256": "346027270fddb71de64f6c84008b55e710271f515ed8afcf1500c24463ac3aef"
+    },
+    {
+      "file": "demo/firmware/src/third_party/LICENSE.lz4",
+      "bytes": 1311,
+      "sha256": "8b58c446121a109ccf32edc094bba3010a3d85e4ee3702950db55e4d3e87736c"
+    },
+    {
+      "file": "demo/firmware/src/third_party/LICENSE.xxhash",
+      "bytes": 1389,
+      "sha256": "6ffedbc0f7878612d2b23589f1ff2ab15633e1df7963a5d9fc750ec5500c7e7a"
+    },
+    {
+      "file": "demo/firmware/src/third_party/lz4.c",
+      "bytes": 118145,
+      "sha256": "9396f7de527bc8435de9c7569fb7998e56545a84b4f3c2d808c0235c01774539"
+    },
+    {
+      "file": "demo/firmware/src/third_party/lz4.h",
+      "bytes": 46014,
+      "sha256": "26b82efc53d1570f3b54eef02e9c4764c1ad374ff03cac04e2ced5ea4d4c552f"
+    },
+    {
+      "file": "demo/firmware/src/third_party/xxhash.h",
+      "bytes": 268319,
+      "sha256": "17973c0dc49d9854ca26caa191f0e12f7a424b68858d9a78de3860d959d85e4b"
+    },
+    {
+      "file": "demo/releases/manifest.json",
+      "bytes": 1438,
+      "sha256": "affc3a2b374374db6dce79a656bd3af7c1d9f31f311d8545c6114c2c77ecaee0"
+    },
+    {
+      "file": "demo/releases/v0.3.0-demo.20261009.md",
+      "bytes": 1815,
+      "sha256": "eb83dda2506d57fb886192b5e6073d1ff993f4e40172b23469af64006cc5863c"
+    },
+    {
+      "file": "demo/requirements-build.txt",
+      "bytes": 51,
+      "sha256": "33b5b1b3bdabc2f9bc3b353a58e4f694a1b364def78dcf31688b0ade0fdea1f3"
+    },
+    {
+      "file": "demo/scripts/build_desktop.ps1",
+      "bytes": 4708,
+      "sha256": "f6d475e30770181ba1859ba0fb1c7c8a30d78b057d7a412dfeee233cc2bd3ab5"
+    },
+    {
+      "file": "demo/scripts/build_desktop_msi.ps1",
+      "bytes": 11683,
+      "sha256": "561b29d90059c69d928638c97811b815a3bc0cefb81185b861cedc1c9cefb3de"
+    },
+    {
+      "file": "demo/scripts/build_firmware.ps1",
+      "bytes": 1447,
+      "sha256": "4f1433c6ec1febc0ba5687390c66e3aae745fe92ff40b2fed0458200f19cbc6d"
+    },
+    {
+      "file": "demo/scripts/build_native_firmware.py",
+      "bytes": 8286,
+      "sha256": "7b127efde2afd6f428a1dccd8bed274949af0d602efe3389a571f30d9beacde2"
+    },
+    {
+      "file": "demo/scripts/deploy_native_app.py",
+      "bytes": 8487,
+      "sha256": "e8967a5619ef65bdc9459823f2763f15eceed2bc5c6eea7dbf2cbddd9081188f"
+    },
+    {
+      "file": "demo/scripts/prepare_release_payload.ps1",
+      "bytes": 4636,
+      "sha256": "897ec781afde3a7de7f9e53e9f718460c7b1555e5983d1097f1d805d7f834f41"
+    },
+    {
+      "file": "demo/scripts/prepare_upload_bundle.py",
+      "bytes": 4102,
+      "sha256": "44c35edcc78284d8cc6f9c06dd560c18c31c958ae23b91e01c0c930f2c7dd790"
+    },
+    {
+      "file": "demo/scripts/publish_github.ps1",
+      "bytes": 7447,
+      "sha256": "6a58b3ca98a47eff96a0f98a502a112b2f3fb1a86ff5f468cd4e1fbb408aea7a"
+    },
+    {
+      "file": "demo/scripts/restore_desktop_dependencies.ps1",
+      "bytes": 2312,
+      "sha256": "112e36201bf219e0b9d29cb147e3992105bb3ea51a92fd2e2ca83fa4de6f2d6e"
+    },
+    {
+      "file": "demo/scripts/verify_snapshot.py",
+      "bytes": 1646,
+      "sha256": "32a9c593528ff72c61892659d5f6ca35c7b0439363a39696725a3f784d7ad7fa"
+    },
+    {
+      "file": "demo/third_party/sprdflash-LICENSE",
+      "bytes": 1081,
+      "sha256": "e7bee705189424791bea7f72f90cba9ddb5bbf1204ef95a49fb9417d5c3e7e87"
+    },
+    {
+      "file": "demo/third_party/sprdflash/__init__.py",
+      "bytes": 99,
+      "sha256": "4743148c4d2970f5dcb9800ef9efbf717693993c3e1463b5425a1c221724361c"
+    },
+    {
+      "file": "demo/third_party/sprdflash/__main__.py",
+      "bytes": 48,
+      "sha256": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d"
+    },
+    {
+      "file": "demo/third_party/sprdflash/cli.py",
+      "bytes": 7009,
+      "sha256": "7e42266d791d872bb884b2d47f6fe32af44c901e4a99d068467c51cff1756fb1"
+    },
+    {
+      "file": "demo/third_party/sprdflash/flasher.py",
+      "bytes": 7696,
+      "sha256": "b42ec35bedc98f23ab2a490ed6f616724fd58850829a4a5206175156de5c1bac"
+    },
+    {
+      "file": "demo/third_party/sprdflash/native.py",
+      "bytes": 14321,
+      "sha256": "ae8f4d1a0ef9446fc7b55f8084c15a343ea847c2138ee3f73a0ece397ccffd7f"
+    },
+    {
+      "file": "demo/third_party/sprdflash/pac.py",
+      "bytes": 4340,
+      "sha256": "b0c709c134f977712e277d844fabae0453851483f2083553248d3fc0bc21c973"
+    },
+    {
+      "file": "demo/third_party/sprdflash/pdl.py",
+      "bytes": 6378,
+      "sha256": "f399cdc1e916007de21fb34eaf2e62175e61df2e4adcc0dd63441bb2d1a8355c"
+    },
+    {
+      "file": "demo/third_party/sprdflash/protocol.py",
+      "bytes": 9560,
+      "sha256": "d89857bd16768f8bd4970f73de28bc8386b20b203a566bf279de4196d82af690"
+    },
+    {
+      "file": "demo/third_party/sprdflash/usb_transport.py",
+      "bytes": 10244,
+      "sha256": "42b844d8ff3c0aa256700f2ef2fe95cae84d94037eae4b16f69742675991ca9d"
+    },
+    {
+      "file": "reverse/AUDIO.md",
+      "bytes": 3798,
+      "sha256": "2c6fbd194c4fe554472ee02847745276c28368c2ae06db21758ee85b7ed2aaad"
+    },
+    {
+      "file": "reverse/DISPLAY.md",
+      "bytes": 4833,
+      "sha256": "cee53855e62d19e674fe24c91bbea0f68f89c0294ba8dd359f4af17538fbe292"
+    },
+    {
+      "file": "reverse/EVIDENCE.md",
+      "bytes": 3419,
+      "sha256": "e95005ebbf57f6f9cf9758b3ee85a2226d48824739288cc4100b73612d810922"
+    },
+    {
+      "file": "reverse/HARDWARE.md",
+      "bytes": 4201,
+      "sha256": "8d9bd157aaf85b9b5560fe859c5e27597d308d898c65decfa00f112728a65db6"
+    },
+    {
+      "file": "reverse/IMPORTS_R03.md",
+      "bytes": 3610,
+      "sha256": "03068d8e94a9d43b17d268883a464281c79b06fc699d0f4037fd86ae29c45326"
+    },
+    {
+      "file": "reverse/MEMORY_AND_ABI.md",
+      "bytes": 4693,
+      "sha256": "cd58acbb7539d5bdc86164f84348999cce0d2d3f1d3818bc78df4f6666ed8385"
+    },
+    {
+      "file": "reverse/PANEL_INIT.md",
+      "bytes": 1280,
+      "sha256": "b14f5af6d4d09c8f906c3d6d8d11acca266bb8a4f2215b9b1c895071b26cf435"
+    },
+    {
+      "file": "reverse/PROTOCOL.md",
+      "bytes": 7460,
+      "sha256": "b55ab0fee61acec98c0fad8c84529775d74905f667f8ee1d238244054c43bcfd"
+    },
+    {
+      "file": "reverse/README.md",
+      "bytes": 1618,
+      "sha256": "5dad508c29fe979293f37f7e4b684c0e2a52f9189b5749f56f1fc14c61acaa6d"
+    },
+    {
+      "file": "reverse/UNCERTAIN.md",
+      "bytes": 3091,
+      "sha256": "b5c68be90c08fc5d41736f1a921d095eb9b249da7e35ea880227e33ba377b6a0"
+    },
+    {
+      "file": "reverse/USB_AND_BOOT.md",
+      "bytes": 4438,
+      "sha256": "7ae9debc12ef62300c70230f5680e76c79dfeb50c618cef038145c909d817f62"
+    },
+    {
+      "file": "reverse/evidence/abi/SDK-LICENSE",
+      "bytes": 598,
+      "sha256": "a0b5596fffe122ae05a9c7fd99740ed61619e206d9221b7e75da33934473fb30"
+    },
+    {
+      "file": "reverse/evidence/abi/helios_audio.h",
+      "bytes": 22898,
+      "sha256": "ac501a0ca79cf0cd3b5a7e67ef16e65aa5c7286181e078169650d712449a62ef"
+    },
+    {
+      "file": "reverse/evidence/abi/helios_gpio.h",
+      "bytes": 4349,
+      "sha256": "8b031004c81aef6223e75e77656d5deead8d69d4f0acae4fe8e2d6ae7bad3cdc"
+    },
+    {
+      "file": "reverse/evidence/abi/helios_lcd.h",
+      "bytes": 5044,
+      "sha256": "6d8efcac4c12b63291762a4dd6afb759c138cb6bb25c78f73262b5a9dd672228"
+    },
+    {
+      "file": "reverse/evidence/abi/helios_uart.h",
+      "bytes": 6826,
+      "sha256": "7aefaa5fb16fa49f4d5f7fc5c87da138d038d4644dee6d73d03f05808ec988f4"
+    },
+    {
+      "file": "reverse/evidence/native_audio_20261005/audio_exports.json",
+      "bytes": 3038,
+      "sha256": "c2bb5784460af6c06fb60b6dbe20b90a10d0c7b14196549a504671e8a072f784"
+    },
+    {
+      "file": "reverse/evidence/native_audio_20261005/audio_exports.txt",
+      "bytes": 333077,
+      "sha256": "c7fcabc996de597d87abd26076f435ae880fdb092b350b38ea7a0a5a421d6ab6"
+    },
+    {
+      "file": "reverse/evidence/native_audio_20261008/factory_app_headers.json",
+      "bytes": 695,
+      "sha256": "44797bec4e8425df8e84c58b585702f170ef611fd2440dc0be959a3c42584221"
+    },
+    {
+      "file": "reverse/evidence/native_audio_20261008/factory_audio_calls.json",
+      "bytes": 1180,
+      "sha256": "091a0d6160938e981badd5487028b935e2f5a31dbbb2603cde87b9db3215a93c"
+    },
+    {
+      "file": "reverse/evidence/native_audio_20261008/factory_audio_strings.json",
+      "bytes": 4867,
+      "sha256": "1d5a08d0ce520d51b772dd5be9691b135273a012e8adac6be9184d75a69b796a"
+    },
+    {
+      "file": "reverse/evidence/native_audio_20261008/factory_import_bindings.json",
+      "bytes": 26346,
+      "sha256": "a5500e9983570621b7b60e8cedb302eb38c7036bfd97e603bf651635806e5606"
+    },
+    {
+      "file": "reverse/evidence/native_audio_20261008/factory_internal_audio_calls.json",
+      "bytes": 717,
+      "sha256": "7d16290b2d21e46b5d5443fa81120d1ac2c8bf83fc9cf20dada3161a3729ca2a"
+    },
+    {
+      "file": "reverse/evidence/native_audio_20261009/Helios_Audio_SetDSPGainTable.txt",
+      "bytes": 16961,
+      "sha256": "baec4e0b5c631adddfc355b8ee438511e0be220fa23079c8c19cb38ff5398dc7"
+    },
+    {
+      "file": "reverse/evidence/native_audio_20261009/gain_exports.json",
+      "bytes": 953,
+      "sha256": "e85c58afa80bfad67e5c4bb35ce2c7a129d4de6dfde2470b95125f54d99779bc"
+    },
+    {
+      "file": "reverse/evidence/native_audio_20261009/ql_aud_codec_read_nv.txt",
+      "bytes": 17028,
+      "sha256": "88bd70126f9de41bb13b38e287a73ab6f0d2f3bf77023162d64116873148fd29"
+    },
+    {
+      "file": "reverse/evidence/native_audio_20261009/ql_aud_codec_write_nv.txt",
+      "bytes": 17054,
+      "sha256": "f1359439b8f72622ff00c7cab07a18d8db28b00dab7ca408d91751a0b66033b9"
+    },
+    {
+      "file": "reverse/evidence/native_audio_20261009/ql_aud_get_icvolume_level_gain.txt",
+      "bytes": 17814,
+      "sha256": "5b9ac0d3eb643767257545df6dc1f29c1d062c363ecd8a9c794b96d0dfa099dd"
+    },
+    {
+      "file": "reverse/evidence/native_audio_20261009/ql_aud_get_volume.txt",
+      "bytes": 17018,
+      "sha256": "db567d6e8845f5432be0b3ae50b90795f4891d8fa7513eab01ec7695c3db867d"
+    },
+    {
+      "file": "reverse/evidence/native_audio_20261009/ql_aud_set_calib_real_time.txt",
+      "bytes": 15988,
+      "sha256": "ce263ca9590e3bd0a9dc01f33e3e03f3c93215182acca980cd2e44366784e41a"
+    },
+    {
+      "file": "reverse/evidence/native_audio_20261009/ql_aud_set_icvolume_level_gain.txt",
+      "bytes": 17753,
+      "sha256": "1476b68124907f177492f942ef94648f3b1570b6eb3e7bdb429cf026433e128f"
+    },
+    {
+      "file": "reverse/evidence/native_audio_20261009/ql_aud_set_volume.txt",
+      "bytes": 17308,
+      "sha256": "2ba4e06ea536739150c01106edf023cceb9291ed991ca62b6ba442ad11bf120a"
+    },
+    {
+      "file": "reverse/evidence/native_audio_20261009/ql_set_volume.txt",
+      "bytes": 16624,
+      "sha256": "3589cef52adac4bc6c15aaa368c4323541a412a7876272f37fa7dafb3cd21add"
+    },
+    {
+      "file": "reverse/evidence/native_audio_20261009/ql_set_volume_ex.txt",
+      "bytes": 16297,
+      "sha256": "b63d98ec8df1854b3cb0de3a0c51557b66ac7b97cfd26dd6c737754183bb2c85"
+    },
+    {
+      "file": "reverse/evidence/panel_init_r05.json",
+      "bytes": 2433,
+      "sha256": "5f16b0e800a864c5b9f67b4dcbd75bcc41dc4c60aaeb1d8dc0dc9061bb9f9131"
+    },
+    {
+      "file": "reverse/evidence/photos/silkscreen_1.jpg",
+      "bytes": 93348,
+      "sha256": "24bb4478f5544957fa7b873beb72884a8a88b72647eafc0c71860d584900dfff"
+    },
+    {
+      "file": "reverse/evidence/photos/silkscreen_2.jpg",
+      "bytes": 65955,
+      "sha256": "672cee653840fb28ed2416bdc272ca3e8673127e7f58ba2e0662a54e525c3215"
+    },
+    {
+      "file": "reverse/evidence/photos/silkscreen_back_crop.png",
+      "bytes": 115415,
+      "sha256": "d432137fc4c65067ca0e0c4e2ece2547bdcfe2cd494608017e8489363cfbc739"
+    },
+    {
+      "file": "reverse/evidence/protocol/hello.bin",
+      "bytes": 32,
+      "sha256": "f1173bae68412b8d87e14d1860dd1ab501922d61aa7a97882a94a86d37a89a6b"
+    },
+    {
+      "file": "reverse/evidence/protocol/hello_ack_example.bin",
+      "bytes": 56,
+      "sha256": "d2e8dd6ad55ce5dfde233598b8e250b2d759f674274be1ae1a5e294632f6a545"
+    },
+    {
+      "file": "reverse/evidence/protocol/vectors.json",
+      "bytes": 2071,
+      "sha256": "31cabd054c92eaa9f0656b234ecceb6c47ff89a061ed602b717f10f6f7c98e25"
+    },
+    {
+      "file": "reverse/evidence/r03/brightness_exports.txt",
+      "bytes": 95134,
+      "sha256": "2d9bac4e04319a82986cd55e9fd2285511dcaf3f473aa5ed46b4f789c457026e"
+    },
+    {
+      "file": "reverse/evidence/r03/imports.json",
+      "bytes": 7215,
+      "sha256": "f6a9cfed36425178b3d5434a46765fad5b2796d77a70d328bb51c3ae75ae97b3"
+    },
+    {
+      "file": "reverse/evidence/r03/r03_mipi_hardware_setup.txt",
+      "bytes": 34483,
+      "sha256": "42974404a63039b02aab462c8048be9a289949df584115579d367cff1368fd72"
+    },
+    {
+      "file": "reverse/evidence/r03/r03_scan_configuration.txt",
+      "bytes": 43018,
+      "sha256": "fead6839f38a08cf004c0211eac5fd3f6669f63618b98e5d642982f34e8a3600"
+    },
+    {
+      "file": "reverse/evidence/r03/r03_write_transfer_helpers.txt",
+      "bytes": 8988,
+      "sha256": "46b5da2c8c91069628ff8b92f087dfd0e5a6739936ab7d2ebdc967edd59bf6e4"
+    },
+    {
+      "file": "reverse/evidence/r05/block_map.csv",
+      "bytes": 9947,
+      "sha256": "3549cefbc1402f46f8678e55a454e4c9580a2d06f76ad420427a6b23dfa09043"
+    },
+    {
+      "file": "reverse/evidence/r05/disasm_app_extnor_mount.txt",
+      "bytes": 24146,
+      "sha256": "a99e8b3b9170792d670905ed3689c6a7c99a2482d41d5d6e7ac667c61bcae3e3"
+    },
+    {
+      "file": "reverse/evidence/r05/disasm_app_systemparam_io.txt",
+      "bytes": 29538,
+      "sha256": "f93e07288a7039e9b4fa4be9b8a34ed9d8a48afe89deb351d98468552f72d870"
+    },
+    {
+      "file": "reverse/evidence/r05/disasm_key.txt",
+      "bytes": 73308,
+      "sha256": "15ce2909c09ce64925492f22c00e22ba2b9afe34a8e0834358c57619c1309b6f"
+    },
+    {
+      "file": "reverse/evidence/r05/disasm_led_key_head.txt",
+      "bytes": 40227,
+      "sha256": "b103e0cdadcd6e3302ca80658e984bd78b898b46a19c1bef71e198601a2405f8"
+    },
+    {
+      "file": "reverse/evidence/r05/disasm_mipi_init.txt",
+      "bytes": 34710,
+      "sha256": "3773b6b405a9eaf8a653a4e32c8ad5ad57f374d317e999773f077f54d70defdc"
+    },
+    {
+      "file": "reverse/evidence/r05/disasm_qdbgcfg_extflash.txt",
+      "bytes": 8392,
+      "sha256": "10e0193f87909bbb51e26a625474a938716666f611cd0a556d3e57f95369fa1b"
+    },
+    {
+      "file": "reverse/evidence/r05/disasm_qdbgcfg_flashpartition.txt",
+      "bytes": 17779,
+      "sha256": "61536064a3e5870bdf37c753165dc6a2487d68c6af5b44e756ef916d239e8d10"
+    },
+    {
+      "file": "reverse/evidence/r05/disasm_qdbgcfg_flst.txt",
+      "bytes": 22674,
+      "sha256": "3387f832792f645e1a75232079e0fef2d47d78c96342ca9acff51b6457b667ef"
+    },
+    {
+      "file": "reverse/evidence/r05/disasm_qdbgcfg_memory.txt",
+      "bytes": 5064,
+      "sha256": "9d4f92056a9fc349096b0ac47b8679b8dba12d414f3e2a56b73eb70678b32989"
+    },
+    {
+      "file": "reverse/evidence/r05/hardware_xrefs.json",
+      "bytes": 54205,
+      "sha256": "418c3343e841a07b81337a77c9671d3dde5239d58dd60ad748f130e1457bc2dd"
+    },
+    {
+      "file": "reverse/evidence/r05/qdbgcfg_xrefs.json",
+      "bytes": 41642,
+      "sha256": "e505cc0a998b09f3c78a642c181bc82327283006a8be213dd414b3f70134fc1b"
+    },
+    {
+      "file": "reverse/evidence/r05/structure.json",
+      "bytes": 6779,
+      "sha256": "7a079a383010cfa14482f1bb5455d6a6344caa1bafb1c499184b8d78d6cc89f2"
+    },
+    {
+      "file": "reverse/tools/analyze_ec600u_flash_dump.py",
+      "bytes": 10888,
+      "sha256": "03d8eb90ffbca08404651f4366a0662e1b91f9e16e11e30791ed93bbea8a429d"
+    },
+    {
+      "file": "reverse/tools/arm_string_xrefs.py",
+      "bytes": 4575,
+      "sha256": "3593eba482db57258f48810b59e3a30181d060318821e4099c123dbff4b5a2a2"
+    },
+    {
+      "file": "reverse/tools/disassemble_arm_range.py",
+      "bytes": 1672,
+      "sha256": "430aa3663670979e6c5b4022c411bb6957e909369d0bde5309b51d6861ee54d9"
+    },
+    {
+      "file": "reverse/tools/extract_pac.py",
+      "bytes": 2569,
+      "sha256": "2837272040bfbef64dc0548f977908dce40f8e510350f7cfdb44f65b08a5d396"
+    },
+    {
+      "file": "reverse/tools/finalize_repository.py",
+      "bytes": 3878,
+      "sha256": "d3fc23f2229d55c008d2d7726c088d4080701b8cf58a67f1a13f9042d9d73d9b"
+    },
+    {
+      "file": "reverse/tools/generate_protocol_fixtures.py",
+      "bytes": 1962,
+      "sha256": "ddfec2d72ebbeb92d0a15f5d9c001e3d9217388a4b6561b289fc25b83e709a90"
+    },
+    {
+      "file": "reverse/tools/requirements.txt",
+      "bytes": 32,
+      "sha256": "853fa721a3fa04d3bf7835bb6a158084f29f7d5844f6f8548010ba19dcfb6cb5"
+    }
+  ],
+  "count": 157,
+  "bytes": 2912678
+}

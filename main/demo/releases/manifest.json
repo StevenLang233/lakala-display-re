@@ -1,0 +1,36 @@
+{
+  "snapshot_date": "2026-10-09",
+  "purpose": "hardware research demo, not production firmware",
+  "firmware": {
+    "file": "firmware/qdisplay_native.bin",
+    "format": "UNISOC APP2 APPIMG, not a whole-device dump",
+    "bytes": 154400,
+    "sha256": "4e6da49fcff0628532ed325b7c722db4e83971015b4f6783a0655c4f099fb437",
+    "core": "EC600UCNLBR03A04M08_OCPU_QPY",
+    "core_sha256": "187abb282fd089e6c3fb9d8bb75b837826b1a726e943fe961e5bf052da433ca9",
+    "flash_base": "0x60260000",
+    "partition_bytes": 917504,
+    "ram_base": "0x80f00000",
+    "ram_bytes": 1048576,
+    "source": "../firmware/src",
+    "release_asset": "qdisplay_native.bin"
+  },
+  "windows": {
+    "msi": "windows/QDisplay-0.3.0-x64.msi",
+    "sha256": "129e947933e041bf0e93c482c4d8bd9cb6e66e3fd28ba6d4f43c9f40bd4efa07",
+    "source": "../desktop/src",
+    "runtime": ".NET Framework 4.8",
+    "version": "0.3.0",
+    "release_asset": "QDisplay-0.3.0-x64.msi",
+    "files_asset": "QDisplay-0.3.0-Windows-files.zip"
+  },
+  "limitations": [
+    "visible tearing/flicker not fully solved",
+    "Windows loopback currently fails with 0x800706CC on this PC",
+    "rear LCD and query key addresses uncertain",
+    "complex scene 1280x800 12Hz not guaranteed",
+    "Linux/macOS adapters not implemented"
+  ],
+  "tag": "v0.3.0-demo.20261009",
+  "distribution": "GitHub Releases; no installer/firmware binaries in source Git history"
+}

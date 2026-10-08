@@ -1,0 +1,100 @@
+{
+  "encoding": "command, delay_ms, payload_length, payload bytes",
+  "records": [
+    {
+      "command": "B9",
+      "delay_ms": 0,
+      "payload_hex": "F1 12 84"
+    },
+    {
+      "command": "BA",
+      "delay_ms": 0,
+      "payload_hex": "31 81 05 F9 0E 0E 02 00 00 00 00 00 00 00 44 25 00 91 0A 00 00 00 4F 01 00 00 37"
+    },
+    {
+      "command": "B8",
+      "delay_ms": 0,
+      "payload_hex": "A8"
+    },
+    {
+      "command": "B3",
+      "delay_ms": 0,
+      "payload_hex": "00 00 00 00 07 0B 1E 1E"
+    },
+    {
+      "command": "C0",
+      "delay_ms": 0,
+      "payload_hex": "73 73 50 50 80 00 08 70 00"
+    },
+    {
+      "command": "CC",
+      "delay_ms": 0,
+      "payload_hex": "0B"
+    },
+    {
+      "command": "BF",
+      "delay_ms": 0,
+      "payload_hex": "02 10 82"
+    },
+    {
+      "command": "BC",
+      "delay_ms": 0,
+      "payload_hex": "46"
+    },
+    {
+      "command": "B4",
+      "delay_ms": 0,
+      "payload_hex": "80"
+    },
+    {
+      "command": "B2",
+      "delay_ms": 0,
+      "payload_hex": "40 08"
+    },
+    {
+      "command": "E3",
+      "delay_ms": 0,
+      "payload_hex": "03 03 00 00 03 03 00 00 00 C0"
+    },
+    {
+      "command": "B1",
+      "delay_ms": 0,
+      "payload_hex": "43 54 23 1E 1E 22 77 04 DB 4C"
+    },
+    {
+      "command": "B5",
+      "delay_ms": 0,
+      "payload_hex": "0A 0A"
+    },
+    {
+      "command": "B6",
+      "delay_ms": 0,
+      "payload_hex": "44 44"
+    },
+    {
+      "command": "E9",
+      "delay_ms": 0,
+      "payload_hex": "02 00 04 05 0F 80 81 12 31 23 4F 06 80 28 47 08 00 00 0F 00 00 00 00 00 0F 00 00 00 11 44 FF 88 8B BA A3 31 17 75 58 00 44 FF 88 8B BA A2 20 06 64 48 00 00 00 00 00 00 00 00 00 00 00 00 00"
+    },
+    {
+      "command": "EA",
+      "delay_ms": 0,
+      "payload_hex": "96 12 00 00 00 70 00 00 00 00 00 00 11 44 88 FF 8B BA A4 46 60 02 28 00 44 88 FF 8B BA A5 57 71 13 38 23 10 00 00 01 40 00 00 00 00 00 00 00 00 00 00 00 00 00 00 40 80 81 00 00 00 00 00 00"
+    },
+    {
+      "command": "E0",
+      "delay_ms": 0,
+      "payload_hex": "01 13 19 27 2F 39 4A 3C 07 0C 0E 13 14 12 13 11 1A 01 13 19 27 2F 39 4A 3C 07 0C 0E 13 14 12 13 11 1A"
+    },
+    {
+      "command": "11",
+      "delay_ms": 250,
+      "payload_hex": ""
+    },
+    {
+      "command": "29",
+      "delay_ms": 50,
+      "payload_hex": ""
+    }
+  ]
+}
