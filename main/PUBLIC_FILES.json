@@ -347,8 +347,8 @@
     },
     {
       "file": "demo/releases/v0.3.0-demo.20261009.md",
-      "bytes": 2687,
-      "sha256": "c794f004d9f827ab5d8969907121fb655c3c63c70599c2f70120c8e29fef96aa"
+      "bytes": 2368,
+      "sha256": "e5ef4c893e328c91be4829969b31e6507e614ef3a0adca528e4318ff71207b4b"
     },
     {
       "file": "demo/requirements-build.txt",
@@ -782,8 +782,8 @@
     },
     {
       "file": "reverse/tools/render_readme.py",
-      "bytes": 7036,
-      "sha256": "9eecb30f283d2f626032ffcaf73b1696a1aff65b200edf1f29b202f07a02959f"
+      "bytes": 6385,
+      "sha256": "c294542d887026375cf5a094cc3abd1d072e3ef1108b7c2b53485106809ee6e8"
     },
     {
       "file": "reverse/tools/requirements.txt",
@@ -792,5 +792,5 @@
     }
   ],
   "count": 158,
-  "bytes": 2921221
+  "bytes": 2920251
 }
