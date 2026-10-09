@@ -14,11 +14,13 @@
 
 <img src="main/assets/steven-appreciation.jpg" alt="Steven 的赞赏码" width="360">
 
-折腾的是一台用 Quectel **EC600U-CN** 的拉卡拉客显屏音响。引脚、地址、显示、音频、USB 协议和编译方法都在下面，资料截至 **2026-10-09**。
+折腾的是一台用 Quectel **EC600U-CN** 的拉卡拉客显屏音响。引脚、地址、显示、音频、USB 协议和编译方法都在下面，资料截至 **2026-10-10**。
 
 实机测过的、从固件里分析出的、还不确定的内容，分别标成 **实机确认**、**静态逆向** 和 **候选／地址不确定**。屏幕闪烁、撕裂和电脑声音采集还没完全解决，具体看对应章节。
 
 固件 BIN、Windows MSI 和运行文件包从 [GitHub Releases](https://github.com/StevenLang233/lakala-display-re/releases) 下载。参考实现源码在 [C 固件](main/demo/firmware/src) 与 [C# 上位机](main/demo/desktop/src)。
+
+新版屏幕电源功能请下载 [0.3.1 固件和 MSI](https://github.com/StevenLang233/lakala-display-re/releases/tag/v0.3.1-demo.20261010)，两个都要更新。旧下载合集固定在 0.3.0，不会自动升级。
 
 新用户到 [下载合集](https://github.com/StevenLang233/lakala-display-re/releases/tag/tools-v1.0.0) 取得 **QDisplay-Flash.cmd**，双击后自动取得并校验完整刷写包。也可下载 ZIP，完整解压后双击 **一键刷机.bat**。同页有固件 BIN、上位机 MSI 和运行文件包，刷写器源码在 [setup](main/demo/setup)。选 **1** 后确认刷写；设备检测、依赖准备、备份刷写、上位机安装与日志都由入口处理。具体条件和验证范围见[一键刷写和基础使用](#一键刷写和基础使用)。
 
@@ -51,6 +53,7 @@
 - [重建与更新 Demo](#重建与更新-demo)
 - [第三方来源与许可](#第三方来源与许可)
 - [源码和安装包分别发布](#源码和安装包分别发布)
+- [0.3.1 屏幕电源更新](#031-屏幕电源更新)
 - [首个 Demo 版本说明](#首个-demo-版本说明)
 
 ## 许可范围与兼容核对
@@ -624,6 +627,10 @@ type=8：flags=0、offset=MP3累计字节、length=raw_length=块长（1..16384�
 
 type=9：flags=offset=0、length=raw_length=偶数且1..16384；payload 为 signed PCM16LE，ACK detail=接受字节。连接/状态失败时停音并重新建立流，不能重放迟到的音频队列。显示和音频共用同一命令流，主机必须串行协调，否则帧组装/ACK 序号冲突。
 
+### 0.3.1 屏幕电源扩展
+
+HELLO(flags=2) 的 bit6 表示软件开关屏幕。HELLO(flags=18,offset=0/1/2) 分别息屏、亮屏、只查询；payload/raw_length 均为空/零。ACK receive 为 awake，detail=0x31534451。查询和 flags=7 不保活、不唤醒。手动息屏只改背光，不关机或断开 USB。5秒等待页之后持续无命令到90秒自动息屏，重连自动唤醒仅适用于这次自动息屏。
+
 
 ## 地址不确定及待验证项
 
@@ -700,7 +707,9 @@ python main/reverse/tools/disassemble_arm_range.py own_factory.bin 0x602a43e4 0x
 
 ## QDisplay Demo
 
-参考实现快照：2026-10-09。固件为原生 **C**，桌面为 **C#/.NET Framework 4.8**；不是 Python/CMD 产品启动器。固件以 APPIMG 方式在指定官方 R03 核心上运行，无 Logicrom 激活/SIM 授权步骤。官方核心和厂商 loader 自行获取，未声明其全部源码开源。安装包见 [GitHub Releases](https://github.com/StevenLang233/lakala-display-re/releases)。
+参考实现快照：2026-10-10。固件为原生 **C**，桌面为 **C#/.NET Framework 4.8**；不是 Python/CMD 产品启动器。固件以 APPIMG 方式在指定官方 R03 核心上运行，无 Logicrom 激活/SIM 授权步骤。官方核心和厂商 loader 自行获取，未声明其全部源码开源。安装包见 [GitHub Releases](https://github.com/StevenLang233/lakala-display-re/releases)。
+
+新版屏幕电源功能需要配套更新固件和 MSI，见 [0.3.1 下载](https://github.com/StevenLang233/lakala-display-re/releases/tag/v0.3.1-demo.20261010)。旧下载合集固定在 0.3.0。
 
 新用户到 [下载合集](https://github.com/StevenLang233/lakala-display-re/releases/tag/tools-v1.0.0) 取得 `QDisplay-Flash.cmd`，双击后自动下载并校验完整入口包；也可以下载 ZIP，解压并双击根目录 `一键刷机.bat`。同一页放固件 BIN、上位机 MSI 和运行文件包。刷写器源码在 [setup](main/demo/setup)。它处理官方依赖获取、原厂 R05 首次转换或 R03 APP 更新、备份校验、MSI 安装与连接检查；日常上位机仍独立运行。流程、恢复和已测试范围见 [SETUP](#一键刷写和基础使用)。AIDA64/Odospace 兼容留待后续。
 
@@ -708,27 +717,29 @@ python main/reverse/tools/disassemble_arm_range.py own_factory.bin 0x602a43e4 0x
 |---|---|
 | 已刷入版本源码 | [firmware/src](main/demo/firmware/src) |
 | 与固件匹配的生成头/图片 | [firmware/assets](main/demo/firmware/assets) |
-| 固件 BIN，154400字节 | GitHub Releases 附件 `qdisplay_native.bin`（APP2容器，原 `.img` 字节未修改） |
+| 固件 BIN，155456字节 | GitHub Releases 附件 `qdisplay_native.bin`（APP2容器，原 `.img` 字节未修改） |
 | 当前上位机源码，含诊断检查 | [desktop/src](main/demo/desktop/src) |
-| 实际已安装的 MSI | GitHub Releases 附件 `QDisplay-0.3.0-x64.msi` |
-| GUI/服务及依赖原包文件 | Releases 附件 `QDisplay-0.3.0-Windows-files.zip`；服务须通过 MSI 注册，单拷 EXE 不是完整安装 |
+| 实际已安装的 MSI | GitHub Releases 附件 `QDisplay-0.3.1-x64.msi` |
+| GUI/服务及依赖原包文件 | Releases 附件 `QDisplay-0.3.1-Windows-files.zip`；服务须通过 MSI 注册，单拷 EXE 不是完整安装 |
 | 版本/基址/二进制哈希 | [releases/manifest.json](main/demo/releases/manifest.json) |
 | 源码逐文件指纹 | [SOURCE_SNAPSHOT.json](main/demo/SOURCE_SNAPSHOT.json) |
 | 构建与APP更新 | [BUILD.md](#重建与更新-demo) |
 | 创建仓库与发布版本 | [PUBLISH.md](#源码和安装包分别发布) |
 
-发布包的本地副本在 `junk/publish/v0.3.0-demo.20261009/`，不进入源码 Git 历史。这些文件作为同一 demo 版本的 Release 附件分发，下载后以 `SHA256SUMS.txt` 核验。版本说明在 [releases/v0.3.0-demo.20261009.md](#首个-demo-版本说明)。
+发布包的本地副本在 `junk/publish/v0.3.1-demo.20261010/`，不进入源码 Git 历史。这些文件作为同一 demo 版本的 Release 附件分发，下载后以 `SHA256SUMS.txt` 核验。版本说明在 [releases/v0.3.1-demo.20261010.md](#031-屏幕电源更新)。
 
-固件 SHA-256：`4e6da49fcff0628532ed325b7c722db4e83971015b4f6783a0655c4f099fb437`。
-MSI SHA-256：`129e947933e041bf0e93c482c4d8bd9cb6e66e3fd28ba6d4f43c9f40bd4efa07`。
+固件 SHA-256：`4af5b2b0df8ea504d07ae18bb900aae3fd69381e45e707b2c9ca39ae1c5a5fee`。
+MSI SHA-256：`3955286e39faa450324cd335c6c454e99fd552278fd74ea941a8196d167ee80f`。
 
 MSI 安装 LocalSystem 自动启动服务 `QDisplayDevice`、图形界面和系统托盘启动项。每用户配置在 `%LOCALAPPDATA%/QDisplay/ui.json`；板卡重启/USB重连时恢复所选显示/相框/硬件模式及音频意图。运行稳定时不重启采集流水线。虚拟副屏依赖独立的 **MikeTheTech Virtual Display Driver**（`ROOT\MTTVDD`），MSI 本身不包含该驱动；当前实现期望唯一虚拟设备，不改真实主显示器配置。请从 [上游项目](https://github.com/VirtualDrivers/Virtual-Display-Driver) 获取匹配驱动，本机历史使用25.7.23版本。
 
 一键入口可代为取得并安装这个固定版本的签名驱动，不创建重复适配器，不导入测试证书。相框和硬件信息模式无需虚拟屏驱动。
 
+屏幕电源：勾选“跟随 Windows 息屏和亮屏”后随当前 Windows 会话的显示器状态同步，变暗不算息屏；窗口关闭到托盘后仍有效。主窗口和托盘均可手动亮屏/息屏，下次 Windows 显示状态变化会重新同步。息屏时停止画面采集与发送，但音频独立工作；不关机、不关闭 USB。断开有效命令后 5 秒进入等待页，倒计时到 90 秒后关闭背光；重连可唤醒超时息屏，保活不会唤醒手动息屏。需要配套 0.3.1 固件。
+
 已知限制：部分颜色静态闪烁、动态撕裂仍有用户反馈；任意复杂画面12Hz未保证；本机当前WASAPI loopback报 `0x800706cc`，电脑声音桥未恢复，独立MP3已实机验证；小屏/查询键地址不确定，未启用。Linux/macOS尚无适配，不称跨平台成品；AIDA64手机LCD/Odospace兼容尚未完成。
 
-历史上旧构建曾被卡巴斯基拦截，本目录保留的是之后实际安装且2026-10-09本机扫描未检出的版本；这不是数字签名，也不能承诺所有杀毒软件都不会误报。没有要求关闭杀毒/添加排除。
+历史上旧构建曾被卡巴斯基拦截，旧版2026-10-09本机扫描未检出；新版尚未做完整杀毒复核；这不是数字签名，也不能承诺所有杀毒软件都不会误报。没有要求关闭杀毒/添加排除。
 
 本项目有权许可的原创源码、固件、上位机软件和文档采用 **CC BY-NC-SA 4.0**，不授予商业用途许可。完整条款见 [LICENSE](LICENSE)，排除的第三方、原厂内容及兼容核对结论见 [LICENSE_SCOPE](#许可范围与兼容核对) 和 [THIRD_PARTY](#第三方来源与许可)。这不把安装包中的第三方组件改成 CC 许可。个人使用倡议、商家声明及举报原话见[仓库 README](#使用限制与商家授权声明)，不追加 CC 许可条件。
 
@@ -892,6 +903,21 @@ powershell.exe -NoProfile -ExecutionPolicy Bypass -File main/demo/scripts/publis
 源文件及生成资产的SHA按原始字节核对，`.gitattributes` 保留行尾，避免Git提交/检出改变CRLF/LF而破坏已部署快照指纹。
 
 命令参数依据GitHub CLI官方文档：[创建仓库](https://cli.github.com/manual/gh_repo_create)、[创建Release](https://cli.github.com/manual/gh_release_create)、[上传附件](https://cli.github.com/manual/gh_release_upload)。
+
+
+## 0.3.1 屏幕电源更新
+
+- 可选跟随 Windows 息屏/亮屏，关闭窗口进入托盘后继续监听。
+- 主窗口和托盘加入亮屏、息屏按钮。
+- 息屏暂停画面采集和发送，保留 USB 和音频；亮屏恢复原有显示模式。
+- 固件在失去有效主机命令后显示等待页与秒数倒计时，90 秒关闭背光，重连唤醒。手动息屏不会被普通保活唤醒。
+- MSI 支持升级旧版本。请同步更新配套固件，旧固件不支持软件开关屏幕。
+
+新版固件和 MSI 分别下载。本次不发布尚未完成的外置 Flash 音乐功能，也未修复最大音量 MP3 播放结束时 USB 掉线的问题。
+
+Windows 监听使用 [Microsoft 的显示电源通知](https://learn.microsoft.com/en-us/windows/win32/power/power-setting-guids)，以当前会话的显示器电源状态为准；屏保、降低亮度或直接按显示器物理电源键不一定产生同样通知。
+
+验证记录：固件刷后读回一致，电源状态自检、手动开关及保持、90秒无命令自动息屏、重连唤醒。0.3.0→0.3.1 MSI 升级成功且服务运行；上位机实际按钮、注册电源通知、模拟 Windows 电源消息及隐藏到托盘后的板卡开关联动检查通过。实际显示器息屏/亮屏的现场效果仍需用户确认。
 
 
 ## 首个 Demo 版本说明

@@ -291,6 +291,27 @@ static void controls_start(void)
     if(!core_matches) return;
     for(unsigned i=0;i<3;i++) if(!r03_gpio_init(keys[i],&input)) keys_available|=1u<<i;
 }
+static void waiting_countdown(uint32_t now)
+{
+    static unsigned previous=~0u;
+    if(power_state.host_seen || power_state.frame_valid || !power_state.awake || assembling || osd_drawn) {previous=~0u;return;}
+    unsigned elapsed=(uint32_t)(now-power_state.last_host)/1000u;
+    unsigned seconds=elapsed>=90u?0u:90u-elapsed;
+    if(seconds==previous)return;
+    previous=seconds;
+    static const uint8_t segments[10]={0x3f,0x06,0x5b,0x4f,0x66,0x6d,0x7d,0x07,0x7f,0x6f};
+    static const uint8_t rects[7][4]={{7,0,30,6},{37,6,6,28},{37,40,6,28},{7,68,30,6},{1,40,6,28},{1,6,6,28},{7,34,30,6}};
+    uint16_t *pixels=(uint16_t*)frame;
+    for(unsigned y=1050;y<1150;y++)for(unsigned x=330;x<470;x++)pixels[y*QD_WIDTH+x]=0x1084;
+    for(unsigned digit=0;digit<2;digit++) {
+        uint8_t mask=segments[digit?seconds%10:seconds/10];
+        for(unsigned part=0;part<7;part++)if(mask&(1u<<part)) {
+            const uint8_t *r=rects[part];unsigned left=347+digit*58+r[0],top=1062+r[1];
+            for(unsigned y=top;y<top+r[3];y++)for(unsigned x=left;x<left+r[2];x++)pixels[y*QD_WIDTH+x]=0xffff;
+        }
+    }
+    submit_frame();
+}
 static void controls_poll(void)
 {
     static const Helios_GPIONum keys[]={47,46,44};
@@ -304,6 +325,7 @@ static void controls_poll(void)
     if(qd_power_expire(&power_state,now)) {
         osd_restore();assembling=false;frame_offset=0;
     }
+    if(qd_power_idle(&power_state,now)) events|=QD_KEY_POWER;
     if(events && panel_ready) bl_apply(power_state.awake,power_state.brightness);
     if(!frame) return;
     if(!power_state.frame_valid && !assembling && !waiting_drawn) {
@@ -319,6 +341,7 @@ static void controls_poll(void)
             osd_restore();submit_frame();
         } else if((events&QD_KEY_POWER) && power_state.awake) submit_frame();
     }
+    if(waiting_drawn)waiting_countdown(now);
 }
 static void render_task(void *arg)
 {
@@ -333,10 +356,21 @@ static void render_task(void *arg)
         uint32_t status=s->status, decode=0,draw=0,detail=0;
         uint32_t rx=s->received_us;
         if(!status && XXH32(s->data,h->length,0)!=h->payload_hash) status=QD_BAD_HASH;
-        if(!status) qd_power_touch(&power_state,millis());
+        if(!status && !(h->type==QD_HELLO && (h->flags==7 || (h->flags==18 && h->offset==2u)))) {
+            bool was_awake=power_state.awake;qd_power_touch(&power_state,millis());
+            if(was_awake!=power_state.awake && panel_ready) bl_apply(power_state.awake,power_state.brightness);
+        }
         if(!status) switch(h->type) {
         case QD_HELLO:
             detail=QD_BLOCK_BYTES;
+            if(h->flags==18) {
+                if(h->offset>2u || h->length || h->raw_length) {status=QD_BAD_LENGTH;break;}
+                if(h->offset<2u) {
+                    qd_power_set(&power_state,h->offset!=0);osd_restore();
+                    if(panel_ready && !bl_apply(power_state.awake,power_state.brightness))status=QD_DISPLAY_ERROR;
+                }
+                rx=power_state.awake?1u:0u;detail=QD_UI_STATE_MAGIC;break;
+            }
             if(h->flags==2) detail=QD_FEATURE_DEFER_ACK;
             if(h->flags==15) {
                 /* Exact-core diagnostic: these status/W1C and mask registers

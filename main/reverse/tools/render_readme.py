@@ -22,6 +22,7 @@ CHAPTERS = (
     ("main/demo/BUILD.md", "重建与更新 Demo", "重建与更新-demo"),
     ("main/demo/THIRD_PARTY.md", "第三方来源与许可", "第三方来源与许可"),
     ("main/demo/PUBLISH.md", "源码和安装包分别发布", "源码和安装包分别发布"),
+    ("main/demo/releases/v0.3.1-demo.20261010.md", "0.3.1 屏幕电源更新", "031-屏幕电源更新"),
     ("main/demo/releases/v0.3.0-demo.20261009.md", "首个 Demo 版本说明", "首个-demo-版本说明"),
 )
 ANCHORS = {(ROOT / path).resolve(): anchor for path, _, anchor in CHAPTERS}
@@ -41,11 +42,13 @@ INTRO = """# Lakala Display RE
 
 <img src="main/assets/steven-appreciation.jpg" alt="Steven 的赞赏码" width="360">
 
-折腾的是一台用 Quectel **EC600U-CN** 的拉卡拉客显屏音响。引脚、地址、显示、音频、USB 协议和编译方法都在下面，资料截至 **2026-10-09**。
+折腾的是一台用 Quectel **EC600U-CN** 的拉卡拉客显屏音响。引脚、地址、显示、音频、USB 协议和编译方法都在下面，资料截至 **2026-10-10**。
 
 实机测过的、从固件里分析出的、还不确定的内容，分别标成 **实机确认**、**静态逆向** 和 **候选／地址不确定**。屏幕闪烁、撕裂和电脑声音采集还没完全解决，具体看对应章节。
 
 固件 BIN、Windows MSI 和运行文件包从 [GitHub Releases](https://github.com/StevenLang233/lakala-display-re/releases) 下载。参考实现源码在 [C 固件](main/demo/firmware/src) 与 [C# 上位机](main/demo/desktop/src)。
+
+新版屏幕电源功能请下载 [0.3.1 固件和 MSI](https://github.com/StevenLang233/lakala-display-re/releases/tag/v0.3.1-demo.20261010)，两个都要更新。旧下载合集固定在 0.3.0，不会自动升级。
 
 新用户到 [下载合集](https://github.com/StevenLang233/lakala-display-re/releases/tag/tools-v1.0.0) 取得 **QDisplay-Flash.cmd**，双击后自动取得并校验完整刷写包。也可下载 ZIP，完整解压后双击 **一键刷机.bat**。同页有固件 BIN、上位机 MSI 和运行文件包，刷写器源码在 [setup](main/demo/setup)。选 **1** 后确认刷写；设备检测、依赖准备、备份刷写、上位机安装与日志都由入口处理。具体条件和验证范围见[一键刷写和基础使用](#一键刷写和基础使用)。
 

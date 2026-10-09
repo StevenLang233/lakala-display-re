@@ -82,6 +82,11 @@ namespace QDisplay.Windows {
             case Commands.Pcm:
                 if(job.Body.Length<2||job.Body.Length>16384||job.Body.Length%2!=0)throw new InvalidDataException("音频块尺寸错误");
                 RequireLink();if(status.AudioMode!="windows")throw new InvalidOperationException("电脑音频未启用");link.Command(9,0,0,(uint)job.Body.Length,job.Body);status.PcmBlocks++;for(int i=0;i<job.Body.Length;i+=2)if(job.Body[i]!=0||job.Body[i+1]!=0)status.PcmNonzeroSamples++;lastUi=DateTime.UtcNow;break;
+            case Commands.ScreenPower:
+                bool on;if(text=="1")on=true;else if(text=="0")on=false;else throw new InvalidDataException("屏幕状态无效");
+                RequireLink();if(!link.ScreenPower)throw new InvalidOperationException("请先刷入支持屏幕开关的新版固件");
+                Reply power=link.Command(1,18,on?1u:0u,0);if(power.Detail!=0x31534451u)throw new InvalidDataException("屏幕开关协议不匹配");
+                settings.ScreenOn=status.ScreenOn=on;pending=null;pendingPrepared=null;if(on)lastFrame=lastUi=DateTime.UtcNow;Save();break;
             case Commands.VerifyFrame:RequireLink();Reply verified=link.Command(6,0,0,0);job.Result=Ipc.Json(new{Hash=verified.Detail,Expected=status.LastFrameHash});break;
             case Commands.AudioState:RequireLink();Reply audio=link.Command(7,8,0,0);job.Result=Ipc.Json(new{Output=audio.Receive,HardwareVolume=audio.Decode,PaType=audio.Draw,Flags=audio.Detail});break;
             case Commands.AudioOutput:RequireLink();int output;if(!Int32.TryParse(text,out output)||output<0||output>2)throw new InvalidDataException("音频输出通道无效");link.Command(7,9,(uint)output,0);status.AudioMode=settings.AudioMode="off";status.AudioPlaying=false;status.AudioOutput=output;break;
@@ -93,16 +98,16 @@ namespace QDisplay.Windows {
             while(!stopped){try{
                 int session=ActiveSession;if(session!=lastSession){lock(gate){status.Mode=SessionPolicy.AfterSwitch(status.Mode);status.UiSession=-1;pending=null;pendingPrepared=null;lastFrame=DateTime.MinValue;}
                     if(status.AudioMode!="off"&&link!=null){link.Command(7,1,0,0);status.AudioMode="off";status.AudioPlaying=false;}Log("Active session "+lastSession+" -> "+session);lastSession=session;}
-                if(link==null&&DateTime.UtcNow>=nextConnect){nextConnect=DateTime.UtcNow.AddSeconds(2);string port=Usb.Find();if(port!=null){NativeLink attempt=null;try{attempt=new NativeLink(new Usb(port));attempt.Connect();link=attempt;lock(gate){status.NativeBlockBytes=link.BlockBytes;status.NativeWholeFrames=link.WholeFrames;status.NativeSparseFrames=link.SparseFrames;status.ConnectionGeneration++;status.Connected=true;status.AudioAvailable=link.Audio;status.Port=port;status.Error="";status.Message="已连接";}nextHello=DateTime.MinValue;Log("USB connected "+port+" generation "+status.ConnectionGeneration);}catch{if(attempt!=null)attempt.Dispose();throw;}}}
+                if(link==null&&DateTime.UtcNow>=nextConnect){nextConnect=DateTime.UtcNow.AddSeconds(2);string port=Usb.Find();if(port!=null){NativeLink attempt=null;try{attempt=new NativeLink(new Usb(port));attempt.Connect();link=attempt;lock(gate){status.NativeBlockBytes=link.BlockBytes;status.NativeWholeFrames=link.WholeFrames;status.NativeSparseFrames=link.SparseFrames;status.ScreenPowerAvailable=link.ScreenPower;status.ConnectionGeneration++;status.Connected=true;status.AudioAvailable=link.Audio;status.Port=port;status.Error="";status.Message="已连接";}if(link.ScreenPower){link.Command(1,18,settings.ScreenOn?1u:0u,0);status.ScreenOn=settings.ScreenOn;}nextHello=DateTime.MinValue;Log("USB connected "+port+" generation "+status.ConnectionGeneration);}catch{if(attempt!=null)attempt.Dispose();throw;}}}
                 Job job=null;lock(gate){if(jobs.Count>0)job=jobs.Dequeue();}
                 if(job!=null){try{Execute(job);}catch(Exception ex){job.Error=ex;}finally{job.Done.Set();}continue;}
-                if(link!=null){byte[] frame=null;PreparedFrame prepared=null;string mode;lock(gate){mode=status.Mode;if((mode=="display"||mode=="photo")&&DateTime.UtcNow-lastFrame>TimeSpan.FromSeconds(5)&&DateTime.UtcNow-lastUi>TimeSpan.FromSeconds(5)){
+                if(link!=null){byte[] frame=null;PreparedFrame prepared=null;string mode;lock(gate){mode=status.Mode;if(status.ScreenOn&&(mode=="display"||mode=="photo")&&DateTime.UtcNow-lastFrame>TimeSpan.FromSeconds(5)&&DateTime.UtcNow-lastUi>TimeSpan.FromSeconds(5)){
                             status.Mode=mode="hardware";status.UiSession=-1;pending=null;pendingPrepared=null;Log("UI stopped delivering frames; hardware fallback");}
                         if(pending!=null){frame=pending;pending=null;}if(pendingPrepared!=null){prepared=pendingPrepared;pendingPrepared=null;}}
-                    if(mode=="hardware"&&DateTime.UtcNow>=nextMetrics){dashboard.Sample();status.Cpu=dashboard.Cpu;status.Memory=dashboard.Used;status.TotalMemory=dashboard.Total;using(System.Drawing.Bitmap image=dashboard.Draw()){
+                    if(status.ScreenOn&&mode=="hardware"&&DateTime.UtcNow>=nextMetrics){dashboard.Sample();status.Cpu=dashboard.Cpu;status.Memory=dashboard.Used;status.TotalMemory=dashboard.Total;using(System.Drawing.Bitmap image=dashboard.Draw()){
                         frame=Pictures.Pixels(image);}
                         nextMetrics=DateTime.UtcNow.AddSeconds(1);}
-                    bool sent=frame!=null||prepared!=null;
+                    if(!status.ScreenOn){frame=null;prepared=null;}bool sent=frame!=null||prepared!=null;
                     if(sent){if(prepared==null)prepared=PreparedFrame.Prepare(frame,link.BlockBytes);Reply completed=link.SendPrepared(prepared);
                         status.NativeFrameMs=link.LastFrameMs;status.EncodeMs=link.LastEncodeMs;status.WireBytes=link.LastWireBytes;status.ReceiveUs=completed.Receive;status.DecodeUs=completed.Decode;status.DrawUs=completed.Draw;status.LastFrameHash=prepared.PixelHash;status.LastSparseFrame=link.LastSparse;
                         frames++;fpsFrames++;status.Frames=frames;nextHello=DateTime.UtcNow.AddSeconds(1);}

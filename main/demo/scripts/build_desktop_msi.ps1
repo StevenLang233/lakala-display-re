@@ -2,7 +2,7 @@
 $ErrorActionPreference='Stop'
 $project=Split-Path $PSScriptRoot -Parent
 $directory=Join-Path $project $BuildDirectory
-$msi=Join-Path $directory 'QDisplay-0.3.0-x64.msi'
+$msi=Join-Path $directory 'QDisplay-0.3.1-x64.msi'
 $cab=Join-Path $directory 'qdisplay.cab'
 $files=@(
     @{key='Gui';name='QDisplay.exe';guid='{D7646E7E-69FD-415F-A05A-CC86BFB3A112}'},
@@ -61,10 +61,13 @@ $schemas=@(
     'CREATE TABLE `ServiceControl` (`ServiceControl` CHAR(72) NOT NULL,`Name` CHAR(255) NOT NULL,`Event` SHORT NOT NULL,`Arguments` CHAR(255),`Wait` SHORT,`Component_` CHAR(72) NOT NULL PRIMARY KEY `ServiceControl`)',
     'CREATE TABLE `InstallExecuteSequence` (`Action` CHAR(72) NOT NULL,`Condition` CHAR(255),`Sequence` SHORT PRIMARY KEY `Action`)',
     'CREATE TABLE `InstallUISequence` (`Action` CHAR(72) NOT NULL,`Condition` CHAR(255),`Sequence` SHORT PRIMARY KEY `Action`)',
+    'CREATE TABLE `Upgrade` (`UpgradeCode` CHAR(38) NOT NULL,`VersionMin` CHAR(20),`VersionMax` CHAR(20),`Language` CHAR(255),`Attributes` LONG NOT NULL,`Remove` CHAR(255),`ActionProperty` CHAR(72) NOT NULL PRIMARY KEY `UpgradeCode`,`VersionMin`,`VersionMax`,`Language`,`Attributes`)',
     'CREATE TABLE `LaunchCondition` (`Condition` CHAR(255) NOT NULL,`Description` CHAR(255) NOT NULL PRIMARY KEY `Condition`)')
 foreach($schema in $schemas){Sql $schema}
-$properties=[ordered]@{ProductCode='{B8FA9A43-0F4B-41EF-8D36-34C423194D22}';UpgradeCode='{F5923C19-B395-4509-AE80-67B7020A15BA}';ProductName='QDisplay';ProductVersion='0.3.0';ProductLanguage='1033';Manufacturer='QDisplay';ALLUSERS='1';INSTALLLEVEL='1';ARPNOMODIFY='1';ARPPRODUCTICON='QDisplayIcon';REBOOT='ReallySuppress'}
+$properties=[ordered]@{ProductCode='{32989BD8-8D5F-48D0-A6F6-447544C5B869}';UpgradeCode='{F5923C19-B395-4509-AE80-67B7020A15BA}';ProductName='QDisplay';ProductVersion='0.3.1';ProductLanguage='1033';Manufacturer='QDisplay';ALLUSERS='1';INSTALLLEVEL='1';ARPNOMODIFY='1';ARPPRODUCTICON='QDisplayIcon';REBOOT='ReallySuppress'}
+$properties['SecureCustomProperties']='QDISPLAY_OLD';
 foreach($p in $properties.GetEnumerator()){Row 'Property' @('Property','Value') @($p.Key,$p.Value)}
+Row 'Upgrade' @('UpgradeCode','VersionMin','VersionMax','Attributes','Remove','ActionProperty') @($properties.UpgradeCode,'0.0.0','0.3.1',1,'ALL','QDISPLAY_OLD')
 Row 'Directory' @('Directory','Directory_Parent','DefaultDir') @('TARGETDIR',$null,'SourceDir')
 Row 'Directory' @('Directory','Directory_Parent','DefaultDir') @('ProgramFiles64Folder','TARGETDIR','.')
 Row 'Directory' @('Directory','Directory_Parent','DefaultDir') @('INSTALLFOLDER','ProgramFiles64Folder','QDisplay')
@@ -82,9 +85,9 @@ Row 'Shortcut' @('Shortcut','Directory_','Name','Component_','Target','Descripti
 Row 'ServiceInstall' @('ServiceInstall','Name','DisplayName','ServiceType','StartType','ErrorControl','Component_','Description') @('Device','QDisplayDevice','QDisplay Device Service',16,2,32769,'Service','QDisplay USB connection and device audio')
 Row 'ServiceControl' @('ServiceControl','Name','Event','Wait','Component_') @('Device','QDisplayDevice',163,1,'Service')
 Row 'LaunchCondition' @('Condition','Description') @('VersionNT64','QDisplay requires 64-bit Windows.')
-$actions=[ordered]@{LaunchConditions=100;CostInitialize=800;FileCost=900;CostFinalize=1000;InstallValidate=1400;InstallInitialize=1500;ProcessComponents=1600;UnpublishFeatures=1800;StopServices=1900;DeleteServices=2000;RemoveRegistryValues=2600;RemoveShortcuts=3200;RemoveFiles=3500;RemoveFolders=3600;InstallFiles=4000;CreateShortcuts=4500;WriteRegistryValues=5000;InstallServices=5800;StartServices=5900;RegisterUser=6000;RegisterProduct=6100;PublishFeatures=6300;PublishProduct=6400;InstallFinalize=6600}
+$actions=[ordered]@{FindRelatedProducts=25;LaunchConditions=100;CostInitialize=800;FileCost=900;CostFinalize=1000;InstallValidate=1400;InstallInitialize=1500;RemoveExistingProducts=1550;ProcessComponents=1600;UnpublishFeatures=1800;StopServices=1900;DeleteServices=2000;RemoveRegistryValues=2600;RemoveShortcuts=3200;RemoveFiles=3500;RemoveFolders=3600;InstallFiles=4000;CreateShortcuts=4500;WriteRegistryValues=5000;InstallServices=5800;StartServices=5900;RegisterUser=6000;RegisterProduct=6100;PublishFeatures=6300;PublishProduct=6400;InstallFinalize=6600}
 foreach($action in $actions.GetEnumerator()){Row 'InstallExecuteSequence' @('Action','Sequence') @($action.Key,[int]$action.Value)}
-foreach($action in @(@('LaunchConditions',100),@('CostInitialize',800),@('FileCost',900),@('CostFinalize',1000),@('ExecuteAction',1300))){Row 'InstallUISequence' @('Action','Sequence') @($action[0],[int]$action[1])}
+foreach($action in @(@('FindRelatedProducts',25),@('LaunchConditions',100),@('CostInitialize',800),@('FileCost',900),@('CostFinalize',1000),@('ExecuteAction',1300))){Row 'InstallUISequence' @('Action','Sequence') @($action[0],[int]$action[1])}
 function Stream([string]$table,[string]$key,[string]$path){$view=$database.OpenView('INSERT INTO `'+$table+'` (`Name`,`Data`) VALUES (?,?)');$record=$installer.CreateRecord(2);$record.StringData(1)=$key;$record.SetStream(2,$path);try{$view.Execute($record)}finally{$view.Close();[Runtime.InteropServices.Marshal]::FinalReleaseComObject($record) | Out-Null;[Runtime.InteropServices.Marshal]::FinalReleaseComObject($view) | Out-Null}}
 Stream 'Icon' 'QDisplayIcon' (Join-Path $directory 'QDisplay.ico')
 Stream '_Streams' 'qdisplay.cab' $cab

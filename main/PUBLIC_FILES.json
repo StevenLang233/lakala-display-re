@@ -27,8 +27,8 @@
     },
     {
       "file": "demo/README.md",
-      "bytes": 4224,
-      "sha256": "8e22ecabaada3383db98c37c65c00cd9010a1cdeed5530ab00485286c5fa9e85"
+      "bytes": 4946,
+      "sha256": "2b7bbaeff753cd7ba80e7958cfa4ea137ffd4145aba30951505cb4fe814ed792"
     },
     {
       "file": "demo/SETUP.md",
@@ -37,8 +37,8 @@
     },
     {
       "file": "demo/SOURCE_SNAPSHOT.json",
-      "bytes": 6067,
-      "sha256": "d2418ffccad0f32d66e569cdc653006044928b5d024a2b777bf14321fb39d767"
+      "bytes": 6187,
+      "sha256": "54550ceec5ad5dd16a07a1f618c20bd35f4ffd980e4af899015f3182b4cf8285"
     },
     {
       "file": "demo/THIRD_PARTY.md",
@@ -98,7 +98,7 @@
     {
       "file": "demo/desktop/src/AssemblyInfo.cs",
       "bytes": 252,
-      "sha256": "a47476cf13ab1c13a7daae1550cb7b7773c53a55d7a09dda87963ade0662361b"
+      "sha256": "82c69c90efd341834a4d17aa4682c24fe4c2239994308d3422bfc03fd484db6f"
     },
     {
       "file": "demo/desktop/src/Checks/AudioBridgeCheck.cs",
@@ -171,6 +171,11 @@
       "sha256": "4ee274e717db48532eb78e3308462da6bca37e0cbe3127f3cff1a6d1fc33a993"
     },
     {
+      "file": "demo/desktop/src/Checks/ScreenPowerCheck.cs",
+      "bytes": 3127,
+      "sha256": "e6412f4be93208b4133ed8526d80aeb9901ba5226b8e8191f44fc0211c887568"
+    },
+    {
       "file": "demo/desktop/src/Checks/SparseCodecBench.cs",
       "bytes": 1322,
       "sha256": "ff2d1dc20ff173a4c595940bd2a7295633adfa3c944aa9d226ba57a79d48945c"
@@ -192,13 +197,13 @@
     },
     {
       "file": "demo/desktop/src/Core/Models.cs",
-      "bytes": 2468,
-      "sha256": "7762a62de67e26c19ec6b1b637295562df54344627dc5011a7edd055a96a5388"
+      "bytes": 2620,
+      "sha256": "7e9fbdd81af9e5b10602a0d6dc1f092e62ae1b7bcfaf10704e839a65bb2442bb"
     },
     {
       "file": "demo/desktop/src/Core/Protocol.cs",
-      "bytes": 14686,
-      "sha256": "96246d7373c9eebee224676e0acf0807e16c030ddcff805e9b06cbc5cac92520"
+      "bytes": 14727,
+      "sha256": "76bfdb15644bff09255e51cde5e6c2d932efeafe665e219f242bac9bc9994622"
     },
     {
       "file": "demo/desktop/src/Core/SparseFrame.cs",
@@ -217,8 +222,8 @@
     },
     {
       "file": "demo/desktop/src/Windows/Backend.cs",
-      "bytes": 17633,
-      "sha256": "d6bb669f87846a42a597fcb82e9600cb9df077e2545e030c4019c61c455d9df9"
+      "bytes": 18462,
+      "sha256": "38185077c72856a02f685a51b392c90345d0d6d687582461bb461ff0e0024f2b"
     },
     {
       "file": "demo/desktop/src/Windows/DesktopCapture.cs",
@@ -252,8 +257,8 @@
     },
     {
       "file": "demo/desktop/src/Windows/MainWindow.cs",
-      "bytes": 33797,
-      "sha256": "062b2af013e0b2647e6620b3b882dd6612a858f3aae1fd964713464b4cce63bb"
+      "bytes": 36988,
+      "sha256": "1dbf7c59bf4ab95ff10565bbe1258ad4f24f7c879fe9509dd44c1a8ecf1ec01e"
     },
     {
       "file": "demo/desktop/src/Windows/SystemLog.cs",
@@ -317,18 +322,18 @@
     },
     {
       "file": "demo/firmware/src/main.c",
-      "bytes": 27848,
-      "sha256": "e8c54ccb5596185c69e1edd52e360bf86eb13782cea4d34810d37644ef5c2115"
+      "bytes": 29821,
+      "sha256": "172679b7fa3a7b607ab84deb316de60c4716f1e95aed899b7aab91a7311c8369"
     },
     {
       "file": "demo/firmware/src/native_protocol.h",
-      "bytes": 1544,
-      "sha256": "d1772f5a1bc33391d0dc7f72f9f973198095ba9505e2a3eb935e550c62944f05"
+      "bytes": 1606,
+      "sha256": "bfeee5761dfcae28d9ce1dd0a98e61d8f0342f15c2b33f96f1dd75af85272597"
     },
     {
       "file": "demo/firmware/src/power_policy.h",
-      "bytes": 3863,
-      "sha256": "346027270fddb71de64f6c84008b55e710271f515ed8afcf1500c24463ac3aef"
+      "bytes": 4753,
+      "sha256": "f8dbf5c91c605437b442dea3b278fa4b9b3638e06f139708aa701c4db61c7e66"
     },
     {
       "file": "demo/firmware/src/third_party/LICENSE.lz4",
@@ -358,12 +363,12 @@
     {
       "file": "demo/releases/license-bundle.json",
       "bytes": 1536,
-      "sha256": "d849a04d04e64a9b3883283ed69b82bc04ab58fb7fe9a0f7cfc3ccfd5a251602"
+      "sha256": "981ec378772d5c3cb5a0b47ce02de3700a230476ce596eb51e382de1723ec832"
     },
     {
       "file": "demo/releases/manifest.json",
-      "bytes": 1438,
-      "sha256": "affc3a2b374374db6dce79a656bd3af7c1d9f31f311d8545c6114c2c77ecaee0"
+      "bytes": 1535,
+      "sha256": "6aa7921367601880763f37bb552b1e96a6be826018f621f12548d0f2b027f3b2"
     },
     {
       "file": "demo/releases/setup-v1.0.0.md",
@@ -381,6 +386,11 @@
       "sha256": "ee50df28c1b07a16aaf823e25413dfe0cfd9fb117f8d7ee67cd861fbef75743a"
     },
     {
+      "file": "demo/releases/v0.3.1-demo.20261010.md",
+      "bytes": 1338,
+      "sha256": "e3a5d5561cbd70d375b76a601a69e79f8ed3133ebdce2b739502032f69974a93"
+    },
+    {
       "file": "demo/requirements-build.txt",
       "bytes": 51,
       "sha256": "33b5b1b3bdabc2f9bc3b353a58e4f694a1b364def78dcf31688b0ade0fdea1f3"
@@ -392,8 +402,8 @@
     },
     {
       "file": "demo/scripts/build_desktop_msi.ps1",
-      "bytes": 11683,
-      "sha256": "561b29d90059c69d928638c97811b815a3bc0cefb81185b861cedc1c9cefb3de"
+      "bytes": 12267,
+      "sha256": "65494a4be6ce6f861ace103bcce761161414873e564e6623ed0ccccc41b70717"
     },
     {
       "file": "demo/scripts/build_firmware.ps1",
@@ -402,8 +412,8 @@
     },
     {
       "file": "demo/scripts/build_native_firmware.py",
-      "bytes": 8286,
-      "sha256": "7b127efde2afd6f428a1dccd8bed274949af0d602efe3389a571f30d9beacde2"
+      "bytes": 8365,
+      "sha256": "b31c9b7f1b0b3c1a2db6671882d335b339849dd5712596bcdae87a3b4762362d"
     },
     {
       "file": "demo/scripts/deploy_native_app.py",
@@ -473,7 +483,7 @@
     {
       "file": "demo/setup/dependencies.lock.json",
       "bytes": 3533,
-      "sha256": "8d7b394bffe8a9ed837cdf1114cef08c5c099dc6032ed1799aa7b98257cfac66"
+      "sha256": "b3121c976bcd3bf21c7154f88ea3ccb71bec654d122432de816f095eb8f0671f"
     },
     {
       "file": "demo/setup/host-files.lock.json",
@@ -622,8 +632,8 @@
     },
     {
       "file": "reverse/PROTOCOL.md",
-      "bytes": 7460,
-      "sha256": "b55ab0fee61acec98c0fad8c84529775d74905f667f8ee1d238244054c43bcfd"
+      "bytes": 7888,
+      "sha256": "cd02034d0ed15fc19068786a1ec23bb6f705e25670b2af51702519008f0b2426"
     },
     {
       "file": "reverse/README.md",
@@ -917,8 +927,8 @@
     },
     {
       "file": "reverse/tools/render_readme.py",
-      "bytes": 8031,
-      "sha256": "b94e86497f317b8164ed426615cf1dec7d5362417bba749c67248d90743f0cdd"
+      "bytes": 8358,
+      "sha256": "bc51f7e0425d40ab369122cf9c709c3197e6d5f83c655cc8d24c245e750796a6"
     },
     {
       "file": "reverse/tools/requirements.txt",
@@ -926,6 +936,6 @@
       "sha256": "853fa721a3fa04d3bf7835bb6a158084f29f7d5844f6f8548010ba19dcfb6cb5"
     }
   ],
-  "count": 185,
-  "bytes": 3294486
+  "count": 187,
+  "bytes": 3308446
 }

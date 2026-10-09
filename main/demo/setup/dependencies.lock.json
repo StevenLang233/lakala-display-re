@@ -1,7 +1,7 @@
 {
   "version": "1.0.0",
   "repository": "StevenLang233/lakala-display-re",
-  "release": "v0.3.0-demo.20261009",
+  "release": "v0.3.1-demo.20261010",
   "downloads": {
     "python": {
       "file": "python-3.13.16-embed-amd64.zip",
@@ -20,18 +20,18 @@
     },
     "app": {
       "file": "qdisplay_native.bin",
-      "url": "https://github.com/StevenLang233/lakala-display-re/releases/download/v0.3.0-demo.20261009/qdisplay_native.bin",
-      "sha256": "4e6da49fcff0628532ed325b7c722db4e83971015b4f6783a0655c4f099fb437"
+      "url": "https://github.com/StevenLang233/lakala-display-re/releases/download/v0.3.1-demo.20261010/qdisplay_native.bin",
+      "sha256": "4af5b2b0df8ea504d07ae18bb900aae3fd69381e45e707b2c9ca39ae1c5a5fee"
     },
     "host": {
-      "file": "QDisplay-0.3.0-x64.msi",
-      "url": "https://github.com/StevenLang233/lakala-display-re/releases/download/v0.3.0-demo.20261009/QDisplay-0.3.0-x64.msi",
-      "sha256": "129e947933e041bf0e93c482c4d8bd9cb6e66e3fd28ba6d4f43c9f40bd4efa07"
+      "file": "QDisplay-0.3.1-x64.msi",
+      "url": "https://github.com/StevenLang233/lakala-display-re/releases/download/v0.3.1-demo.20261010/QDisplay-0.3.1-x64.msi",
+      "sha256": "3955286e39faa450324cd335c6c454e99fd552278fd74ea941a8196d167ee80f"
     },
     "licenses": {
-      "file": "QDisplay-0.3.0-LICENSES.zip",
-      "url": "https://github.com/StevenLang233/lakala-display-re/releases/download/v0.3.0-demo.20261009/QDisplay-0.3.0-LICENSES.zip",
-      "sha256": "8451e8743b1fa38b0624e603fc97bfe056b8122b911b48ef8cfc683de08a237b"
+      "file": "QDisplay-0.3.1-LICENSES.zip",
+      "url": "https://github.com/StevenLang233/lakala-display-re/releases/download/v0.3.1-demo.20261010/QDisplay-0.3.1-LICENSES.zip",
+      "sha256": "fd6a0d9655f7f8d9325586650a0ebef1a73fb69e1d55cb84fe80aae89576d0d5"
     },
     "usb": {
       "file": "quectel-usb-u-1.1.0.zip",

@@ -12,9 +12,26 @@ namespace QDisplay.Windows {
         [System.Runtime.InteropServices.DllImport("user32.dll",CharSet=System.Runtime.InteropServices.CharSet.Unicode)]static extern uint RegisterWindowMessage(string text);
         [System.Runtime.InteropServices.DllImport("user32.dll",CharSet=System.Runtime.InteropServices.CharSet.Unicode)]static extern IntPtr FindWindow(string type,string title);
         [System.Runtime.InteropServices.DllImport("user32.dll")]static extern bool PostMessage(IntPtr window,uint message,IntPtr first,IntPtr second);
+        [System.Runtime.InteropServices.DllImport("user32.dll",SetLastError=true)]static extern IntPtr RegisterPowerSettingNotification(IntPtr window,ref Guid setting,uint flags);
+        [System.Runtime.InteropServices.DllImport("user32.dll")]static extern bool UnregisterPowerSettingNotification(IntPtr handle);
+        static readonly Guid DisplayPowerGuid=new Guid("2B84C20E-AD23-4DDF-93DB-05FFBD7EFCA5");
+        IntPtr powerNotification;bool monitorOn=true;volatile bool screenOn=true;int pendingScreen=-1,screenSending;
+        readonly CheckBox followScreen=new CheckBox();
+        protected override void OnHandleCreated(EventArgs e){base.OnHandleCreated(e);Guid setting=DisplayPowerGuid;powerNotification=RegisterPowerSettingNotification(Handle,ref setting,0);}
+        protected override void OnHandleDestroyed(EventArgs e){if(powerNotification!=IntPtr.Zero){UnregisterPowerSettingNotification(powerNotification);powerNotification=IntPtr.Zero;}base.OnHandleDestroyed(e);}
+        void MonitorPower(Message message){if(message.LParam==IntPtr.Zero)return;
+            var guid=(Guid)System.Runtime.InteropServices.Marshal.PtrToStructure(message.LParam,typeof(Guid));
+            if(guid!=DisplayPowerGuid||System.Runtime.InteropServices.Marshal.ReadInt32(message.LParam,16)!=4)return;
+            int value=System.Runtime.InteropServices.Marshal.ReadInt32(message.LParam,20);if(value<0||value>2)return;
+            bool on=value!=0;if(on==monitorOn)return;monitorOn=on;
+            if(saved.FollowWindowsScreen&&Ipc.ActiveSession==session)SetScreen(on);}
+        void SetScreen(bool on){screenOn=saved.ScreenOn=on;Save();Interlocked.Increment(ref pictureRevision);Interlocked.Exchange(ref pendingScreen,on?1:0);StartScreenSender();}
+        void StartScreenSender(){if(!exiting&&deviceConnected&&Interlocked.CompareExchange(ref screenSending,1,0)==0)Task.Run((Action)SendScreen);}
+        void SendScreen(){try{while(!exiting&&deviceConnected){int state=Interlocked.Exchange(ref pendingScreen,-1);if(state<0)break;SendText(Commands.ScreenPower,state.ToString());}}
+            catch(Exception ex){ShowError(ex.Message);}finally{Interlocked.Exchange(ref screenSending,0);if(Volatile.Read(ref pendingScreen)>=0)StartScreenSender();}}
         static readonly uint ShowMessage=RegisterWindowMessage("QDisplay.Show.v1");
         public static void ShowExisting(){IntPtr window=FindWindow(null,"QDisplay");if(window!=IntPtr.Zero)PostMessage(window,ShowMessage,IntPtr.Zero,IntPtr.Zero);}
-        protected override void WndProc(ref Message message){if((uint)message.Msg==ShowMessage){OpenWindow();return;}if(message.Msg==0x007e){Interlocked.Increment(ref pictureRevision);if(IsHandleCreated&&!exiting)BeginInvoke((Action)RememberDisplayPosition);}base.WndProc(ref message);}
+        protected override void WndProc(ref Message message){if(message.Msg==0x218&&message.WParam.ToInt64()==0x8013)MonitorPower(message);if((uint)message.Msg==ShowMessage){OpenWindow();return;}if(message.Msg==0x007e){Interlocked.Increment(ref pictureRevision);if(IsHandleCreated&&!exiting)BeginInvoke((Action)RememberDisplayPosition);}base.WndProc(ref message);}
         readonly Color surface=Color.FromArgb(22,33,49),textColor=Color.FromArgb(229,238,246),muted=Color.FromArgb(150,169,190),accent=Color.FromArgb(33,104,122);
         readonly Label connection=new Label(),rate=new Label(),photoInfo=new Label(),musicInfo=new Label(),audioStatus=new Label(),currentPhoto=new Label(),error=new Label();
         readonly TextBox photoPath=new TextBox(),musicPath=new TextBox();
@@ -47,6 +64,9 @@ namespace QDisplay.Windows {
             settingsPanel.Dock=DockStyle.Fill;settingsPanel.AutoScroll=true;settingsPanel.FlowDirection=FlowDirection.TopDown;settingsPanel.WrapContents=false;settingsPanel.Margin=new Padding(0);root.Controls.Add(settingsPanel,0,2);
             Panel frame=Card("副屏",106);AddLabel(frame,"目标帧率",14,38,150,26);fps.SetBounds(174,35,110,29);fps.Minimum=1;fps.Maximum=60;fps.Value=30;Style(fps);frame.Controls.Add(fps);fps.ValueChanged+=(s,e)=>{targetFps=(int)fps.Value;saved.Fps=targetFps;Save();};
             AddLabel(frame,"Windows 刷新率",14,76,150,26);refreshRate.SetBounds(174,72,110,29);refreshRate.DropDownStyle=ComboBoxStyle.DropDownList;refreshRate.Items.AddRange(new object[]{"30 Hz","60 Hz"});refreshRate.SelectedIndex=0;Style(refreshRate);frame.Controls.Add(refreshRate);commands.Add(refreshRate);refreshRate.SelectedIndexChanged+=(s,e)=>{displayHz=refreshRate.SelectedIndex==1?60:30;saved.RefreshHz=displayHz;Save();if(!restoring&&captureEnabled)SetMode("display");};
+            Panel screen=Card("屏幕电源",116);Check(screen,followScreen,"跟随 Windows 息屏和亮屏",14,36);followScreen.Width=360;
+            followScreen.CheckedChanged+=(s,e)=>{saved.FollowWindowsScreen=followScreen.Checked;Save();if(!restoring&&followScreen.Checked)SetScreen(monitorOn);};
+            AddButton(screen,"亮屏",14,73,145,34,()=>SetScreen(true));AddButton(screen,"息屏",169,73,145,34,()=>SetScreen(false));
             Panel pictures=Card("相框",228);AddButton(pictures,"选择图片",14,36,145,36,()=>ChooseMedia(true,false));AddButton(pictures,"选择文件夹",169,36,145,36,()=>ChooseMedia(true,true));
             PathBox(pictures,photoPath,82);photoPath.Text="尚未选择图片或文件夹";Check(pictures,photoRecursive,"同时读取子文件夹",14,139);photoRecursive.CheckedChanged+=(s,e)=>{saved.PhotoRecursive=photoRecursive.Checked;if(!restoring&&saved.PhotoIsFolder&&saved.PhotoPath.Length>0)LoadSelection(true,saved.PhotoPath,true);Save();};
             photoInfo.SetBounds(14,166,430,22);photoInfo.Anchor=AnchorStyles.Top|AnchorStyles.Left|AnchorStyles.Right;photoInfo.AutoEllipsis=true;photoInfo.ForeColor=muted;pictures.Controls.Add(photoInfo);AddLabel(pictures,"轮播间隔（秒）",14,197,166,26);interval.SetBounds(190,193,110,29);interval.Minimum=1;interval.Maximum=3600;interval.Value=5;Style(interval);pictures.Controls.Add(interval);interval.ValueChanged+=(s,e)=>{photoSeconds=(int)interval.Value;saved.PhotoSeconds=photoSeconds;Save();};
@@ -61,15 +81,15 @@ namespace QDisplay.Windows {
             audioStatus.SetBounds(14,387,430,21);audioStatus.ForeColor=muted;audioStatus.Text="音量 10%";sound.Controls.Add(audioStatus);
             error.Dock=DockStyle.Fill;error.ForeColor=Color.FromArgb(245,169,137);error.AutoEllipsis=true;root.Controls.Add(error,0,3);
             settingsPanel.SizeChanged+=(s,e)=>ResizeCards();ResizeCards();
-            ContextMenuStrip menu=new ContextMenuStrip();menu.Items.Add("打开",null,(s,e)=>OpenWindow());menu.Items.Add("退出",null,(s,e)=>ExitApp());tray=new NotifyIcon{Icon=Icon,Text="QDisplay",Visible=true,ContextMenuStrip=menu};tray.DoubleClick+=(s,e)=>OpenWindow();
+            ContextMenuStrip menu=new ContextMenuStrip();menu.Items.Add("打开",null,(s,e)=>OpenWindow());menu.Items.Add("亮屏",null,(s,e)=>SetScreen(true));menu.Items.Add("息屏",null,(s,e)=>SetScreen(false));menu.Items.Add("退出",null,(s,e)=>ExitApp());tray=new NotifyIcon{Icon=Icon,Text="QDisplay",Visible=true,ContextMenuStrip=menu};tray.DoubleClick+=(s,e)=>OpenWindow();
             FormClosing+=(s,e)=>{if(!exiting&&e.CloseReason==CloseReason.UserClosing){e.Cancel=true;Hide();}else if(!exiting){exiting=true;captureEnabled=photoEnabled=false;playlistWanted=false;tray.Visible=false;if(loopback!=null)loopback.Dispose();if(Ipc.ActiveSession==session)try{Displays.Detach();}catch{}}};
             Shown+=(s,e)=>{if(hidden)Hide();Poll();};poll.Interval=900;poll.Tick+=(s,e)=>Poll();poll.Start();
             capture=new Thread(CaptureLoop){IsBackground=true,Name="Active desktop capture"};capture.Start();
             restoring=true;try{saved=Ipc.Parse<Settings>(File.ReadAllBytes(config));if(String.IsNullOrEmpty(saved.PhotoPath))saved.PhotoPath=saved.PhotoFolder;
                 saved.Mode=RecoveryPolicy.Mode(saved.Mode);saved.AudioMode=RecoveryPolicy.Audio(saved.AudioMode);saved.Volume=RecoveryPolicy.Volume(saved.Volume);
-                photoRecursive.Checked=saved.PhotoRecursive;musicRecursive.Checked=saved.MusicRecursive;repeatMusic.Checked=saved.RepeatMusic;volume.Value=saved.Volume;audioMode.SelectedIndex=saved.AudioMode=="windows"?1:saved.AudioMode=="local"?2:0;
+                followScreen.Checked=saved.FollowWindowsScreen;screenOn=saved.ScreenOn;photoRecursive.Checked=saved.PhotoRecursive;musicRecursive.Checked=saved.MusicRecursive;repeatMusic.Checked=saved.RepeatMusic;volume.Value=saved.Volume;audioMode.SelectedIndex=saved.AudioMode=="windows"?1:saved.AudioMode=="local"?2:0;
                 fps.Value=Math.Max(1,Math.Min(60,saved.Fps));refreshRate.SelectedIndex=saved.RefreshHz==60?1:0;interval.Value=Math.Max(1,Math.Min(3600,saved.PhotoSeconds));}catch{}finally{restoring=false;}
-            if(initialMode!=null)saved.Mode=RecoveryPolicy.Mode(initialMode);saved.PreferencesVersion=1;
+            screenOn=saved.ScreenOn;if(saved.FollowWindowsScreen)screenOn=saved.ScreenOn=monitorOn;if(initialMode!=null)saved.Mode=RecoveryPolicy.Mode(initialMode);saved.PreferencesVersion=1;
             if(!String.IsNullOrEmpty(saved.PhotoPath))LoadSelection(true,saved.PhotoPath,saved.PhotoIsFolder);if(!String.IsNullOrEmpty(saved.MusicPath))LoadSelection(false,saved.MusicPath,saved.MusicIsFolder);
             if(startWatchdog)Process.Start(new ProcessStartInfo(Application.ExecutablePath,"--watch "+Process.GetCurrentProcess().Id+" "+session){UseShellExecute=false,CreateNoWindow=true});
         }
@@ -99,7 +119,7 @@ namespace QDisplay.Windows {
             int index=resumeLocal?Math.Max(0,Math.Min(saved.MusicIndex,musicSelection.Files.Length-1)):0;
             string music=resumeLocal?musicSelection.Files[index]:null;int selectedRevision=musicRevision;Status started=null;Exception audioFailure=null;
             captureEnabled=photoEnabled=false;playlistWanted=false;playingId=0;uploadedPath="";Interlocked.Increment(ref modeRevision);
-            Run(()=>{StopLoopback();ApplyDisplayMode(mode,position);SendText(Commands.Volume,requestedVolume.ToString());SendText(Commands.AudioMode,"off");
+            Run(()=>{StopLoopback();ApplyDisplayMode(mode,position);if(status.ScreenPowerAvailable)SendText(Commands.ScreenPower,screenOn?"1":"0");SendText(Commands.Volume,requestedVolume.ToString());SendText(Commands.AudioMode,"off");
                 if(sound=="windows")try{StartWindowsAudio(requestedVolume);}catch(Exception ex){audioFailure=ex;}
                 else if(resumeLocal)started=PlayTrack(music,selectedRevision,requestedVolume);
             },()=>{appliedService=status.ServiceInstance;appliedConnection=status.ConnectionGeneration;recoveryPending=false;
@@ -112,7 +132,7 @@ namespace QDisplay.Windows {
         void RestoreWindowsAudio(){if(busy||DateTime.UtcNow<nextAudioRecovery)return;nextAudioRecovery=DateTime.UtcNow.AddSeconds(5);int requestedVolume=saved.Volume;
             Run(()=>{StopLoopback();StartWindowsAudio(requestedVolume);});}
         async void Poll(){if(polling||exiting||busy)return;polling=true;int observedRevision=Volatile.Read(ref modeRevision),observedVolumeRevision=Volatile.Read(ref volumeRevision);try{Status status=await Task.Run(()=>Ipc.Parse<Status>(Ipc.Request(Commands.Status)));if(exiting||busy||observedRevision!=Volatile.Read(ref modeRevision))return;
-                nativeBlockBytes=status.NativeBlockBytes;nativeWholeFrames=status.NativeWholeFrames;nativeSparseFrames=status.NativeSparseFrames;Interlocked.Exchange(ref transferMicroseconds,(long)(status.NativeFrameMs*1000));
+                if(Volatile.Read(ref pendingScreen)>=0)StartScreenSender();nativeBlockBytes=status.NativeBlockBytes;nativeWholeFrames=status.NativeWholeFrames;nativeSparseFrames=status.NativeSparseFrames;Interlocked.Exchange(ref transferMicroseconds,(long)(status.NativeFrameMs*1000));
                 bool active=status.Session==session;deviceConnected=active&&status.Connected;
                 connection.Text=(status.Connected?"已连接 "+status.Port:"正在连接设备")+(active?"":" · 当前账户不在活动桌面");if(status.Error.Length>0)connection.Text=status.Error;
                 rate.Text=status.Fps.ToString("0.0")+" FPS";display.BackColor=saved.Mode=="display"?accent:surface;photo.BackColor=saved.Mode=="photo"?accent:surface;hardware.BackColor=saved.Mode=="hardware"?accent:surface;
@@ -146,7 +166,7 @@ namespace QDisplay.Windows {
             finally{if(!pictures&&musicScan==token)musicLoading=false;}
         }
         void CaptureLoop(){byte[] previousPixels=null;uint previousHash=0;bool hasPrevious=false;int revision=-1,index=0;PreparedFrame photoFrame=null;DateTime lastSend=DateTime.MinValue,lastPhoto=DateTime.MinValue;DesktopCapture desktop=null;
-            using(var delay=new CaptureDelay())try{while(!exiting){var iteration=Stopwatch.StartNew();try{if(Ipc.ActiveSession!=session){delay.Wait(100);continue;}
+            using(var delay=new CaptureDelay())try{while(!exiting){var iteration=Stopwatch.StartNew();try{if(Ipc.ActiveSession!=session||!screenOn){delay.Wait(100);continue;}
                 lock(captureGate){bool isDisplay=captureEnabled,isPhoto=!isDisplay&&photoEnabled;MediaSelection selected=pictureSelection;
                     int current=Volatile.Read(ref pictureRevision);if(current!=revision){revision=current;index=0;lastPhoto=DateTime.MinValue;photoFrame=null;hasPrevious=false;if(desktop!=null){desktop.Dispose();desktop=null;}}
                     byte[] pixels=null;

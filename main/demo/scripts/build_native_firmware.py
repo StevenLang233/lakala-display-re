@@ -128,6 +128,8 @@ def main():
     report['source_dir']=str(SRC.relative_to(ROOT)).replace('\\','/')
     report['waiting_page']=waiting_asset
     report['disconnect_timeout_ms']=5000
+    report['disconnect_sleep_ms']=90000
+    report['host_screen_power']=True
     report['long_press_ms']=2000
     report['long_press_keys']=['GPIO44 (menu)']
     report['brightness_keys']=['GPIO47 (+)','GPIO46 (-)']

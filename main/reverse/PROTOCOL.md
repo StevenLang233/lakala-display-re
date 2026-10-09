@@ -93,3 +93,7 @@ type=7 为空载荷，flags 为子命令：
 type=8：flags=0、offset=MP3累计字节、length=raw_length=块长（1..16384），每块等 ACK，detail=累计字节。上传成功后 type7/4、7/6 验证，再 type7/5 播放。
 
 type=9：flags=offset=0、length=raw_length=偶数且1..16384；payload 为 signed PCM16LE，ACK detail=接受字节。连接/状态失败时停音并重新建立流，不能重放迟到的音频队列。显示和音频共用同一命令流，主机必须串行协调，否则帧组装/ACK 序号冲突。
+
+## 0.3.1 屏幕电源扩展
+
+HELLO(flags=2) 的 bit6 表示软件开关屏幕。HELLO(flags=18,offset=0/1/2) 分别息屏、亮屏、只查询；payload/raw_length 均为空/零。ACK receive 为 awake，detail=0x31534451。查询和 flags=7 不保活、不唤醒。手动息屏只改背光，不关机或断开 USB。5秒等待页之后持续无命令到90秒自动息屏，重连自动唤醒仅适用于这次自动息屏。

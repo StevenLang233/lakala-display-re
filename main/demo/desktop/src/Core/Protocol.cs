@@ -81,7 +81,7 @@ namespace QDisplay.Core {
     public sealed class NativeLink : IDisposable {
         public const int FrameBytes=800*1280*2;
         public double LastFrameMs,LastEncodeMs;public long LastWireBytes;
-        readonly ITransport port;uint sequence,committedHash;bool committedValid;public int BlockBytes=128*1024,MaxWindow=4;public bool Audio,WholeFrames,SparseFrames;bool deferred;
+        readonly ITransport port;uint sequence,committedHash;bool committedValid;public int BlockBytes=128*1024,MaxWindow=4;public bool Audio,WholeFrames,SparseFrames,ScreenPower;bool deferred;
         public void InvalidateFrame(){committedValid=false;}
         public NativeLink(ITransport transport){port=transport;sequence=unchecked((uint)System.Diagnostics.Stopwatch.GetTimestamp());}
         static void U32(byte[] b,int o,uint n){b[o]=(byte)n;b[o+1]=(byte)(n>>8);b[o+2]=(byte)(n>>16);b[o+3]=(byte)(n>>24);}
@@ -112,7 +112,7 @@ namespace QDisplay.Core {
         public Reply Command(byte kind,ushort flags,uint offset,uint raw,byte[] payload){return Receive(Send(kind,flags,offset,raw,payload));}
         public Reply Command(byte kind,ushort flags,uint offset,uint raw){return Command(kind,flags,offset,raw,null);}
         public Reply Hello(){return Command(1,0,0,0);}
-        public void Connect(){Reply hello=Receive(Send(1,0,0,0,null),true);if(hello.Detail!=128*1024 && hello.Detail!=508*1024)throw new IOException("设备协议不匹配");BlockBytes=(int)hello.Detail;uint features=Command(1,2,0,0).Detail;Audio=(features&4)!=0;WholeFrames=(features&16)!=0;SparseFrames=(features&32)!=0;deferred=(features&1)!=0;MaxWindow=deferred?(int)((features>>8)&15):4;if(MaxWindow==0)MaxWindow=4;if(MaxWindow<1||MaxWindow>4)throw new IOException("设备接收窗口不匹配");}
+        public void Connect(){Reply hello=Receive(Send(1,0,0,0,null),true);if(hello.Detail!=128*1024 && hello.Detail!=508*1024)throw new IOException("设备协议不匹配");BlockBytes=(int)hello.Detail;uint features=Command(1,2,0,0).Detail;Audio=(features&4)!=0;WholeFrames=(features&16)!=0;SparseFrames=(features&32)!=0;ScreenPower=(features&64)!=0;deferred=(features&1)!=0;MaxWindow=deferred?(int)((features>>8)&15):4;if(MaxWindow==0)MaxWindow=4;if(MaxWindow<1||MaxWindow>4)throw new IOException("设备接收窗口不匹配");}
         public Reply Frame(byte[] pixels){
             return SendPrepared(PreparedFrame.Prepare(pixels,BlockBytes,WholeFrames));
         }
